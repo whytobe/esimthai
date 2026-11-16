@@ -1,0 +1,31 @@
+---
+interface Props {
+  link: string;
+  name: string;
+  data: string;
+  days: string;
+  price: string;
+  code?: string;
+}
+
+const { link, name, data, days, price, code } = Astro.props;
+---
+
+<div class="ticket">
+  <div class="ticket__main">
+    <h3>{name}</h3>
+    <p>แพ็กเกจคุ้มสำหรับทริป {days} — ต่อเน็ตทันทีหลังถึง ไม่ต้องเปลี่ยนซิม</p>
+    <a class="btn" href={link} rel="sponsored nofollow" target="_blank">ดูราคาและสมัคร</a>
+    {code && (
+      <p class="affiliate-note">โค้ดส่วนลดครั้งแรก: <code>{code}</code></p>
+    )}
+  </div>
+  <div class="ticket__stub">
+    <span class="ticket__stub-label">เน็ต</span>
+    <span class="ticket__stub-data">{data}</span>
+    <span class="ticket__stub-label">วัน</span>
+    <span class="ticket__stub-data">{days}</span>
+    <span class="ticket__stub-label">ราคา</span>
+    <span class="ticket__stub-price">{price}</span>
+  </div>
+</div>

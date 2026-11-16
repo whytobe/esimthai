@@ -1,0 +1,437 @@
+/* ============================================================
+   eSIMไทย — "ตั๋วเชื่อมต่อ" design system
+   Palette, type and layout drawn from airport departure boards
+   and boarding passes: an eSIM is a digital ticket to being
+   connected abroad.
+   ============================================================ */
+
+:root {
+  --paper: #f4f6f5;
+  --paper-raised: #ffffff;
+  --ink: #0e2a3a;
+  --ink-soft: #40586a;
+  --connect: #0fa47a;
+  --connect-dark: #0b7d5e;
+  --amber: #e8a13d;
+  --line: #c6d0d5;
+  --line-soft: #dce3e6;
+  --board: #0e2a3a;
+  --board-text: #e9f1ee;
+
+  --font-sans: 'Prompt', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --maxw: 780px;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: 2.4rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
+}
+
+a {
+  color: var(--connect-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ---------- Layout shell ---------- */
+.shell {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--paper);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.15rem 1.25rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand__dot {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: var(--connect);
+  margin-left: 0.1em;
+}
+
+.nav {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 0.95rem;
+}
+
+.nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+.site-footer {
+  margin-top: 5rem;
+  border-top: 1px solid var(--line-soft);
+  padding: 1.6rem 0 3rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Hero (home) ---------- */
+.hero {
+  padding: 3.4rem 0 2.6rem;
+}
+
+.hero h1 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+}
+
+.hero__sub {
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 2rem;
+  font-size: 1.02rem;
+}
+
+.route {
+  display: block;
+  max-width: 340px;
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Departure board (article list) ---------- */
+.board-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3rem 0 0.8rem;
+}
+
+.board-label::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--connect);
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.post-list li {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.post-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.05rem 0.2rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.post-list a:hover .post-list__title {
+  color: var(--connect-dark);
+}
+
+.post-list__title {
+  font-weight: 600;
+}
+
+.post-list__meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ---------- Article body ---------- */
+.article-head {
+  padding: 3rem 0 1.5rem;
+}
+
+.article-head h1 {
+  margin: 0 0 0.8rem;
+}
+
+.article-head__meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.article-head__meta time {
+  color: var(--ink);
+}
+
+.prose {
+  max-width: var(--maxw);
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  max-width: 68ch;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3rem;
+}
+
+.prose li {
+  margin-bottom: 0.45rem;
+}
+
+.prose blockquote {
+  margin: 1.4rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 3px solid var(--amber);
+  color: var(--ink-soft);
+}
+
+.prose blockquote p {
+  margin: 0.4rem 0;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--line-soft);
+  margin: 2.2rem 0;
+}
+
+/* Departure-board table inside an article */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin: 1.4rem 0 1.8rem;
+  background: var(--paper-raised);
+}
+
+.prose thead th {
+  background: var(--board);
+  color: var(--board-text);
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.6rem 0.75rem;
+  white-space: nowrap;
+}
+
+.prose tbody td {
+  padding: 0.62rem 0.75rem;
+  border-top: 1px solid var(--line-soft);
+  color: var(--ink);
+}
+
+.prose tbody tr:nth-child(even) {
+  background: #edf1f0;
+}
+
+.prose tbody tr:hover {
+  background: #e7f2ec;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: #e7eeec;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* ---------- Boarding-pass CTA ---------- */
+.ticket {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  overflow: hidden;
+  margin: 2.2rem 0;
+}
+
+.ticket__main {
+  padding: 1.4rem 1.5rem;
+}
+
+.ticket__main h3 {
+  margin: 0 0 0.5rem;
+}
+
+.ticket__main p {
+  margin: 0 0 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.ticket__stub {
+  min-width: 9.5rem;
+  padding: 1.4rem 1.4rem 1.4rem 1.3rem;
+  border-left: 1.5px dashed var(--line);
+  background: #fbfcfb;
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.ticket__stub-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.ticket__stub-data {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.ticket__stub-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--connect-dark);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--connect);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.62rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background: var(--connect-dark);
+  color: #ffffff;
+}
+
+.affiliate-note {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-top: 0.6rem;
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+  outline: 2px solid var(--connect);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .ticket {
+    grid-template-columns: 1fr;
+  }
+  .ticket__stub {
+    border-left: none;
+    border-top: 1.5px dashed var(--line);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+  }
+  .post-list a {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}

@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Base
+  title="eSIM สำหรับคนไทยเที่ยวต่างประเทศ"
+  description="เปรียบเทียบราคา eSIM จริง วิธีใช้ทีละขั้น สำหรับคนไทยไปญี่ปุ่น เกาหลี ไต้หวัน และอีก 200+ ประเทศ"
+>
+  <section class="hero">
+    <h1>ต่อเน็ตตอนเที่ยวต่างประเทศ<br />ไม่ต้องเปลี่ยนซิม</h1>
+    <p class="hero__sub">
+      เปรียบเทียบราคา eSIM จริง วิธีใช้ทีละขั้น สำหรับคนไทยไปญี่ปุ่น เกาหลี ไต้หวัน
+      และอีก 200+ ประเทศ
+    </p>
+    <svg class="route" viewBox="0 0 260 120" fill="none" aria-hidden="true">
+      <path
+        d="M28 96 C 88 18, 168 18, 216 42"
+        stroke="var(--line)"
+        stroke-width="1.5"
+        stroke-dasharray="2 7"
+        stroke-linecap="round"
+      />
+      <circle cx="28" cy="96" r="4" fill="var(--ink)" />
+      <circle cx="216" cy="42" r="4" fill="var(--connect)" />
+      <rect x="228" y="26" width="3" height="5" rx="1" fill="var(--connect)" />
+      <rect x="234" y="21" width="3" height="10" rx="1" fill="var(--connect)" />
+      <rect x="240" y="16" width="3" height="15" rx="1" fill="var(--connect)" />
+    </svg>
+  </section>
+
+  <div class="board-label">บทความล่าสุด</div>
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.id}/`}>
+          <span class="post-list__title">{post.data.title}</span>
+          <span class="post-list__meta">
+            {post.data.date.toLocaleDateString('th-TH', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric',
+            })}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>

@@ -1,0 +1,47 @@
+---
+import Base from './Base.astro';
+import TicketCta from '../components/TicketCta.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  Content: unknown;
+}
+
+const { post, Content } = Astro.props;
+const { title, description, date, affiliate, recommend } = post.data;
+const dateStr = date.toLocaleDateString('th-TH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base title={title} description={description}>
+  <article>
+    <header class="article-head">
+      <h1>{title}</h1>
+      <div class="article-head__meta">
+        <time datetime={date.toISOString()}>{dateStr}</time>
+        {post.data.tags.map((tag: string) => <span>{tag}</span>)}
+      </div>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {
+      affiliate && recommend && (
+        <TicketCta
+          link={affiliate.link}
+          name={recommend.name}
+          data={recommend.data}
+          days={recommend.days}
+          price={recommend.price}
+          code={affiliate.code}
+        />
+      )
+    }
+  </article>
+</Base>
