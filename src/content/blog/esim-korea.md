@@ -6,7 +6,7 @@ tags:
   - 'eSIM เกาหลี'
   - 'ซิมเกาหลี'
 affiliate:
-  link: 'https://www.airalo.com/south-korea-esim'
+  link: 'https://airalo.pxf.io/n4MgRx'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo 짱 Jjang'

@@ -8,7 +8,7 @@ const blog = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
-    // Airalo affiliate link — replace with the real tracked link once approved
+    // Airalo Impact affiliate tracking link (see docs/affiliate-links.md)
     affiliate: z
       .object({
         link: z.string(),

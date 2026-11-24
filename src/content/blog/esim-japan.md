@@ -6,7 +6,7 @@ tags:
   - 'eSIM ญี่ปุ่น'
   - 'ซิมญี่ปุ่น'
 affiliate:
-  link: 'https://www.airalo.com/japan-esim'
+  link: 'https://airalo.pxf.io/E0B2zX'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Moshi Moshi'
