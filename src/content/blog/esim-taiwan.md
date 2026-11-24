@@ -6,7 +6,7 @@ tags:
   - 'eSIM ไต้หวัน'
   - 'ซิมไต้หวัน'
 affiliate:
-  link: 'https://airalo.pxf.io/OYqz9A'
+  link: 'https://airalo.pxf.io/k46V9x'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Xie Xie (ไต้หวัน)'

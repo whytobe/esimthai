@@ -6,7 +6,7 @@ tags:
   - 'eSIM เวียดนาม'
   - 'ซิมเวียดนาม'
 affiliate:
-  link: 'https://airalo.pxf.io/OYqz9A'
+  link: 'https://airalo.pxf.io/aNgPjq'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Xin Chao (เวียดนาม)'
