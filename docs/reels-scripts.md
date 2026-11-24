@@ -2,7 +2,7 @@
 
 Ready-to-record 30-second Thai vertical video scripts adapted from published articles on `https://esim.whytobe.com/`.
 Use UTM/bio links pointing to the corresponding article so every social view funnels into tracked Impact affiliate links.
-Pair Clips #1–#4 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
+Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
 
 ---
 
@@ -92,6 +92,7 @@ Pair Clips #1–#4 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
 
 ## Reel #5: เทียบราคา eSIM 6 ประเทศฮิตปลายปี 2569 (5GB/7 วัน)
 
+- **Cover Asset:** [reel-05-6-countries-prices.png](../assets/reels/reel-05-6-countries-prices.png)
 - **Target Article:** `https://esim.whytobe.com/` (Flight Board Picker)
 - **Length:** ~25–30 sec
 - **Shot List:** 0–3s Hook over flight departure board graphic → 3–22s Fast-paced country price cards (SG ฿315, VN ~฿340, JP ฿350, KR ฿350, TW ~฿374, HK ฿385) → 22–28s Show interactive TripRecommender on `esim.whytobe.com` + `NEWTOAIRALO15`.

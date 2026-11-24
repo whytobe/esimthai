@@ -7,10 +7,10 @@
 
 | Criterion | Target (by 11 Jan 2027) | Current Status (24 Nov 2026) | Gap / Next Action |
 | --- | --- | --- | --- |
-| 1. Content Volume | ≥ 12 pieces (≥ 8 SEO articles + ≥ 4 Reels) | **10 SEO articles live** + **5 Reels scripts + 4 PNG covers ready** | Owner to record & post Reels using [reels-scripts.md](reels-scripts.md) + [distribution-pack.md](distribution-pack.md) |
-| 2. Indexing & Measurement | All key pages indexed in Google + GSC + Analytics + SubID | Technical SEO, `sitemap.xml`, Cloudflare Web Analytics, and `subId1`/`subId2` live; GSC sitemap submitted | Monitor GSC `"Couldn't fetch"` resolution & Request Indexing completion |
-| 3. Traffic & Clicks | ≥ 30 organic affiliate clicks + full funnel data | Measurement active (`check-metrics.sh` + Impact SubIDs); awaiting index & Reels traffic | Drive early clicks via Reels/social drafts while SEO ramps |
-| 4. Partner Diversification | Backup payout-compatible programs prepared/applied | Airalo active (6 destinations + homepage); Impact Marketplace showed 0 eligible listings for Nomad/Ubigi | Review [partner-expansion-pack.md](partner-expansion-pack.md) & approve Ubigi/Nomad/Holafly outreach |
+| 1. Content Volume | ≥ 12 pieces (≥ 8 SEO articles + ≥ 4 Reels) | **10 SEO articles live** + **5 Reels scripts + 5 PNG covers ready** | Owner to record & post Reels using [reels-scripts.md](reels-scripts.md) + [distribution-pack.md](distribution-pack.md) |
+| 2. Indexing & Measurement | All key pages indexed in Google + GSC + Analytics + SubID | GSC `sitemap.xml` **processed successfully (9 discovered pages; 11 URLs now in sitemap)**; homepage live test passed & indexing requested; Cloudflare Web Analytics + SubID active | Remaining manual per-URL GSC indexing hit reCAPTCHA (`esim-japan`) — sitemap will crawl remaining URLs automatically unless owner solves reCAPTCHA |
+| 3. Traffic & Clicks | ≥ 30 organic affiliate clicks + full funnel data | Measurement active (`scripts/check-metrics.sh` + Impact SubIDs); Impact dashboard stats unverified due to expired session | Re-sign into Impact on `puie-m4pro` for baseline clicks/earnings + drive clicks via Reels/social |
+| 4. Partner Diversification | Backup payout-compatible programs prepared/applied | Airalo active (all 10 articles tracked); Impact Marketplace showed 0 eligible listings for Nomad/Ubigi; Ubigi portal read-only checked (requires sign-in) | Owner to review [partner-expansion-pack.md](partner-expansion-pack.md), sign into Impact/Ubigi, and approve external applications/email |
 
 ---
 
@@ -41,12 +41,22 @@ Plus homepage interactive `TripRecommender` attributing clicks as `subId1=home-p
   - `assets/reels/reel-02-check-esim-eid.png`
   - `assets/reels/reel-03-korea-naver-010.png`
   - `assets/reels/reel-04-preflight-checklist.png`
+  - `assets/reels/reel-05-6-countries-prices.png`
 - Scripts & social captions: [reels-scripts.md](reels-scripts.md) and [distribution-pack.md](distribution-pack.md)
 
 ---
 
-## 4. Funnel Snapshot Log
+## 4. Current Blockers / Decisions Needed from Owner
 
-| Date | GSC Indexed Pages | GSC Impressions / Clicks | CF Web Analytics Pageviews | Impact Affiliate Clicks | Conversions / Earnings | Notes |
+1. **Social Distribution (Zero Posts Published Yet):** Review & publish Reels #1–#5 (`assets/reels/*.png` + `docs/reels-scripts.md`) and Facebook Page posts (`docs/distribution-pack.md`).
+2. **Impact Re-login (`puie-m4pro`):** Session redirected to sign-in. Needed to check baseline Clicks/Actions/Earnings, generate country deep links for Singapore & Hong Kong, and check Ubigi portal access (`https://app.impact.com/bla/Transatel/login.user`).
+3. **External Partner Applications:** Approve outreach in [partner-expansion-pack.md](partner-expansion-pack.md) (Nomad `affiliate@getnomad.app`, Holafly, Ubigi, aloSIM).
+4. **GSC Manual Per-URL Indexing (Optional):** Sitemap already processed cleanly (`9 discovered pages`, now serving `11 URLs`). Remaining manual indexing requests hit reCAPTCHA on `esim-japan`.
+
+---
+
+## 5. Funnel Snapshot Log
+
+| Date | GSC Sitemap / Indexed | GSC Impressions / Clicks | CF Web Analytics Pageviews | Impact Affiliate Clicks | Conversions / Earnings | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| 2026-11-24 | Pending initial crawl | 0 / 0 | 0 (just deployed) | Pending check | $0 | Launched technical SEO, 10 articles, TripRecommender, Web Analytics, and Reels kits |
+| 2026-11-24 | `sitemap.xml` processed (**9 discovered pages**, updated to **11 URLs**); Homepage live test passed & indexing requested | 0 / 0 | 0 (just deployed) | Unverified (Impact login expired) | Unverified | Shipped technical SEO, 10 articles, TripRecommender, Web Analytics, 5 Reels kits + 5 PNG covers |

@@ -206,13 +206,39 @@ def reel_04() -> str:
     return reel_base("4-STEP SETUP", "ตั้งค่า eSIM ก่อนบิน", "กันเน็ตรั่ว 100%", body, "คู่มือภาพทีละขั้น + แก้ปัญหาเน็ตไม่ขึ้นที่หน้าเว็บ")
 
 
+def reel_05() -> str:
+    rows = [
+        ("สิงคโปร์ (Connect Lah!)", "Singtel 5G / M1", "฿315", GREEN),
+        ("เวียดนาม (Xin Chao)", "VNPT 5G", "~฿340", GREEN),
+        ("ญี่ปุ่น (Moshi Moshi)", "SoftBank / KDDI 5G", "฿350", NAVY),
+        ("เกาหลีใต้ (짱 Jjang)", "SK Telecom 5G", "฿350", NAVY),
+        ("ไต้หวัน (Xie Xie)", "Taiwan Mobile 5G", "~฿374", INK_SOFT),
+        ("ฮ่องกง (Hkmobile)", "HKT 5G", "฿385", INK_SOFT),
+    ]
+    cards = []
+    y = 470
+    for country, net, price, badge_col in rows:
+        cards.append(
+            f"""
+  <rect x="104" y="{y}" width="872" height="156" rx="18" fill="{WHITE}" stroke="{LINE}" stroke-width="2"/>
+  <text x="140" y="{y + 68}" font-family="{FONT_TH}" font-size="38" font-weight="700" fill="{NAVY}">{country}</text>
+  <text x="140" y="{y + 118}" font-family="{FONT_MONO}" font-size="25" fill="{INK_SOFT}">{net} · 5 GB / 7 วัน</text>
+  <rect x="736" y="{y + 42}" width="206" height="72" rx="14" fill="{badge_col}"/>
+  <text x="839" y="{y + 90}" text-anchor="middle" font-family="{FONT_MONO}" font-size="38" font-weight="700" fill="{WHITE}">{price}</text>"""
+        )
+        y += 176
+    body = "\n".join(cards)
+    return reel_base("6 DESTINATIONS", "eSIM 6 ประเทศฮิต", "5GB / 7 วัน กี่บาท?", body, "กดเลือกประเทศที่หน้าเว็บ รู้แพ็กคุ้มใน 10 วิ")
+
+
 def main() -> None:
     render_svg(og_card(), PUBLIC_DIR / "og-default.png", 1200, 630)
     render_svg(reel_01(), REELS_DIR / "reel-01-japan-vs-sim2fly.png", 1080, 1920)
     render_svg(reel_02(), REELS_DIR / "reel-02-check-esim-eid.png", 1080, 1920)
     render_svg(reel_03(), REELS_DIR / "reel-03-korea-naver-010.png", 1080, 1920)
     render_svg(reel_04(), REELS_DIR / "reel-04-preflight-checklist.png", 1080, 1920)
-    print("Generated og-default.png and 4 Reels cover PNGs.")
+    render_svg(reel_05(), REELS_DIR / "reel-05-6-countries-prices.png", 1080, 1920)
+    print("Generated og-default.png and 5 Reels cover PNGs.")
 
 
 if __name__ == "__main__":
