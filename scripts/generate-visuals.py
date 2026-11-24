@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PUBLIC_DIR = ROOT / "public"
 REELS_DIR = ROOT / "assets" / "reels"
 BRAND_DIR = ROOT / "assets" / "brand"
+CREATIVES_DIR = BRAND_DIR / "creatives"
 SVG_TMP = ROOT / ".astro" / "svg-tmp"
 
 FONT_TH = "Noto Sans Thai, Google Sans, sans-serif"
@@ -353,6 +354,196 @@ def fb_cover() -> str:
 """
 
 
+def render_svg_overlay(svg_text: str, name: str, width: int, height: int) -> Path:
+    SVG_TMP.mkdir(parents=True, exist_ok=True)
+    svg_path = SVG_TMP / f"{name}.svg"
+    png_path = SVG_TMP / f"{name}.png"
+    svg_path.write_text(svg_text, encoding="utf-8")
+    subprocess.run(
+        [
+            "rsvg-convert",
+            "-w",
+            str(width),
+            "-h",
+            str(height),
+            "-o",
+            str(png_path),
+            str(svg_path),
+        ],
+        check=True,
+    )
+    return png_path
+
+
+def simpainai_profile() -> None:
+    src = CREATIVES_DIR / "travel-duo-avatar-bg.png"
+    if not src.exists():
+        return
+    overlay_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{GREEN}"/>
+      <stop offset="60%" stop-color="#22d3a0"/>
+      <stop offset="100%" stop-color="{AMBER}"/>
+    </linearGradient>
+    <mask id="outerCut">
+      <rect width="1024" height="1024" fill="white"/>
+      <circle cx="512" cy="512" r="466" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Cover white outer corners smoothly with aviation navy so square & circular crops look seamless -->
+  <rect width="1024" height="1024" fill="{NAVY}" mask="url(#outerCut)"/>
+  <circle cx="512" cy="512" r="468" fill="none" stroke="url(#ring)" stroke-width="14"/>
+  <!-- Bottom safe frosted brand pill leaving characters, Mt. Fuji, sakura, and pagoda bright -->
+  <rect x="292" y="794" width="440" height="86" rx="43" fill="{NAVY}" fill-opacity="0.92" stroke="{GREEN}" stroke-width="5"/>
+  <text x="492" y="852" text-anchor="middle" font-family="{FONT_TH}" font-size="52" font-weight="700" fill="{WHITE}">ซิมไปไหน</text>
+  <circle cx="644" cy="838" r="10" fill="{GREEN}"/>
+</svg>
+"""
+    overlay = render_svg_overlay(overlay_svg, "simpainai-profile-overlay", 1024, 1024)
+    out = BRAND_DIR / "simpainai-profile.png"
+    subprocess.run(
+        [
+            "magick",
+            "-size",
+            "1024x1024",
+            f"xc:{NAVY}",
+            "(",
+            str(src),
+            "-filter",
+            "Lanczos",
+            "-resize",
+            "948x948",
+            ")",
+            "-gravity",
+            "center",
+            "-geometry",
+            "+0-12",
+            "-composite",
+            str(overlay),
+            "-gravity",
+            "center",
+            "-geometry",
+            "+0+0",
+            "-composite",
+            "-depth",
+            "8",
+            str(out),
+        ],
+        check=True,
+    )
+
+
+def simpainai_cover() -> None:
+    src = CREATIVES_DIR / "travel-cover-panorama.png"
+    if not src.exists():
+        return
+    overlay_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="924" viewBox="0 0 1640 924">
+  <defs>
+    <linearGradient id="leftScrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="{NAVY}" stop-opacity="0.65"/>
+      <stop offset="45%" stop-color="{NAVY}" stop-opacity="0.32"/>
+      <stop offset="68%" stop-color="{NAVY}" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1640" height="924" fill="url(#leftScrim)"/>
+
+  <!-- Compact glass travel card lower-left so snow-capped Mt. Fuji above, Shinkansen below & Duo on right shine cleanly -->
+  <rect x="196" y="348" width="710" height="394" rx="26" fill="{NAVY}" fill-opacity="0.86" stroke="#2f6683" stroke-width="2.5"/>
+
+  <rect x="232" y="380" width="468" height="38" rx="19" fill="#17455f" stroke="{GREEN}" stroke-width="2"/>
+  <text x="466" y="406" text-anchor="middle" font-family="{FONT_TH}" font-size="20" font-weight="600" fill="#8eead0">เพื่อนสายเที่ยว · ญี่ปุ่น · เกาหลี · จีน · ไต้หวัน</text>
+
+  <text x="232" y="486" font-family="{FONT_TH}" font-size="64" font-weight="700" fill="{WHITE}">ซิมไปไหน</text>
+  <circle cx="542" cy="462" r="11" fill="{GREEN}"/>
+  <text x="572" y="484" font-family="{FONT_MONO}" font-size="34" font-weight="700" fill="#8eead0">SimPaiNai</text>
+
+  <text x="232" y="542" font-family="{FONT_TH}" font-size="28" font-weight="600" fill="{AMBER}">ออกไปเก็บโมเมนต์ต่างแดนให้สุด... ไม่มีสะดุดกลางทาง!</text>
+  <text x="232" y="586" font-family="{FONT_TH}" font-size="23" fill="#dce7eb">ทริคเอาตัวรอดหน้างาน · พิกัดกินเที่ยว · เทียบราคา eSIM จริง</text>
+
+  <line x1="232" y1="618" x2="870" y2="618" stroke="#2f6683" stroke-width="2" stroke-dasharray="8 8"/>
+
+  <rect x="232" y="644" width="276" height="62" rx="15" fill="{GREEN}"/>
+  <text x="370" y="684" text-anchor="middle" font-family="{FONT_MONO}" font-size="24" font-weight="700" fill="{WHITE}">esim.whytobe.com</text>
+
+  <rect x="526" y="644" width="344" height="62" rx="15" fill="{PAPER}"/>
+  <text x="698" y="684" text-anchor="middle" font-family="{FONT_TH}" font-size="23" font-weight="700" fill="{NAVY}">โค้ดลด 15%: NEWTOAIRALO15</text>
+</svg>
+"""
+    overlay = render_svg_overlay(overlay_svg, "simpainai-cover-overlay", 1640, 924)
+    out = BRAND_DIR / "simpainai-cover.png"
+    subprocess.run(
+        [
+            "magick",
+            str(src),
+            "-filter",
+            "Lanczos",
+            "-resize",
+            "1640x924^",
+            "-gravity",
+            "center",
+            "-extent",
+            "1640x924",
+            str(overlay),
+            "-composite",
+            str(out),
+        ],
+        check=True,
+    )
+
+
+def vertical_invite_poster(src_name: str, out_name: str, eyebrow: str, line1: str, line2: str, cta: str) -> None:
+    src = CREATIVES_DIR / src_name
+    if not src.exists():
+        return
+    overlay_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="topWash" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="{NAVY}" stop-opacity="0.90"/>
+      <stop offset="68%" stop-color="{NAVY}" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="{NAVY}" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="botWash" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="{NAVY}" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="{NAVY}" stop-opacity="0.86"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1080" height="520" fill="url(#topWash)"/>
+  <rect x="0" y="1480" width="1080" height="440" fill="url(#botWash)"/>
+
+  <rect x="76" y="110" width="440" height="50" rx="25" fill="#123a50" fill-opacity="0.9" stroke="{GREEN}" stroke-width="2.5"/>
+  <text x="296" y="144" text-anchor="middle" font-family="{FONT_MONO}" font-size="22" font-weight="700" fill="#8eead0">{eyebrow}</text>
+
+  <text x="76" y="246" font-family="{FONT_TH}" font-size="58" font-weight="700" fill="{WHITE}">{line1}</text>
+  <text x="76" y="328" font-family="{FONT_TH}" font-size="52" font-weight="700" fill="{AMBER}">{line2}</text>
+
+  <rect x="76" y="1590" width="928" height="114" rx="28" fill="{NAVY}" fill-opacity="0.92" stroke="{GREEN}" stroke-width="4"/>
+  <text x="540" y="1644" text-anchor="middle" font-family="{FONT_TH}" font-size="33" font-weight="700" fill="{WHITE}">{cta}</text>
+  <text x="540" y="1684" text-anchor="middle" font-family="{FONT_MONO}" font-size="24" font-weight="700" fill="#8eead0">esim.whytobe.com · โค้ดลด 15% NEWTOAIRALO15</text>
+</svg>
+"""
+    overlay = render_svg_overlay(overlay_svg, f"{Path(out_name).stem}-overlay", 1080, 1920)
+    out = CREATIVES_DIR / out_name
+    subprocess.run(
+        [
+            "magick",
+            str(src),
+            "-filter",
+            "Lanczos",
+            "-resize",
+            "1080x1920^",
+            "-gravity",
+            "center",
+            "-extent",
+            "1080x1920",
+            str(overlay),
+            "-composite",
+            str(out),
+        ],
+        check=True,
+    )
+
+
 def render_ico(favicon_path: Path) -> None:
     sizes = [48, 32, 16]
     pngs = []
@@ -377,13 +568,31 @@ def main() -> None:
     render_ico(favicon_path)
     render_svg(profile_avatar(), BRAND_DIR / "esimthai-profile.png", 1024, 1024)
     render_svg(fb_cover(), BRAND_DIR / "esimthai-cover.png", 1640, 924)
+    simpainai_profile()
+    simpainai_cover()
+    vertical_invite_poster(
+        "creative-japan-kyoto-fuji.png",
+        "post-japan-invite.png",
+        "KYOTO · MT. FUJI · TOKYO",
+        "ปลายปีนี้บินญี่ปุ่นกันไหม?",
+        "เก็บ 3 ทริคลงนาริตะแบบตัวปลิว!",
+        "ซิมไปไหน · เทียบ eSIM ญี่ปุ่น 5 ค่ายจริง",
+    )
+    vertical_invite_poster(
+        "creative-seoul-taipei-night.png",
+        "post-seoul-night-invite.png",
+        "SEOUL · TAIPEI NIGHT MARKET",
+        "เดินกินสตรีทฟู้ดโซล–ไทเปทั้งคืน",
+        "ไม่มีหลงทาง เน็ตลื่นไม่สะดุด!",
+        "ซิมไปไหน · รวมแอปจำเป็น + เทียบ eSIM",
+    )
     render_svg(og_card(), PUBLIC_DIR / "og-default.png", 1200, 630)
     render_svg(reel_01(), REELS_DIR / "reel-01-japan-vs-sim2fly.png", 1080, 1920)
     render_svg(reel_02(), REELS_DIR / "reel-02-check-esim-eid.png", 1080, 1920)
     render_svg(reel_03(), REELS_DIR / "reel-03-korea-naver-010.png", 1080, 1920)
     render_svg(reel_04(), REELS_DIR / "reel-04-preflight-checklist.png", 1080, 1920)
     render_svg(reel_05(), REELS_DIR / "reel-05-6-countries-prices.png", 1080, 1920)
-    print("Generated favicon, brand profile/cover, og-default.png, and 5 Reels cover PNGs.")
+    print("Generated favicon, brand kits, travel creatives, og-default.png, and 5 Reels covers.")
 
 
 if __name__ == "__main__":

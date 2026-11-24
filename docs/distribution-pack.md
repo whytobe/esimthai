@@ -5,14 +5,19 @@
 
 ---
 
-## 1. Profile Bio & Link Setup (Facebook Page / TikTok / IG)
+## 1. Profile Bio & Link Setup (ซิมไปไหน · SimPaiNai across TikTok / FB Page / IG)
 
-- **Display Name:** `eSIMไทย — ทริคเน็ตเที่ยวต่างประเทศ`
-- **Bio (TikTok / IG):**
-  `เทียบราคา eSIM จริง ญี่ปุ่น เกาหลี ไต้หวัน เวียดนาม 🇹🇭`
-  `วิธีตั้งค่ากันเน็ตรั่ว + โค้ดลด Airalo 15%: NEWTOAIRALO15`
-  `👇 ดูตารางเทียบราคาทุกประเทศ`
-- **Website Link:** `https://esim.whytobe.com/?utm_source=social&utm_medium=bio`
+- **TikTok / Social Brand Name:** `ซิมไปไหน · SimPaiNai` (`@simpainai` / `@simpainai.th`)
+- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเน็ตเที่ยวต่างประเทศ`
+- **Profile & Cover Visual Assets:**
+  - Avatar (`1024×1024`): [simpainai-profile.png](../assets/brand/simpainai-profile.png) *(featuring lead duo พี่ตั๋ว + น้องซิมป๊อก)*
+  - FB Cover (`1640×924`): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
+- **Bio (TikTok / IG / FB):**
+  `พี่ตั๋ว & น้องซิมป๊อก พาเอาตัวรอดต่างแดน ✈️`
+  `ทริคเน็ตเที่ยวญี่ปุ่น เกาหลี จีน ไต้หวัน + กันเน็ตรั่ว`
+  `โค้ดลด Airalo 15%: NEWTOAIRALO15 👇 ดูตารางเทียบราคาจริง`
+- **Website Link:** `https://esim.whytobe.com/?utm_source=social&utm_medium=bio&utm_campaign=simpainai`
+- **Relatable Video Scripts (Mascot + Google Flow Batch 2):** See [reels-batch2-mascot.md](reels-batch2-mascot.md) and [brand-playbook.md](brand-playbook.md).
 
 ---
 
