@@ -54,8 +54,8 @@ recommend:
 
 ## ดูราคาจริงแยกตามประเทศปลายทาง
 
-- [eSIM ญี่ปุ่น 2569: เปรียบเทียบ 9 แพ็กเกจ + วิธีใช้](/blog/esim-japan/)
-- [eSIM เกาหลี 2569: เปรียบเทียบราคา + ข้อควรรู้ Naver Map และเบอร์ 010](/blog/esim-korea/)
-- [eSIM ไต้หวัน 2569: เปรียบเทียบราคา + วิธีใช้](/blog/esim-taiwan/)
-- [eSIM เวียดนาม 2569: เปรียบเทียบราคา + วิธีใช้](/blog/esim-vietnam/)
+- [eSIM ญี่ปุ่น 2569: เปรียบเทียบ 9 แพ็กเกจ + วิธีใช้](/blog/esim-japan/) · [eSIM เกาหลี 2569](/blog/esim-korea/)
+- [eSIM ไต้หวัน 2569](/blog/esim-taiwan/) · [eSIM เวียดนาม 2569](/blog/esim-vietnam/)
+- [eSIM สิงคโปร์ 2569](/blog/esim-singapore/) · [eSIM ฮ่องกง 2569](/blog/esim-hong-kong/)
+- [eSIM จีน 2569 (เล่น LINE ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM เอเชียหลายประเทศ](/blog/esim-asia/)
 - [วิธีใช้ Airalo บน iPhone และ Android ทีละขั้น](/blog/how-to-use-airalo/)

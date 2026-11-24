@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { post, Content } = Astro.props;
-const { title, description, date, affiliate, recommend } = post.data;
+const { title, description, date, affiliate, recommend, faqs } = post.data;
 const dateStr = date.toLocaleDateString('th-TH', {
   year: 'numeric',
   month: 'long',
@@ -26,41 +26,57 @@ const canonicalUrl = new URL(
   Astro.site ?? 'https://esim.whytobe.com'
 ).toString();
 
+const graphNodes: Record<string, unknown>[] = [
+  {
+    '@type': 'Article',
+    headline: title,
+    description,
+    image: 'https://esim.whytobe.com/og-default.png',
+    datePublished: date.toISOString(),
+    inLanguage: 'th-TH',
+    mainEntityOfPage: canonicalUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'eSIMไทย',
+      url: 'https://esim.whytobe.com',
+    },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'หน้าแรก',
+        item: 'https://esim.whytobe.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: title,
+        item: canonicalUrl,
+      },
+    ],
+  },
+];
+
+if (faqs && faqs.length > 0) {
+  graphNodes.push({
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  });
+}
+
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Article',
-      headline: title,
-      description,
-      image: 'https://esim.whytobe.com/og-default.png',
-      datePublished: date.toISOString(),
-      inLanguage: 'th-TH',
-      mainEntityOfPage: canonicalUrl,
-      publisher: {
-        '@type': 'Organization',
-        name: 'eSIMไทย',
-        url: 'https://esim.whytobe.com',
-      },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'หน้าแรก',
-          item: 'https://esim.whytobe.com/',
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: title,
-          item: canonicalUrl,
-        },
-      ],
-    },
-  ],
+  '@graph': graphNodes,
 };
 
 const relatedPosts = (await getCollection('blog'))

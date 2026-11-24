@@ -24,6 +24,15 @@ const blog = defineCollection({
         price: z.string(),
       })
       .optional(),
+    // Optional FAQ structured data for Google FAQPage rich snippets
+    faqs: z
+      .array(
+        z.object({
+          q: z.string(),
+          a: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

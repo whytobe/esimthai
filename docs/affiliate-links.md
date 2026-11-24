@@ -10,9 +10,11 @@ Generated via Impact (`Airgsm Pte. Ltd (Airalo)`) on 2026-11-24.
 | Vietnam eSIM | `https://www.airalo.com/vietnam-esim` | `https://airalo.pxf.io/aNgPjq` | [esim-vietnam.md](../src/content/blog/esim-vietnam.md) |
 | Singapore eSIM *(fallback until deep link)* | `https://www.airalo.com/` | `https://airalo.pxf.io/OYqz9A` | [esim-singapore.md](../src/content/blog/esim-singapore.md) (`subId1=esim-singapore`), `TripRecommender` (`subId2=singapore`) |
 | Hong Kong eSIM *(fallback until deep link)* | `https://www.airalo.com/` | `https://airalo.pxf.io/OYqz9A` | [esim-hong-kong.md](../src/content/blog/esim-hong-kong.md) (`subId1=esim-hong-kong`), `TripRecommender` (`subId2=hong-kong`) |
+| China eSIM *(fallback until deep link)* | `https://www.airalo.com/` | `https://airalo.pxf.io/OYqz9A` | [esim-china.md](../src/content/blog/esim-china.md) (`subId1=esim-china`), `TripRecommender` (`subId2=china`) |
+| Asia Regional eSIM *(fallback until deep link)* | `https://www.airalo.com/` | `https://airalo.pxf.io/OYqz9A` | [esim-asia.md](../src/content/blog/esim-asia.md) (`subId1=esim-asia`), `TripRecommender` (`subId2=asia`) |
 | General Airalo homepage | `https://www.airalo.com/` | `https://airalo.pxf.io/OYqz9A` | [what-is-esim.md](../src/content/blog/what-is-esim.md), [how-to-use-airalo.md](../src/content/blog/how-to-use-airalo.md), [where-to-buy-esim.md](../src/content/blog/where-to-buy-esim.md) |
 
-> **Pending deep links (SG & HK):** On 2026-11-24, Impact session expired on `puie-m4pro` before generating country-specific links for `singapore-esim` and `hong-kong-esim`. Both articles currently track commissions via `https://airalo.pxf.io/OYqz9A` with article-specific `subId1` until the owner re-signs into Impact.
+> **Pending country deep links (SG, HK, CN, Asia):** On 2026-11-24, Impact session expired on `puie-m4pro` before generating country-specific links. Those articles currently track commissions via `https://airalo.pxf.io/OYqz9A` with article-specific `subId1` until the owner re-signs into Impact.
 
 ## Other Partner Programs Checked (2026-11-24)
 

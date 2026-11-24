@@ -72,6 +72,30 @@ const PLANS = {
       heavy: { data: '10 GB', days: '30 วัน', price: '฿629.50', disc: '~฿535' },
     },
   },
+  china: {
+    label: 'จีน',
+    network: 'China Unicom 5G (ไม่ต้อง VPN)',
+    operator: 'Airalo Chinacom',
+    link: 'https://airalo.pxf.io/OYqz9A?subId1=home-picker&subId2=china',
+    guide: '/blog/esim-china/',
+    tiers: {
+      light: { data: '3 GB', days: '7 วัน', price: '฿367', disc: '~฿312' },
+      standard: { data: '5 GB', days: '7 วัน', price: '฿507', disc: '~฿431' },
+      heavy: { data: '10 GB', days: '30 วัน', price: '฿926.50', disc: '~฿788' },
+    },
+  },
+  asia: {
+    label: 'หลายประเทศเอเชีย',
+    network: 'ครอบคลุม 18 ประเทศเอเชีย',
+    operator: 'Airalo Asialink',
+    link: 'https://airalo.pxf.io/OYqz9A?subId1=home-picker&subId2=asia',
+    guide: '/blog/esim-asia/',
+    tiers: {
+      light: { data: '3 GB', days: '7 วัน', price: '฿332.50', disc: '~฿283' },
+      standard: { data: '5 GB', days: '7 วัน', price: '฿489.50', disc: '~฿416' },
+      heavy: { data: '10 GB', days: '30 วัน', price: '฿874', disc: '~฿743' },
+    },
+  },
 } as const;
 
 const initial = PLANS.japan;

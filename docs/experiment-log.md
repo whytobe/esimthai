@@ -7,8 +7,8 @@
 
 | Criterion | Target (by 11 Jan 2027) | Current Status (24 Nov 2026) | Gap / Next Action |
 | --- | --- | --- | --- |
-| 1. Content Volume | ≥ 12 pieces (≥ 8 SEO articles + ≥ 4 Reels) | **10 SEO articles live** + **5 Reels scripts + 5 PNG covers ready** | Owner to record & post Reels using [reels-scripts.md](reels-scripts.md) + [distribution-pack.md](distribution-pack.md) |
-| 2. Indexing & Measurement | All key pages indexed in Google + GSC + Analytics + SubID | GSC `sitemap.xml` **processed successfully (9 discovered pages; 11 URLs now in sitemap)**; homepage live test passed & indexing requested; Cloudflare Web Analytics + SubID active | Remaining manual per-URL GSC indexing hit reCAPTCHA (`esim-japan`) — sitemap will crawl remaining URLs automatically unless owner solves reCAPTCHA |
+| 1. Content Volume | ≥ 12 pieces (≥ 8 SEO articles + ≥ 4 Reels) | **12 SEO articles live** + **5 Reels scripts + 5 PNG covers + 5 ready-to-upload 1080×1920 MP4 videos** | Owner to review & post Reels using [reels-scripts.md](reels-scripts.md) + [distribution-pack.md](distribution-pack.md) |
+| 2. Indexing & Measurement | All key pages indexed in Google + GSC + Analytics + SubID | GSC `sitemap.xml` **processed successfully (9 discovered pages initially; 13 URLs now in sitemap)**; homepage live test passed & indexing requested; `FAQPage` + `BreadcrumbList` + `Article` JSON-LD + Web Analytics + SubID active | Remaining manual per-URL GSC indexing hit reCAPTCHA (`esim-japan`) — sitemap will crawl remaining URLs automatically unless owner solves reCAPTCHA |
 | 3. Traffic & Clicks | ≥ 30 organic affiliate clicks + full funnel data | Measurement active (`scripts/check-metrics.sh` + Impact SubIDs); Impact dashboard stats unverified due to expired session | Re-sign into Impact on `puie-m4pro` for baseline clicks/earnings + drive clicks via Reels/social |
 | 4. Partner Diversification | Backup payout-compatible programs prepared/applied | Airalo active (all 10 articles tracked); Impact Marketplace showed 0 eligible listings for Nomad/Ubigi; Ubigi portal read-only checked (requires sign-in) | Owner to review [partner-expansion-pack.md](partner-expansion-pack.md), sign into Impact/Ubigi, and approve external applications/email |
 
@@ -28,20 +28,22 @@
 | 8 | `where-to-buy-esim` | `ซื้อ eSIM ที่ไหน` | `airalo.pxf.io/OYqz9A` | `where-to-buy-esim` |
 | 9 | `esim-singapore` | `eSIM สิงคโปร์` | `airalo.pxf.io/OYqz9A` *(SG deep link pending)* | `esim-singapore` |
 | 10 | `esim-hong-kong` | `eSIM ฮ่องกง` | `airalo.pxf.io/OYqz9A` *(HK deep link pending)* | `esim-hong-kong` |
+| 11 | `esim-china` | `eSIM จีน` | `airalo.pxf.io/OYqz9A` *(CN deep link pending)* | `esim-china` |
+| 12 | `esim-asia` | `eSIM เอเชีย` | `airalo.pxf.io/OYqz9A` *(Asia deep link pending)* | `esim-asia` |
 
-Plus homepage interactive `TripRecommender` attributing clicks as `subId1=home-picker&subId2=<country>`.
+Plus homepage interactive `TripRecommender` covering 8 destinations (`subId1=home-picker&subId2=<country>`).
 
 ---
 
 ## 3. Reels & Visual Assets Ready
 
 - OG share image: `public/og-default.png` (`1200×630`)
-- Reels covers (`1080×1920`):
-  - `assets/reels/reel-01-japan-vs-sim2fly.png`
-  - `assets/reels/reel-02-check-esim-eid.png`
-  - `assets/reels/reel-03-korea-naver-010.png`
-  - `assets/reels/reel-04-preflight-checklist.png`
-  - `assets/reels/reel-05-6-countries-prices.png`
+- Reels covers (`1080×1920`) & Ready-to-upload MP4 videos (`1080×1920`, H.264):
+  - `assets/reels/reel-01-japan-vs-sim2fly.{png,mp4}`
+  - `assets/reels/reel-02-check-esim-eid.{png,mp4}`
+  - `assets/reels/reel-03-korea-naver-010.{png,mp4}`
+  - `assets/reels/reel-04-preflight-checklist.{png,mp4}`
+  - `assets/reels/reel-05-6-countries-prices.{png,mp4}`
 - Scripts & social captions: [reels-scripts.md](reels-scripts.md) and [distribution-pack.md](distribution-pack.md)
 
 ---

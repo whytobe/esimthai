@@ -2,13 +2,14 @@
 
 Ready-to-record 30-second Thai vertical video scripts adapted from published articles on `https://esim.whytobe.com/`.
 Use UTM/bio links pointing to the corresponding article so every social view funnels into tracked Impact affiliate links.
-Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
+Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs and ready-to-upload `.mp4` motion videos in `assets/reels/`.
 
 ---
 
 ## Reel #1: ไปญี่ปุ่น 7 วัน ใช้ eSIM หรือ SIM2Fly คุ้มกว่า?
 
 - **Cover Asset:** [reel-01-japan-vs-sim2fly.png](../assets/reels/reel-01-japan-vs-sim2fly.png)
+- **Ready Video (MP4 1080×1920):** [reel-01-japan-vs-sim2fly.mp4](../assets/reels/reel-01-japan-vs-sim2fly.mp4)
 - **Target Article:** `https://esim.whytobe.com/blog/esim-japan-vs-sim-card/`
 - **Length:** ~28–32 sec
 - **Shot List:** 0–3s Holding phone at airport/desk (`Hook`) → 3–13s Screen-record or overlay `SIM2Fly ฿399` vs `Airalo ฿350` → 13–23s Show `NEWTOAIRALO15` (~฿298) → 23–30s Cover card + point down to bio link.
@@ -30,6 +31,7 @@ Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
 ## Reel #2: เช็กมือถือรองรับ eSIM ใน 10 วิ ก่อนบินญี่ปุ่น/เกาหลี
 
 - **Cover Asset:** [reel-02-check-esim-eid.png](../assets/reels/reel-02-check-esim-eid.png)
+- **Ready Video (MP4 1080×1920):** [reel-02-check-esim-eid.mp4](../assets/reels/reel-02-check-esim-eid.mp4)
 - **Target Article:** `https://esim.whytobe.com/blog/what-is-esim/`
 - **Length:** ~25–30 sec
 - **Shot List:** 0–3s Warning face/text (`*#06#`) → 3–13s Dial `*#06#` showing `EID` number → 13–20s Highlight China/HK dual-SIM iPhone warning → 20–28s Cover card CTA.
@@ -51,6 +53,7 @@ Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
 ## Reel #3: ไปเกาหลีใช้ eSIM ต้องรู้ 2 เรื่องนี้ (Naver Map + เบอร์ 010)
 
 - **Cover Asset:** [reel-03-korea-naver-010.png](../assets/reels/reel-03-korea-naver-010.png)
+- **Ready Video (MP4 1080×1920):** [reel-03-korea-naver-010.mp4](../assets/reels/reel-03-korea-naver-010.mp4)
 - **Target Article:** `https://esim.whytobe.com/blog/esim-korea/`
 - **Length:** ~28–32 sec
 - **Shot List:** 0–3s Hook overlay → 3–13s Split screen Google Maps vs Naver Map (`SK Telecom 5G`) → 13–22s Show CatchTable Global email login screen → 22–30s Price overlay (`เริ่ม ฿51 / 5GB ฿350`) + bio link CTA.
@@ -72,6 +75,7 @@ Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
 ## Reel #4: เช็กลิสต์ตั้งค่า eSIM ก่อนบิน กันเน็ตรั่วซิมไทย 100%
 
 - **Cover Asset:** [reel-04-preflight-checklist.png](../assets/reels/reel-04-preflight-checklist.png)
+- **Ready Video (MP4 1080×1920):** [reel-04-preflight-checklist.mp4](../assets/reels/reel-04-preflight-checklist.mp4)
 - **Target Article:** `https://esim.whytobe.com/blog/how-to-use-airalo/`
 - **Length:** ~28–32 sec
 - **Shot List:** 0–3s Hook (`กันบิลช็อกค่าโรมมิ่ง`) → 3–23s Screen recording iPhone Settings → Cellular (`Data Roaming OFF` on Thai SIM, `ON` on Travel eSIM, `Data Switching OFF`) → 23–30s Cover card + bio link CTA.
@@ -93,6 +97,7 @@ Pair Clips #1–#5 with the rendered `1080×1920` cover PNGs in `assets/reels/`.
 ## Reel #5: เทียบราคา eSIM 6 ประเทศฮิตปลายปี 2569 (5GB/7 วัน)
 
 - **Cover Asset:** [reel-05-6-countries-prices.png](../assets/reels/reel-05-6-countries-prices.png)
+- **Ready Video (MP4 1080×1920):** [reel-05-6-countries-prices.mp4](../assets/reels/reel-05-6-countries-prices.mp4)
 - **Target Article:** `https://esim.whytobe.com/` (Flight Board Picker)
 - **Length:** ~25–30 sec
 - **Shot List:** 0–3s Hook over flight departure board graphic → 3–22s Fast-paced country price cards (SG ฿315, VN ~฿340, JP ฿350, KR ฿350, TW ~฿374, HK ฿385) → 22–28s Show interactive TripRecommender on `esim.whytobe.com` + `NEWTOAIRALO15`.
