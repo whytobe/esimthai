@@ -7,6 +7,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parent.parent
 PUBLIC_DIR = ROOT / "public"
 REELS_DIR = ROOT / "assets" / "reels"
+BRAND_DIR = ROOT / "assets" / "brand"
 SVG_TMP = ROOT / ".astro" / "svg-tmp"
 
 FONT_TH = "Noto Sans Thai, Google Sans, sans-serif"
@@ -231,14 +232,158 @@ def reel_05() -> str:
     return reel_base("6 DESTINATIONS", "eSIM 6 ประเทศฮิต", "5GB / 7 วัน กี่บาท?", body, "กดเลือกประเทศที่หน้าเว็บ รู้แพ็กคุ้มใน 10 วิ")
 
 
+def favicon_svg() -> str:
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="{NAVY}"/>
+  <!-- Beveled eSIM card -->
+  <path d="M 38 24 H 78 L 100 46 V 96 A 10 10 0 0 1 90 106 H 38 A 10 10 0 0 1 28 96 V 34 A 10 10 0 0 1 38 24 Z" fill="#163c52" stroke="#ffffff" stroke-width="5.5" stroke-linejoin="round"/>
+  <!-- Gold/Amber chip contact matrix -->
+  <rect x="42" y="54" width="44" height="34" rx="6" fill="none" stroke="{AMBER}" stroke-width="4.5"/>
+  <line x1="64" y1="54" x2="64" y2="88" stroke="{AMBER}" stroke-width="4"/>
+  <line x1="42" y1="71" x2="86" y2="71" stroke="{AMBER}" stroke-width="4"/>
+  <!-- Signal Emerald connection core & beacon -->
+  <circle cx="93" cy="33" r="11" fill="{GREEN}" stroke="{NAVY}" stroke-width="4"/>
+  <path d="M 52 44 Q 64 34 76 44" fill="none" stroke="{GREEN}" stroke-width="4.5" stroke-linecap="round"/>
+</svg>
+"""
+
+
+def profile_avatar() -> str:
+    # 1024x1024 circular-crop-safe brand avatar (critical elements strictly within center r<=380)
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#1a4862"/>
+      <stop offset="65%" stop-color="{NAVY}"/>
+      <stop offset="100%" stop-color="#091d28"/>
+    </radialGradient>
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d516d"/>
+      <stop offset="100%" stop-color="#103144"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{GREEN}"/>
+      <stop offset="55%" stop-color="#22d3a0"/>
+      <stop offset="100%" stop-color="{AMBER}"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bgGlow)"/>
+
+  <!-- Subtle subtle flight-grid circles safe inside social circle crop -->
+  <circle cx="512" cy="512" r="452" fill="none" stroke="#1f536e" stroke-width="3" stroke-dasharray="10 14"/>
+  <circle cx="512" cy="512" r="424" fill="none" stroke="url(#ringGrad)" stroke-width="10"/>
+
+  <!-- Top signal waves emerging above eSIM card -->
+  <path d="M 412 246 Q 512 178 612 246" fill="none" stroke="{GREEN}" stroke-width="16" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 446 286 Q 512 238 578 286" fill="none" stroke="{GREEN}" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Iconic beveled eSIM chip card (center-upper safe zone) -->
+  <path d="M 406 328 H 572 L 646 402 V 566 A 28 28 0 0 1 618 594 H 406 A 28 28 0 0 1 378 566 V 356 A 28 28 0 0 1 406 328 Z"
+        fill="url(#chipGrad)" stroke="{WHITE}" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- Chip gold/amber circuit pads -->
+  <rect x="424" y="408" width="176" height="134" rx="20" fill="#0c2635" stroke="{AMBER}" stroke-width="10"/>
+  <line x1="512" y1="408" x2="512" y2="542" stroke="{AMBER}" stroke-width="8"/>
+  <line x1="424" y1="475" x2="600" y2="475" stroke="{AMBER}" stroke-width="8"/>
+  <circle cx="512" cy="475" r="24" fill="{NAVY}" stroke="{GREEN}" stroke-width="9"/>
+  <circle cx="512" cy="475" r="9" fill="{GREEN}"/>
+
+  <!-- Connected signal beacon at beveled corner -->
+  <circle cx="628" cy="348" r="26" fill="{GREEN}" stroke="{NAVY}" stroke-width="10"/>
+
+  <!-- Bold brand wordmark strictly inside safe circular mask -->
+  <text x="500" y="718" text-anchor="middle" font-family="{FONT_TH}" font-size="112" font-weight="700" fill="{WHITE}">eSIMไทย</text>
+  <circle cx="738" cy="698" r="15" fill="{GREEN}"/>
+
+  <!-- Minimal airport-board status bar below wordmark -->
+  <rect x="352" y="758" width="320" height="44" rx="22" fill="#12364a" stroke="{GREEN}" stroke-width="3"/>
+  <text x="512" y="789" text-anchor="middle" font-family="{FONT_MONO}" font-size="23" font-weight="700" fill="#8eead0">TRAVEL DATA GUIDE</text>
+</svg>
+"""
+
+
+def fb_cover() -> str:
+    # 1640x924 (@2x of 820x462) keeping all critical content in centered 1280x624 safe zone
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="924" viewBox="0 0 1640 924">
+  <defs>
+    <linearGradient id="coverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{NAVY}"/>
+      <stop offset="100%" stop-color="#143b50"/>
+    </linearGradient>
+  </defs>
+  <rect width="1640" height="924" fill="url(#coverBg)"/>
+
+  <!-- Subtle architectural grid outside/inside border -->
+  <rect x="180" y="150" width="1280" height="624" rx="28" fill="#103144" stroke="#24536d" stroke-width="2.5"/>
+
+  <!-- Flight route decoration top-right inside safe area -->
+  <path d="M 1030 270 C 1140 190, 1265 190, 1375 265" fill="none" stroke="{GREEN}" stroke-width="5" stroke-dasharray="10 14" stroke-linecap="round"/>
+  <circle cx="1030" cy="270" r="10" fill="{AMBER}"/>
+  <circle cx="1375" cy="265" r="12" fill="{GREEN}"/>
+  <rect x="1396" y="236" width="8" height="16" rx="3" fill="{GREEN}"/>
+  <rect x="1410" y="224" width="8" height="28" rx="3" fill="{GREEN}"/>
+  <rect x="1424" y="212" width="8" height="40" rx="3" fill="{GREEN}"/>
+
+  <!-- Top eyebrow -->
+  <rect x="240" y="206" width="460" height="48" rx="24" fill="#17455f" stroke="{GREEN}" stroke-width="2"/>
+  <text x="470" y="238" text-anchor="middle" font-family="{FONT_TH}" font-size="24" font-weight="600" fill="#8eead0">คู่มือ eSIM เที่ยวต่างประเทศ · อัปเดต 2569</text>
+
+  <!-- Brand title + tagline -->
+  <text x="240" y="346" font-family="{FONT_TH}" font-size="82" font-weight="700" fill="{WHITE}">eSIMไทย</text>
+  <circle cx="584" cy="322" r="13" fill="{GREEN}"/>
+  <text x="240" y="422" font-family="{FONT_TH}" font-size="42" font-weight="600" fill="{AMBER}">เทียบราคา eSIM จริง ญี่ปุ่น · เกาหลี · ไต้หวัน · จีน · เอเชีย</text>
+  <text x="240" y="482" font-family="{FONT_TH}" font-size="30" fill="#cbd8de">รวมตารางเทียบ 5 ค่าย · เช็กมือถือ *#06# · วิธีตั้งค่ากันเน็ตรั่วซิมไทย</text>
+
+  <!-- Bottom boarding pass cards -->
+  <line x1="240" y1="538" x2="1400" y2="538" stroke="#24536d" stroke-width="2.5" stroke-dasharray="10 10"/>
+
+  <rect x="240" y="572" width="380" height="136" rx="18" fill="{PAPER}"/>
+  <text x="272" y="624" font-family="{FONT_TH}" font-size="24" fill="{INK_SOFT}">แพ็กยอดนิยม 5GB / 7 วัน</text>
+  <text x="272" y="676" font-family="{FONT_MONO}" font-size="36" font-weight="700" fill="{GREEN_DARK}">฿315 – ฿385</text>
+
+  <rect x="646" y="572" width="430" height="136" rx="18" fill="{PAPER}"/>
+  <text x="678" y="624" font-family="{FONT_TH}" font-size="24" fill="{INK_SOFT}">โค้ดลด Airalo ครั้งแรก 15%</text>
+  <text x="678" y="676" font-family="{FONT_MONO}" font-size="36" font-weight="700" fill="{NAVY}">NEWTOAIRALO15</text>
+
+  <rect x="1102" y="572" width="298" height="136" rx="18" fill="{GREEN}"/>
+  <text x="1251" y="630" text-anchor="middle" font-family="{FONT_TH}" font-size="30" font-weight="700" fill="{WHITE}">เช็กแพ็กเลย</text>
+  <text x="1251" y="676" text-anchor="middle" font-family="{FONT_MONO}" font-size="24" font-weight="700" fill="{NAVY}">esim.whytobe.com</text>
+</svg>
+"""
+
+
+def render_ico(favicon_path: Path) -> None:
+    sizes = [48, 32, 16]
+    pngs = []
+    SVG_TMP.mkdir(parents=True, exist_ok=True)
+    for sz in sizes:
+        png_out = SVG_TMP / f"favicon-{sz}.png"
+        subprocess.run(
+            ["rsvg-convert", "-w", str(sz), "-h", str(sz), "-o", str(png_out), str(favicon_path)],
+            check=True,
+        )
+        pngs.append(str(png_out))
+    subprocess.run(["magick", *pngs, str(PUBLIC_DIR / "favicon.ico")], check=True)
+
+
 def main() -> None:
+    favicon_path = PUBLIC_DIR / "favicon.svg"
+    favicon_path.write_text(favicon_svg(), encoding="utf-8")
+    subprocess.run(
+        ["rsvg-convert", "-w", "180", "-h", "180", "-o", str(PUBLIC_DIR / "apple-touch-icon.png"), str(favicon_path)],
+        check=True,
+    )
+    render_ico(favicon_path)
+    render_svg(profile_avatar(), BRAND_DIR / "esimthai-profile.png", 1024, 1024)
+    render_svg(fb_cover(), BRAND_DIR / "esimthai-cover.png", 1640, 924)
     render_svg(og_card(), PUBLIC_DIR / "og-default.png", 1200, 630)
     render_svg(reel_01(), REELS_DIR / "reel-01-japan-vs-sim2fly.png", 1080, 1920)
     render_svg(reel_02(), REELS_DIR / "reel-02-check-esim-eid.png", 1080, 1920)
     render_svg(reel_03(), REELS_DIR / "reel-03-korea-naver-010.png", 1080, 1920)
     render_svg(reel_04(), REELS_DIR / "reel-04-preflight-checklist.png", 1080, 1920)
     render_svg(reel_05(), REELS_DIR / "reel-05-6-countries-prices.png", 1080, 1920)
-    print("Generated og-default.png and 5 Reels cover PNGs.")
+    print("Generated favicon, brand profile/cover, og-default.png, and 5 Reels cover PNGs.")
 
 
 if __name__ == "__main__":

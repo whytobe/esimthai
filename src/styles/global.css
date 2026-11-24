@@ -102,7 +102,7 @@ strong {
 
 .site-header__inner {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   padding: 1.15rem 1.25rem;
   max-width: var(--maxw);
@@ -110,11 +110,20 @@ strong {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--ink);
+}
+
+.brand__mark {
+  display: block;
+  border-radius: 7px;
+  flex-shrink: 0;
 }
 
 .brand__dot {
