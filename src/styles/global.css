@@ -404,6 +404,94 @@ strong {
   font-size: 0.72rem;
   color: var(--ink-soft);
   margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* ---------- Quick-pick top CTA & Copy button ---------- */
+.quick-pick {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.9rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--connect);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+}
+
+.quick-pick__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.quick-pick__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--connect-dark);
+}
+
+.quick-pick__title {
+  font-size: 0.96rem;
+  color: var(--ink);
+}
+
+.quick-pick__price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--connect-dark);
+}
+
+.quick-pick__code {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.quick-pick__code code {
+  background: #e7eeec;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  color: var(--ink);
+}
+
+.copy-code {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+  cursor: pointer;
+}
+
+.copy-code:hover {
+  border-color: var(--connect);
+  color: var(--connect-dark);
+}
+
+.related {
+  margin-top: 3rem;
+}
+
+.not-found {
+  padding: 4rem 0 2rem;
+}
+
+.not-found p {
+  color: var(--ink-soft);
+  margin-bottom: 1.6rem;
 }
 
 /* ---------- Accessibility ---------- */
@@ -418,7 +506,22 @@ strong {
   }
 }
 
+@media (max-width: 640px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @media (max-width: 560px) {
+  .quick-pick {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .quick-pick .btn {
+    text-align: center;
+  }
   .ticket {
     grid-template-columns: 1fr;
   }

@@ -5,11 +5,20 @@ import Base from '../layouts/Base.astro';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'eSIMไทย',
+  url: 'https://esim.whytobe.com',
+  inLanguage: 'th-TH',
+};
 ---
 
 <Base
   title="eSIM สำหรับคนไทยเที่ยวต่างประเทศ"
   description="เปรียบเทียบราคา eSIM จริง วิธีใช้ทีละขั้น สำหรับคนไทยไปญี่ปุ่น เกาหลี ไต้หวัน และอีก 200+ ประเทศ"
+  jsonLd={websiteJsonLd}
 >
   <section class="hero">
     <h1>ต่อเน็ตตอนเที่ยวต่างประเทศ<br />ไม่ต้องเปลี่ยนซิม</h1>

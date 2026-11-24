@@ -17,7 +17,10 @@ const { link, name, data, days, price, code } = Astro.props;
     <p>แพ็กเกจคุ้มสำหรับทริป {days} — ต่อเน็ตทันทีหลังถึง ไม่ต้องเปลี่ยนซิม</p>
     <a class="btn" href={link} rel="sponsored nofollow" target="_blank">ดูราคาและสมัคร</a>
     {code && (
-      <p class="affiliate-note">โค้ดส่วนลดครั้งแรก: <code>{code}</code></p>
+      <p class="affiliate-note">
+        โค้ดส่วนลดครั้งแรก: <code>{code}</code>{' '}
+        <button class="copy-code" type="button" data-copy={code}>คัดลอกโค้ด</button>
+      </p>
     )}
   </div>
   <div class="ticket__stub">
