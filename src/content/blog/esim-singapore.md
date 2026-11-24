@@ -6,7 +6,7 @@ tags:
   - 'eSIM สิงคโปร์'
   - 'ซิมสิงคโปร์'
 affiliate:
-  link: 'https://airalo.pxf.io/OYqz9A'
+  link: 'https://airalo.pxf.io/dyBDOq'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Connect Lah! (สิงคโปร์)'

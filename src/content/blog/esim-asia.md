@@ -6,7 +6,7 @@ tags:
   - 'eSIM เอเชีย'
   - 'eSIM หลายประเทศ'
 affiliate:
-  link: 'https://airalo.pxf.io/OYqz9A'
+  link: 'https://airalo.pxf.io/MKOkA3'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Asialink (18 ประเทศเอเชีย)'

@@ -6,7 +6,7 @@ tags:
   - 'eSIM จีน'
   - 'ซิมจีนเล่น LINE'
 affiliate:
-  link: 'https://airalo.pxf.io/OYqz9A'
+  link: 'https://airalo.pxf.io/YVejRm'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Chinacom (จีน)'

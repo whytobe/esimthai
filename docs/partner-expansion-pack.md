@@ -12,10 +12,10 @@ Why expand beyond Airalo alone:
 
 | Partner | Network / Portal | Commission | Cookie | Min Payout / Method (TH) | Current Blocker / Action Needed |
 | --- | --- | --- | --- | --- | --- |
-| **Airalo** | Impact (`app.impact.com`) | 10% | 30d | $15 / PayPal or wire | ✅ **Active** (`E0B2zX`, `n4MgRx`, `k46V9x`, `aNgPjq`, `OYqz9A`) |
-| **Ubigi** | Impact direct portal (`https://app.impact.com/bla/Transatel/login.user`) | ~10% (first order) | 60d | $10 / PayPal or wire | 0 listings in general Impact Marketplace → test direct Impact portal login/apply |
-| **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 0 listings in general Impact Marketplace → email `affiliate@getnomad.app` for private invite link |
-| **Holafly** | Direct (`https://esim.holafly.com/affiliates/` / `partners.holafly.com`) | 10–20% (custom/tiered) | 30d | PayPal / bank | Apply directly via Holafly Affiliate landing page (high AOV on Unlimited plans) |
+| **Airalo** | Impact (`app.impact.com`) | 10% | 30d | $15 / PayPal or wire | ✅ **Active** (`E0B2zX`, `n4MgRx`, `k46V9x`, `aNgPjq`, `dyBDOq`, `NGLe9v`, `YVejRm`, `MKOkA3`, `OYqz9A`) |
+| **Ubigi** | Impact direct portal (`https://app.impact.com/bla/Transatel/login.user`) | ~10% (first order) | 60d | $10 / PayPal or wire | ⚠️ Google SSO into Transatel Impact portal redirected to Airalo dashboard (no Ubigi offer exposed) → requires direct partner invite / outreach |
+| **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 0 listings in Impact Marketplace → email `affiliate@getnomad.app` for private invite link |
+| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | ⏸️ Form pre-filled on `puie-m4pro` Tab 3 (`@pukpuie`, `ESIMTHAI`, `Destination Blog`), stopped on required `Primary Audience Country` dropdown validation |
 | **aloSIM** | Direct / Everflow (`https://alosim.com`) | 10% or ~$5 flat | 30d | Monthly / PayPal | Good backup for budget US/EU/Asia conversions |
 
 ---

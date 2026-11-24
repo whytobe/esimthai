@@ -6,7 +6,7 @@ tags:
   - 'eSIM ฮ่องกง'
   - 'ซิมฮ่องกง'
 affiliate:
-  link: 'https://airalo.pxf.io/OYqz9A'
+  link: 'https://airalo.pxf.io/NGLe9v'
   code: 'NEWTOAIRALO15'
 recommend:
   name: 'Airalo Hkmobile (ฮ่องกง)'
