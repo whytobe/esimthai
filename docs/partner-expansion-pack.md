@@ -1,6 +1,6 @@
-# Affiliate Partner Expansion Pack (Pending User Approval)
+# Affiliate Partner Expansion Pack
 
-> **Guardrail:** No applications or outreach emails have been sent automatically. Review and approve before submitting.
+> **Status (`2026-11-25`):** Holafly application submitted (`SIMPAINAI`) and direct outreach emails for **Nomad**, **Ubigi**, and **aloSIM** sent via `whytobe@gmail.com` (confirmed in Gmail Sent after Mail.app stopped at first-run privacy setup on `puie-m4pro`, leaving `simpainai@whyto.be` unavailable in Mail.app). All sent emails await partner team responses.
 
 Why expand beyond Airalo alone:
 1. **Resilience:** Avoid single-vendor dependency ahead of the 11 Jan 2027 review.
@@ -13,10 +13,10 @@ Why expand beyond Airalo alone:
 | Partner | Network / Portal | Commission | Cookie | Min Payout / Method (TH) | Current Blocker / Action Needed |
 | --- | --- | --- | --- | --- | --- |
 | **Airalo** | Impact (`app.impact.com`) | 10% | 30d | $15 / PayPal or wire | ✅ **Active** (`E0B2zX`, `n4MgRx`, `k46V9x`, `aNgPjq`, `dyBDOq`, `NGLe9v`, `YVejRm`, `MKOkA3`, `OYqz9A`) |
-| **Ubigi** | Impact direct portal (`https://app.impact.com/bla/Transatel/login.user`) · Contact: `affiliates@ubigi.com` / `collaboration@ubigi.com` | ~10% (first order) | 60d | $10 / PayPal or wire | ⚠️ Google SSO into Transatel Impact portal redirected to Airalo dashboard (no Ubigi offer exposed) → ready-to-send email draft for `affiliates@ubigi.com` added below (requires owner approval) |
-| **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 0 listings in Impact Marketplace → email `affiliate@getnomad.app` for private invite link |
-| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | 🟡 **Submitted (2026-11-25 — pending review):** `@simpainai`, desired code `SIMPAINAI`, `Destination Blog`, `Thailand`, linked Impact account; HubSpot confirmed `"Thank you! We'll be in touch with you soon."` |
-| **aloSIM** | Direct / Everflow (`https://alosim.com/affiliate-program/` · `affiliates@alosim.com`) | 10% or ~$5 flat | 30d | Monthly / PayPal | Signup URL verified; `https://alosim.com/affiliate-program/` returned HTTP 403 to CLI crawler → use browser signup or ready-to-send email draft for `affiliates@alosim.com` below |
+| **Ubigi** | Impact direct portal (`https://app.impact.com/bla/Transatel/login.user`) · Contact: `affiliates@ubigi.com` / `collaboration@ubigi.com` | ~10% (first order) | 60d | $10 / PayPal or wire | 🟡 **Outreach Sent (`2026-11-25`):** Sent to `affiliates@ubigi.com` via `whytobe@gmail.com` (confirmed in Gmail Sent; Mail.app unavailable on `puie-m4pro`); awaiting partner reply & Impact invite |
+| **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 🟡 **Outreach Sent (`2026-11-25`):** Sent to `affiliate@getnomad.app` via `whytobe@gmail.com` (confirmed in Gmail Sent); awaiting partner reply & private Impact invite |
+| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | 🟡 **Submitted (`2026-11-25` — pending review):** `@simpainai`, desired code `SIMPAINAI`, `Destination Blog`, `Thailand`, linked Impact account; HubSpot confirmed `"Thank you! We'll be in touch with you soon."` *(Gmail `in:inbox holafly`: no reply yet)* |
+| **aloSIM** | Direct / Everflow (`https://alosim.com/affiliate-program/` · `affiliates@alosim.com`) | 10% or ~$5 flat | 30d | Monthly / PayPal | 🟡 **Outreach Sent (`2026-11-25`):** Sent to `affiliates@alosim.com` via `whytobe@gmail.com` (confirmed in Gmail Sent); awaiting partner reply & Everflow onboarding link |
 
 ---
 
@@ -29,7 +29,9 @@ Why expand beyond Airalo alone:
 
 ---
 
-## 3. Ready-to-Send Email Draft for Nomad (`affiliate@getnomad.app`)
+## 3. Sent Email Record — Nomad (`affiliate@getnomad.app`)
+
+> **Sent (`2026-11-25`):** Confirmed in Gmail Sent (`whytobe@gmail.com`).
 
 **Subject:** Affiliate Partnership Request — Thai Travel eSIM Comparison Site (`esim.whytobe.com`)
 
@@ -51,9 +53,9 @@ Email: whytobe@gmail.com
 
 ---
 
-## 4. Ready-to-Send Email Draft for Ubigi (`affiliates@ubigi.com`)
+## 4. Sent Email Record — Ubigi (`affiliates@ubigi.com`)
 
-> Backup contact for social/influencer partnerships: `collaboration@ubigi.com`. Review and approve before sending.
+> **Sent (`2026-11-25`):** Confirmed in Gmail Sent (`whytobe@gmail.com`). Backup contact for social/influencer partnerships: `collaboration@ubigi.com`.
 
 **Subject:** Affiliate Partnership & Impact Invite Request — Thai eSIM Comparison Site (`esim.whytobe.com`)
 
@@ -76,9 +78,9 @@ Email: whytobe@gmail.com
 
 ---
 
-## 5. Ready-to-Send Email Draft for aloSIM (`affiliates@alosim.com`)
+## 5. Sent Email Record — aloSIM (`affiliates@alosim.com`)
 
-> Review and approve before sending if you prefer direct onboarding over the web signup form.
+> **Sent (`2026-11-25`):** Confirmed in Gmail Sent (`whytobe@gmail.com`). Web form backup: `https://alosim.com/affiliate-program/`.
 
 **Subject:** Affiliate Application Inquiry — Thai Travel eSIM Guide (`esim.whytobe.com`)
 

@@ -1,7 +1,6 @@
-# Organic Distribution Pack (Ready-to-Post Drafts)
+# Organic Distribution Pack & Publishing Schedule
 
-> **Status:** Drafts prepared for owner review & posting (never auto-posted per safety rules).
-> Pair Reels drafts with the 1080×1920 cover cards in `assets/reels/` and point all bio/comment CTAs to `https://esim.whytobe.com/`.
+> **Status (`2026-11-25`):** Active across [`fb.com/simpainai`](https://www.facebook.com/simpainai) (`ซิมไปไหน Simpainai`, Post A live; Posts B–E scheduled in Meta Business Suite for `2026-11-26..29 19:00` Asia/Bangkok) and [`tiktok.com/@simpainai`](https://www.tiktok.com/@simpainai). Pair video assets in `assets/reels/` with matching travel-first covers in `assets/brand/creatives/` and point all bio/comment CTAs to `https://esim.whytobe.com/`.
 
 ---
 
@@ -25,7 +24,14 @@
 
 ---
 
-## 2. Facebook Page Launch Posts (Ready to Schedule via Meta Business Suite)
+## 2. Facebook Page Launch Posts (Published & Scheduled via Meta Business Suite)
+
+> **Scheduled Queue Verified (`2026-11-25` · Meta Business Suite `asset_id=1374773002395475` · Asia/Bangkok):**
+> - **Post B · South Korea:** `2026-11-26 19:00` (`post-seoul-night-invite.png`)
+> - **Post C · China:** `2026-11-27 19:00` (`post-china-shanghai-invite.png`)
+> - **Post D · eSIM Preflight (`*#06#`):** `2026-11-28 19:00` (`post-preflight-lantern-invite.png`)
+> - **Post E · Japan 7-Pack Budget (`SIM2Fly vs Airalo`):** `2026-11-29 19:00` (`post-japan-ramen-invite.png`)
+> - All 4 confirmed under **Scheduled** (0 boosted, 0 published early). Note: public Incognito header on `fb.com/simpainai` did not show a `Learn More` CTA button (`utm_medium=cta` remains unverified publicly).
 
 ### Post A (ทริปญี่ปุ่น — High Intent)
 > ✅ **Published (`2026-11-25`):** Paired with `assets/brand/creatives/post-japan-invite.png` · [View live post](https://www.facebook.com/simpainai/posts/pfbid0BgLL6XpMT6WUZ2AQoQtapjVDc1SvmMYV6w4UqUHybgnMvnt6wiTQ6incNA7H2n59l) (`utm_source=social&utm_medium=post&utm_campaign=launch_post_a`).
@@ -68,7 +74,7 @@ Pair each episode video from [reels-batch2-mascot.md](reels-batch2-mascot.md) wi
 
 | Ep | Topic & Mix | Travel-First Poster (`assets/brand/creatives/`) | TikTok / FB Caption Hook | Pinned Comment CTA Link (UTM-Tagged) |
 | --- | --- | --- | --- | --- |
-| **EP 1** | ลงนาริตะ Visit Japan Web หมุนติ้ว + Suica (Japan · 70%) | `post-japan-invite.png` | ปลายปีนี้บินญี่ปุ่นอย่าลืมแคป QR Visit Japan Web + ติด eSIM จากไทย (`NEWTOAIRALO15` ลด 15%) #ซิมไปไหน #เที่ยวญี่ปุ่น | เทียบ 5 ค่าย eSIM ญี่ปุ่น + วิธีกันเน็ตรั่ว: `https://esim.whytobe.com/blog/esim-japan/?utm_source=social&utm_medium=comment&utm_campaign=ep1` |
+| **EP 1** | ลงนาริตะ Visit Japan Web หมุนติ้ว + Suica (Japan · 70%) | `post-japan-invite.png` · Video: [`simpainai-ep01-narita-japan.mp4`](../assets/reels/simpainai-ep01-narita-japan.mp4) (`36.13s`, `1080×1920`, Thai Neural TTS) | ปลายปีนี้บินญี่ปุ่นอย่าลืมแคป QR Visit Japan Web + ติด eSIM จากไทย (`NEWTOAIRALO15` ลด 15%) #ซิมไปไหน #เที่ยวญี่ปุ่น | เทียบ 5 ค่าย eSIM ญี่ปุ่น + วิธีกันเน็ตรั่ว: `https://esim.whytobe.com/blog/esim-japan/?utm_source=social&utm_medium=comment&utm_campaign=ep1` |
 | **EP 2** | กลางเมียงดง Google Maps เป็นเส้นตรง (Korea · 70%) | `post-seoul-night-invite.png` | เกาหลีต้องใช้ Naver Map + CatchTable Global แบบไม่ใช้เบอร์ 010 และ eSIM คลื่น SK Telecom 5G #ซิมไปไหน #เที่ยวเกาหลี | เทียบราคา 5 ค่าย eSIM เกาหลีเริ่ม ~฿51: `https://esim.whytobe.com/blog/esim-korea/?utm_source=social&utm_medium=comment&utm_campaign=ep2` |
 | **EP 3** | เซี่ยงไฮ้สแกน Alipay/LINE ไม่ติด + ออกเกตเวย์นอกจีน (China · 70%) | `post-china-shanghai-invite.png` | เที่ยวจีน 2026 ให้เล่น LINE / Google / Alipay ลื่นไม่ต้องต่อ VPN แถมเปิดซิมไทยรับ OTP ได้ #ซิมไปไหน #เที่ยวจีน | เช็กลิสต์ eSIM จีน 5GB ฿507 (ลด 15% เหลือ ~฿431): `https://esim.whytobe.com/blog/esim-china/?utm_source=social&utm_medium=comment&utm_campaign=ep3` |
 | **EP 4** | กลับไทยเจอบิลโรมมิ่งซิมหลักเพราะลืมปิด Data Switching (Setup · 20%) | `post-preflight-lantern-invite.png` | กดเช็กเครื่อง `*#06#` หาเลข `EID` + ปิด `Allow Cellular Data Switching` ก่อนเครื่องลงกันเน็ตรั่ว 100% #ซิมไปไหน #วิธีใช้eSIM | คู่มือภาพ 4 ขั้นตอนตั้งค่า + เช็กเครื่อง: `https://esim.whytobe.com/blog/how-to-use-airalo/?utm_source=social&utm_medium=comment&utm_campaign=ep4` |
