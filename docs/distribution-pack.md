@@ -8,7 +8,7 @@
 ## 1. Profile Bio & Link Setup (ซิมไปไหน · SimPaiNai across TikTok / FB Page / IG)
 
 - **TikTok / Social Brand Name:** `ซิมไปไหน · SimPaiNai` (`@simpainai` / `@simpainai.th`)
-- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ`
+- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` ([Live Page](https://www.facebook.com/profile.php?id=61596804965384) · username `simpainai` available, awaiting password confirmation)
 - **Profile & Cover Visual Assets:**
   - Avatar (`1024×1024`): [simpainai-profile.png](../assets/brand/simpainai-profile.png) *(featuring lead duo พี่ตั๋ว + น้องซิมป๊อก)*
   - FB Cover (`1640×924`): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
