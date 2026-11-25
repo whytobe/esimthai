@@ -5,12 +5,12 @@
 
 ## 1. Definition of Done Tracker
 
-| Criterion | Target (by 11 Jan 2027) | Current Status (24 Nov 2026) | Gap / Next Action |
+| Criterion | Target (by 11 Jan 2027) | Current Status (25 Nov 2026) | Gap / Next Action |
 | --- | --- | --- | --- |
-| 1. Content Volume | ≥ 12 pieces (≥ 8 SEO articles + ≥ 4 Reels) | **12 SEO articles live** + **5 Reels scripts + 5 PNG covers + 5 ready-to-upload 1080×1920 MP4 videos** | Owner to review & post Reels using [reels-scripts.md](reels-scripts.md) + [distribution-pack.md](distribution-pack.md) |
+| 1. Content Volume | ≥ 12 pieces (≥ 8 SEO articles + ≥ 4 Reels) | **12 SEO articles live** + **SimPaiNai travel-first brand kit + 5 mascot Episode scripts (`reels-batch2-mascot.md`) + 5 Batch 1 MP4 videos** | Owner to create FB Page + `@simpainai` TikTok & produce/publish EP 1 via Google Flow + Lyrics credit |
 | 2. Indexing & Measurement | All key pages indexed in Google + GSC + Analytics + SubID | GSC `sitemap.xml` **processed successfully (9 discovered pages initially; 13 URLs now in sitemap)**; homepage live test passed & indexing requested; `FAQPage` + `BreadcrumbList` + `Article` JSON-LD + Web Analytics + SubID active | Remaining manual per-URL GSC indexing hit reCAPTCHA (`esim-japan`) — sitemap will crawl remaining URLs automatically unless owner solves reCAPTCHA |
-| 3. Traffic & Clicks | ≥ 30 organic affiliate clicks + full funnel data | Measurement active (`scripts/check-metrics.sh` + Impact SubIDs); **Impact baseline Nov 10–24, 2026 confirmed at 0 clicks, 0 actions, ฿0.00 earnings**; Reel #1 staged on TikTok Studio & FB Page creation ready | Publish Reels & FB Page posts via owner review to drive initial traffic |
-| 4. Partner Diversification | Backup payout-compatible programs prepared/applied | Airalo active with **all 12 articles + 8 TripRecommender destinations using dedicated country/regional links**; Impact Marketplace had 0 listings for Nomad/Ubigi/Holafly; Transatel Impact portal SSO redirected to Airalo; Holafly HubSpot form pre-filled (paused on `Primary Audience Country` validation) | Owner to select `Thailand` + submit Tab 3 Holafly form in Chrome, or approve Nomad email / direct Ubigi outreach |
+| 3. Traffic & Clicks | ≥ 30 organic affiliate clicks + full funnel data | Measurement active (`scripts/check-metrics.sh` + Impact SubIDs); **Impact baseline Nov 10–24, 2026 confirmed at 0 clicks, 0 actions, ฿0.00 earnings**; `@simpainai` verified untaken & FB Page draft ready on `puie-m4pro` | Owner to click **Create Page** on FB Tab 4, register `@simpainai`, & publish initial episodes to drive traffic |
+| 4. Partner Diversification | Backup payout-compatible programs prepared/applied | Airalo active with **all 12 articles + 8 TripRecommender destinations using dedicated country/regional links**; **Holafly submitted (`2026-11-25`)** with `@simpainai`, `SIMPAINAI`, & linked Impact account (`"Thank you! We'll be in touch with you soon."`); Impact Marketplace had 0 listings for Nomad/Ubigi/Holafly; Transatel Impact portal SSO redirected to Airalo | Wait for Holafly approval email; optionally approve Nomad (`affiliate@getnomad.app`) or direct Ubigi outreach |
 
 ---
 
@@ -59,12 +59,13 @@ Plus homepage interactive `TripRecommender` covering 8 destinations (`subId1=hom
 ## 4. Current Blockers / Decisions Needed from Owner
 
 1. **Social Distribution (Brand Separation & Launch Ready on `puie-m4pro`):**
-   - **Facebook Page (`puie-m4pro` Tab 4):** Updating staged Page Creation to `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` (`Digital creator`). Owner to click **Create Page** and upload `assets/brand/simpainai-profile.png` + `assets/brand/simpainai-cover.png`.
-   - **TikTok Account Separation (`puie-m4pro`):** Reverted `@pukpuie` (discarded Reel #1 upload; restored previous avatar from `/tmp/pukpuie-old-avatar-crop.png`). Owner to register dedicated `ซิมไปไหน · SimPaiNai` TikTok account using the verified untaken handle and produce Episode 1 via Google Flow + [reels-batch2-mascot.md](reels-batch2-mascot.md).
-2. **Holafly Partner Application (`puie-m4pro` Tab 3):** Cleared `@pukpuie` and validated `Primary Audience Country = Thailand`; syncing verified `SimPaiNai` handle + `SIMPAINAI` code for final Submit.
-3. **Ubigi Partner Access:** Signing into `https://app.impact.com/bla/Transatel/login.user` via Google redirected directly to the existing Airalo dashboard without showing a Ubigi campaign or signup form (requires direct partner outreach/invite if still desired).
-4. **GSC Manual Per-URL Indexing (Optional):** `sitemap.xml` processed cleanly (9 discovered initially; now serving 13 URLs). Manual `esim-japan` inspection previously hit reCAPTCHA.
-5. **Automated Weekly Metrics Check:** Daemon cron `0 9 * * 1` scheduled to run `scripts/check-metrics.sh`.
+   - **Facebook Page (`puie-m4pro` Tab 4):** Focused & ready with green checkmark on `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` (`Digital creator`). Owner to click **Create Page** and upload `assets/brand/simpainai-profile.png` + `assets/brand/simpainai-cover.png`.
+   - **TikTok Account Separation (`puie-m4pro`):** Reverted `@pukpuie` (discarded Reel #1 upload; restored previous avatar); `@simpainai` verified untaken (`2026-11-25`; `@simpainai.th` backup also untaken). Owner to register `@simpainai` and produce/publish Episode 1 via Google Flow + [reels-batch2-mascot.md](reels-batch2-mascot.md).
+2. **Holafly Partner Application (`puie-m4pro` Tab 3):** ✅ Submitted on `2026-11-25` (`@simpainai`, code `SIMPAINAI`, `Destination Blog`, `Thailand`, Impact account linked) — HubSpot confirmed `"Thank you! We'll be in touch with you soon."` *(pending partner team review)*.
+3. **Notion Shared Context (Saved & Verified `2026-11-25`):** [Playbook Document](https://app.notion.com/p/SimPaiNai-Brand-Travel-First-Mascot-Playbook-esim-whytobe-com-4239f1ab89268158bfd6e6e82763c0c1) · [Decision Memory](https://app.notion.com/p/eSIM-Affiliate-Brand-Identity-SimPaiNai-Travel-First-Mascot-Universe-4239f1ab8926810d8eecf00324945099).
+4. **Ubigi & Nomad Partner Access:** Signing into `https://app.impact.com/bla/Transatel/login.user` via Google redirected directly to the existing Airalo dashboard without showing a Ubigi campaign or signup form (requires direct partner outreach/invite if desired; Nomad outreach draft ready in [partner-expansion-pack.md](partner-expansion-pack.md)).
+5. **GSC Manual Per-URL Indexing (Optional):** `sitemap.xml` processed cleanly (9 discovered initially; now serving 13 URLs). Manual `esim-japan` inspection previously hit reCAPTCHA.
+6. **Automated Weekly Metrics Check:** Daemon cron `0 9 * * 1` scheduled to run `scripts/check-metrics.sh`.
 
 ---
 
@@ -74,3 +75,4 @@ Plus homepage interactive `TripRecommender` covering 8 destinations (`subId1=hom
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-11-24 13:30 | `sitemap.xml` processed (**9 discovered pages**, updated to **13 URLs**); Homepage live test passed & indexing requested | 0 / 0 | 0 (just deployed) | Unverified (Impact login expired) | Unverified | Shipped technical SEO, 12 articles, TripRecommender, Web Analytics, 5 Reels kits + 5 MP4 videos |
 | 2026-11-24 15:32 | 13 URLs live in `sitemap.xml` | 0 / 0 | Pending live re-check | **0** *(Nov 10–24 Impact baseline verified)* | **0 / ฿0.00** | Generated SG/HK/CN/Asia Airalo deep links (`dyBDOq`, `NGLe9v`, `YVejRm`, `MKOkA3`); shipped custom brand profile/cover & favicon; staged FB Page creation & TikTok Reel #1 on `puie-m4pro` |
+| 2026-11-25 09:02 | 13 URLs live in `sitemap.xml` | 0 / 0 | 0 *(unchanged ahead of social launch)* | **0** *(unchanged)* | **0 / ฿0.00** | Verified `@simpainai` untaken on TikTok; submitted Holafly application (`SIMPAINAI` / HubSpot confirmed); FB Tab 4 `ซิมไปไหน SimPaiNai` ready & focused on `puie-m4pro`; saved & read-back verified Brand Playbook + Decision Memory in Notion |

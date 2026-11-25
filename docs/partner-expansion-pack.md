@@ -15,7 +15,7 @@ Why expand beyond Airalo alone:
 | **Airalo** | Impact (`app.impact.com`) | 10% | 30d | $15 / PayPal or wire | ✅ **Active** (`E0B2zX`, `n4MgRx`, `k46V9x`, `aNgPjq`, `dyBDOq`, `NGLe9v`, `YVejRm`, `MKOkA3`, `OYqz9A`) |
 | **Ubigi** | Impact direct portal (`https://app.impact.com/bla/Transatel/login.user`) | ~10% (first order) | 60d | $10 / PayPal or wire | ⚠️ Google SSO into Transatel Impact portal redirected to Airalo dashboard (no Ubigi offer exposed) → requires direct partner invite / outreach |
 | **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 0 listings in Impact Marketplace → email `affiliate@getnomad.app` for private invite link |
-| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | ⏸️ Form pre-filled on `puie-m4pro` Tab 3 (`@pukpuie`, `ESIMTHAI`, `Destination Blog`), stopped on required `Primary Audience Country` dropdown validation |
+| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | 🟡 **Submitted (2026-11-25 — pending review):** `@simpainai`, desired code `SIMPAINAI`, `Destination Blog`, `Thailand`, linked Impact account; HubSpot confirmed `"Thank you! We'll be in touch with you soon."` |
 | **aloSIM** | Direct / Everflow (`https://alosim.com`) | 10% or ~$5 flat | 30d | Monthly / PayPal | Good backup for budget US/EU/Asia conversions |
 
 ---

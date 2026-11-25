@@ -7,8 +7,11 @@
 ## 1. Brand Positioning & Naming System
 
 - **Display Brand (TikTok / Facebook):** `ซิมไปไหน · SimPaiNai` *(by eSIMไทย)*
-- **Target Handle Priority:** `@simpainai` *(fallback: `@simpainai.th` / `@simpainai.go`)*
-- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเน็ตเที่ยวต่างประเทศ`
+- **Verified TikTok Handle (2026-11-25):** `@simpainai` *(verified untaken on TikTok; backup `@simpainai.th` also untaken)*
+- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` *(Category: `Digital creator`, green checkmark verified & staged on `puie-m4pro` Tab 4)*
+- **Notion Shared Memory (2026-11-25, read-back verified):**
+  - Playbook Document: [SimPaiNai Brand & Travel-First Mascot Playbook](https://app.notion.com/p/SimPaiNai-Brand-Travel-First-Mascot-Playbook-esim-whytobe-com-4239f1ab89268158bfd6e6e82763c0c1)
+  - Decision Memory: [eSIM Affiliate Brand Identity: ซิมไปไหน (SimPaiNai)](https://app.notion.com/p/eSIM-Affiliate-Brand-Identity-SimPaiNai-Travel-First-Mascot-Universe-4239f1ab8926810d8eecf00324945099)
 - **Role in Funnel:**
   - **Social Channels (TikTok / Reels / FB):** Stop the scroll with *relatable travel pain & survival moments*, solve real airport/app headaches in 25–35 seconds, and build trust so travelers click the bio/comment link.
   - **Website (`https://esim.whytobe.com/`):** Act as the neutral Thai comparison hub (THB tables across Airalo, Ubigi, Nomad, SimOptions, Holafly + `TripRecommender` + `NEWTOAIRALO15` 15% discount code) that converts high-intent readers via SubID-tracked affiliate links.
