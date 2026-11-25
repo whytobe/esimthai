@@ -8,7 +8,7 @@
 
 - **Display Brand (TikTok / Facebook):** `ซิมไปไหน · SimPaiNai` *(by eSIMไทย)*
 - **Verified TikTok Handle (2026-11-25):** `@simpainai` *(verified untaken on TikTok; backup `@simpainai.th` also untaken)*
-- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` *(Category: `Digital creator`; Live URL: `https://www.facebook.com/profile.php?id=61596804965384` — `simpainai-profile.png`, `simpainai-cover.png`, Website UTM link & `Learn More` CTA wizard configured `2026-11-25`; username `simpainai` verified available, paused on password confirmation)*
+- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` *(Category: `Digital creator`; Live URL: `https://www.facebook.com/simpainai` — username `simpainai` active; `simpainai-profile.png` & `simpainai-cover.png` verified live `2026-11-25`; Website UTM link & `Learn More` CTA saved in wizard, public CTA visibility unverified)*
 - **Notion Shared Memory (2026-11-25, read-back verified):**
   - Playbook Document: [SimPaiNai Brand & Travel-First Mascot Playbook](https://app.notion.com/p/SimPaiNai-Brand-Travel-First-Mascot-Playbook-esim-whytobe-com-4239f1ab89268158bfd6e6e82763c0c1)
   - Decision Memory: [eSIM Affiliate Brand Identity: ซิมไปไหน (SimPaiNai)](https://app.notion.com/p/eSIM-Affiliate-Brand-Identity-SimPaiNai-Travel-First-Mascot-Universe-4239f1ab8926810d8eecf00324945099)

@@ -8,7 +8,7 @@
 ## 1. Profile Bio & Link Setup (ซิมไปไหน · SimPaiNai across TikTok / FB Page / IG)
 
 - **TikTok / Social Brand Name:** `ซิมไปไหน · SimPaiNai` (`@simpainai` / `@simpainai.th`)
-- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` ([Live Page](https://www.facebook.com/profile.php?id=61596804965384) · username `simpainai` available, awaiting password confirmation)
+- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` ([`fb.com/simpainai`](https://www.facebook.com/simpainai) · username `simpainai` active)
 - **Profile & Cover Visual Assets:**
   - Avatar (`1024×1024`): [simpainai-profile.png](../assets/brand/simpainai-profile.png) *(featuring lead duo พี่ตั๋ว + น้องซิมป๊อก)*
   - FB Cover (`1640×924`): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
@@ -24,6 +24,8 @@
 ## 2. Facebook Page Launch Posts (Ready to Schedule via Meta Business Suite)
 
 ### Post A (ทริปญี่ปุ่น — High Intent)
+> ✅ **Published (`2026-11-25`):** Paired with `assets/brand/creatives/post-japan-invite.png` · [View live post](https://www.facebook.com/simpainai/posts/pfbid0BgLL6XpMT6WUZ2AQoQtapjVDc1SvmMYV6w4UqUHybgnMvnt6wiTQ6incNA7H2n59l) (`utm_source=social&utm_medium=post&utm_campaign=launch_post_a`).
+
 **Text:**
 ไปญี่ปุ่น 5–7 วัน ซื้อ eSIM หรือ SIM2Fly คุ้มกว่า? เทียบตัวเลขจริงให้แล้วครับ 🇯🇵
 
