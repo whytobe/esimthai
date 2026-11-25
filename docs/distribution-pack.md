@@ -8,7 +8,7 @@
 ## 1. Profile Bio & Link Setup (ซิมไปไหน · SimPaiNai across TikTok / FB Page / IG)
 
 - **TikTok / Social Brand Name:** `ซิมไปไหน · SimPaiNai` (`@simpainai` / `@simpainai.th`)
-- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเน็ตเที่ยวต่างประเทศ`
+- **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ`
 - **Profile & Cover Visual Assets:**
   - Avatar (`1024×1024`): [simpainai-profile.png](../assets/brand/simpainai-profile.png) *(featuring lead duo พี่ตั๋ว + น้องซิมป๊อก)*
   - FB Cover (`1640×924`): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
@@ -53,6 +53,20 @@
 
 สรุปวิธีเช็กครบทุกรุ่น + วิธีตั้งค่าไม่ให้เน็ตไทยรั่วหลังลงเครื่อง:
 👉 https://esim.whytobe.com/blog/what-is-esim/
+
+---
+
+## 2B. Batch 2 (ซิมไปไหน · SimPaiNai) Episodes 1–5 Travel-First Posters & Pinned-Comment CTA Pack
+
+Pair each episode video from [reels-batch2-mascot.md](reels-batch2-mascot.md) with its `1080×1920` travel-first cover poster and drop the matching pinned comment right after posting:
+
+| Ep | Topic & Mix | Travel-First Poster (`assets/brand/creatives/`) | TikTok / FB Caption Hook | Pinned Comment CTA Link (UTM-Tagged) |
+| --- | --- | --- | --- | --- |
+| **EP 1** | ลงนาริตะ Visit Japan Web หมุนติ้ว + Suica (Japan · 70%) | `post-japan-invite.png` | ปลายปีนี้บินญี่ปุ่นอย่าลืมแคป QR Visit Japan Web + ติด eSIM จากไทย (`NEWTOAIRALO15` ลด 15%) #ซิมไปไหน #เที่ยวญี่ปุ่น | เทียบ 5 ค่าย eSIM ญี่ปุ่น + วิธีกันเน็ตรั่ว: `https://esim.whytobe.com/blog/esim-japan/?utm_source=social&utm_medium=comment&utm_campaign=ep1` |
+| **EP 2** | กลางเมียงดง Google Maps เป็นเส้นตรง (Korea · 70%) | `post-seoul-night-invite.png` | เกาหลีต้องใช้ Naver Map + CatchTable Global แบบไม่ใช้เบอร์ 010 และ eSIM คลื่น SK Telecom 5G #ซิมไปไหน #เที่ยวเกาหลี | เทียบราคา 5 ค่าย eSIM เกาหลีเริ่ม ~฿51: `https://esim.whytobe.com/blog/esim-korea/?utm_source=social&utm_medium=comment&utm_campaign=ep2` |
+| **EP 3** | เซี่ยงไฮ้สแกน Alipay/LINE ไม่ติด + ออกเกตเวย์นอกจีน (China · 70%) | `post-china-shanghai-invite.png` | เที่ยวจีน 2026 ให้เล่น LINE / Google / Alipay ลื่นไม่ต้องต่อ VPN แถมเปิดซิมไทยรับ OTP ได้ #ซิมไปไหน #เที่ยวจีน | เช็กลิสต์ eSIM จีน 5GB ฿507 (ลด 15% เหลือ ~฿431): `https://esim.whytobe.com/blog/esim-china/?utm_source=social&utm_medium=comment&utm_campaign=ep3` |
+| **EP 4** | กลับไทยเจอบิลโรมมิ่งซิมหลักเพราะลืมปิด Data Switching (Setup · 20%) | `post-preflight-lantern-invite.png` | กดเช็กเครื่อง `*#06#` หาเลข `EID` + ปิด `Allow Cellular Data Switching` ก่อนเครื่องลงกันเน็ตรั่ว 100% #ซิมไปไหน #วิธีใช้eSIM | คู่มือภาพ 4 ขั้นตอนตั้งค่า + เช็กเครื่อง: `https://esim.whytobe.com/blog/how-to-use-airalo/?utm_source=social&utm_medium=comment&utm_campaign=ep4` |
+| **EP 5** | บินญี่ปุ่น 5–7 วัน eSIM ~฿298 vs ซิมค่ายไทย ฿399 (Budget · 10%) | `post-japan-ramen-invite.png` | เทียบแฟร์ ๆ! ทริปสั้น 3–7 วัน Airalo 5GB ฿350 (`NEWTOAIRALO15` เหลือ ~฿298) vs 8–10 วันซิมไทย ฿399 #ซิมไปไหน #eSIMญี่ปุ่น | ตารางเทียบ 7 แพ็กเกจญี่ปุ่นฉบับเต็ม: `https://esim.whytobe.com/blog/esim-japan-vs-sim-card/?utm_source=social&utm_medium=comment&utm_campaign=ep5` |
 
 ---
 

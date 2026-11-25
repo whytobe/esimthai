@@ -67,7 +67,7 @@ Keep character prompts anchored word-for-word when adding reference images in Go
 - **Social Brand & Travel Campaign Assets:**
   - Avatar (`1024×1024` Mt. Fuji + Sakura + Duo): [simpainai-profile.png](../assets/brand/simpainai-profile.png)
   - Facebook Cover (`1640×924` Panorama Viewpoint + Shinkansen + Mt. Fuji): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
-  - Vertical Travel Invite Creatives (`1080×1920`): [post-japan-invite.png](../assets/brand/creatives/post-japan-invite.png), [post-seoul-night-invite.png](../assets/brand/creatives/post-seoul-night-invite.png)
+  - Vertical Travel Invite Creatives (`1080×1920`, EP 1–5): [post-japan-invite.png](../assets/brand/creatives/post-japan-invite.png), [post-seoul-night-invite.png](../assets/brand/creatives/post-seoul-night-invite.png), [post-china-shanghai-invite.png](../assets/brand/creatives/post-china-shanghai-invite.png), [post-preflight-lantern-invite.png](../assets/brand/creatives/post-preflight-lantern-invite.png), [post-japan-ramen-invite.png](../assets/brand/creatives/post-japan-ramen-invite.png)
 
 ---
 

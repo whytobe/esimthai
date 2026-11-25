@@ -2,7 +2,7 @@
 
 > Ready-to-produce **9:16 vertical episodes** using the **70/20/10 Travel-Invitation + Relatable Survival Mix** starring **พี่ตั๋ว (`pi-tua`)**, **น้องซิมป๊อก (`nong-simpok`)**, and cameo **น้องชิป (`nong-chip`)**.
 > Every episode opens inside an **inviting real travel atmosphere** (Mt. Fuji sunrise, Kyoto sakura lanterns, Seoul Myeongdong street food, Shanghai Bund twilight, Tokyo ramen alleys) before introducing the relatable trip friction and eSIM solution.
-> Ready static invitation posters in `assets/brand/creatives/`: [post-japan-invite.png](../assets/brand/creatives/post-japan-invite.png) · [post-seoul-night-invite.png](../assets/brand/creatives/post-seoul-night-invite.png).
+> Ready static invitation posters in `assets/brand/creatives/`: [post-japan-invite.png](../assets/brand/creatives/post-japan-invite.png) · [post-seoul-night-invite.png](../assets/brand/creatives/post-seoul-night-invite.png) · [post-china-shanghai-invite.png](../assets/brand/creatives/post-china-shanghai-invite.png) · [post-preflight-lantern-invite.png](../assets/brand/creatives/post-preflight-lantern-invite.png) · [post-japan-ramen-invite.png](../assets/brand/creatives/post-japan-ramen-invite.png).
 > Pair episodes with `assets/brand/characters/` inside **Google Flow ("Ingredients to Video")**.
 
 ---

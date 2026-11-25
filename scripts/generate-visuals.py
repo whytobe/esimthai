@@ -586,6 +586,30 @@ def main() -> None:
         "ไม่มีหลงทาง เน็ตลื่นไม่สะดุด!",
         "ซิมไปไหน · รวมแอปจำเป็น + เทียบ eSIM",
     )
+    vertical_invite_poster(
+        "creative-china-shanghai.png",
+        "post-china-shanghai-invite.png",
+        "SHANGHAI · BUND · CHINA",
+        "เที่ยวจีน 2026 ไม่ต้องกลัวจอดับ",
+        "เล่น LINE · สแกน Alipay ลื่นไม่ง้อ VPN",
+        "ซิมไปไหน · เทียบ eSIM จีน 5 ค่ายจริง",
+    )
+    vertical_invite_poster(
+        "creative-preflight-lanterns.png",
+        "post-preflight-lantern-invite.png",
+        "PRE-FLIGHT CHECKLIST",
+        "บินนอกไม่ให้เจอบิลโรมมิ่ง",
+        "ปิด 1 ปุ่มลับนี้ก่อนเครื่องลง!",
+        "ซิมไปไหน · คู่มือกันเน็ตรั่ว + เช็ก *#06#",
+    )
+    vertical_invite_poster(
+        "creative-japan-ramen-fuji.png",
+        "post-japan-ramen-invite.png",
+        "JAPAN BUDGET HACK",
+        "บินญี่ปุ่น 5–7 วัน เซฟค่าซิม",
+        "เหลือเงินกินราเมงเพิ่มอีกชาม!",
+        "ซิมไปไหน · เทียบ eSIM ฿298 vs ซิมไทย ฿399",
+    )
     render_svg(og_card(), PUBLIC_DIR / "og-default.png", 1200, 630)
     render_svg(reel_01(), REELS_DIR / "reel-01-japan-vs-sim2fly.png", 1080, 1920)
     render_svg(reel_02(), REELS_DIR / "reel-02-check-esim-eid.png", 1080, 1920)
