@@ -7,7 +7,7 @@
 ## 1. Brand Positioning & Naming System
 
 - **Display Brand (TikTok / Facebook):** `ซิมไปไหน · SimPaiNai` *(by eSIMไทย)*
-- **Verified TikTok Handle (2026-11-25):** `@simpainai` *(verified untaken on TikTok; backup `@simpainai.th` also untaken)*
+- **Live TikTok Channel (`2026-11-25`):** [`https://www.tiktok.com/@simpainai`](https://www.tiktok.com/@simpainai) *(Display Name: `ซิมไปไหน · SimPaiNai`; rebranded cleanly from `@whytobe_music` / `whytobeats` inside isolated Chrome profile `SimPaiNai`; `simpainai-profile.png` + 3-line Bio live; 5 existing music videos moved to Private `Only me` / 0 public remaining)*
 - **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` *(Category: `Digital creator`; Live URL: `https://www.facebook.com/simpainai` — username `simpainai` active; `simpainai-profile.png` & `simpainai-cover.png` verified live `2026-11-25`; Website UTM link & `Learn More` CTA saved in wizard, public CTA visibility unverified)*
 - **Notion Shared Memory (2026-11-25, read-back verified):**
   - Playbook Document: [SimPaiNai Brand & Travel-First Mascot Playbook](https://app.notion.com/p/SimPaiNai-Brand-Travel-First-Mascot-Playbook-esim-whytobe-com-4239f1ab89268158bfd6e6e82763c0c1)

@@ -7,15 +7,19 @@
 
 ## 1. Profile Bio & Link Setup (ซิมไปไหน · SimPaiNai across TikTok / FB Page / IG)
 
-- **TikTok / Social Brand Name:** `ซิมไปไหน · SimPaiNai` (`@simpainai` / `@simpainai.th`)
+- **TikTok Channel (LIVE):** `ซิมไปไหน · SimPaiNai` ([`tiktok.com/@simpainai`](https://www.tiktok.com/@simpainai) · isolated Chrome profile `SimPaiNai`, 5 prior videos archived to Private)
 - **Facebook Page Name:** `ซิมไปไหน SimPaiNai — ทริคเที่ยวและเน็ตต่างประเทศ` ([`fb.com/simpainai`](https://www.facebook.com/simpainai) · username `simpainai` active)
 - **Profile & Cover Visual Assets:**
   - Avatar (`1024×1024`): [simpainai-profile.png](../assets/brand/simpainai-profile.png) *(featuring lead duo พี่ตั๋ว + น้องซิมป๊อก)*
   - FB Cover (`1640×924`): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
-- **Bio (TikTok / IG / FB):**
+- **Bio (Facebook / Full Version):**
   `พี่ตั๋ว & น้องซิมป๊อก พาเอาตัวรอดต่างแดน ✈️`
   `ทริคเน็ตเที่ยวญี่ปุ่น เกาหลี จีน ไต้หวัน + กันเน็ตรั่ว`
   `โค้ดลด Airalo 15%: NEWTOAIRALO15 👇 ดูตารางเทียบราคาจริง`
+- **Bio (TikTok LIVE ≤ 80 chars):**
+  `ทริคเน็ตเที่ยวญี่ปุ่น เกาหลี จีน ✈️`
+  `ลด 15%: NEWTOAIRALO15`
+  `esim.whytobe.com`
 - **Website Link:** `https://esim.whytobe.com/?utm_source=social&utm_medium=bio&utm_campaign=simpainai`
 - **Relatable Video Scripts (Mascot + Google Flow Batch 2):** See [reels-batch2-mascot.md](reels-batch2-mascot.md) and [brand-playbook.md](brand-playbook.md).
 
