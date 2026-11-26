@@ -1,6 +1,6 @@
 # Affiliate Partner Expansion Pack
 
-> **Status (`2026-11-25`):** Holafly application submitted (`SIMPAINAI`) and direct outreach emails for **Nomad**, **Ubigi**, and **aloSIM** sent via `whytobe@gmail.com` (confirmed in Gmail Sent after Mail.app stopped at first-run privacy setup on `puie-m4pro`, leaving `simpainai@whyto.be` unavailable in Mail.app). All sent emails await partner team responses.
+> **Status (`2026-11-26`):** **Holafly declined** (`2026-11-25 13:22 GMT+7` via `creators@holafly.com`); **Nomad** sent auto-acknowledgment (`2026-11-25 11:22 GMT+7`, landed in Spam; follow-up expected within 1–2 business days if interested); **Ubigi** and **aloSIM** outreach emails (`2026-11-25` via `whytobe@gmail.com`) still await replies.
 
 Why expand beyond Airalo alone:
 1. **Resilience:** Avoid single-vendor dependency ahead of the 11 Jan 2027 review.
@@ -14,8 +14,8 @@ Why expand beyond Airalo alone:
 | --- | --- | --- | --- | --- | --- |
 | **Airalo** | Impact (`app.impact.com`) | 10% | 30d | $15 / PayPal or wire | ✅ **Active** (`E0B2zX`, `n4MgRx`, `k46V9x`, `aNgPjq`, `dyBDOq`, `NGLe9v`, `YVejRm`, `MKOkA3`, `OYqz9A`) |
 | **Ubigi** | Impact direct portal (`https://app.impact.com/bla/Transatel/login.user`) · Contact: `affiliates@ubigi.com` / `collaboration@ubigi.com` | ~10% (first order) | 60d | $10 / PayPal or wire | 🟡 **Outreach Sent (`2026-11-25`):** Sent to `affiliates@ubigi.com` via `whytobe@gmail.com` (confirmed in Gmail Sent; Mail.app unavailable on `puie-m4pro`); awaiting partner reply & Impact invite |
-| **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 🟡 **Outreach Sent (`2026-11-25`):** Sent to `affiliate@getnomad.app` via `whytobe@gmail.com` (confirmed in Gmail Sent); awaiting partner reply & private Impact invite |
-| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | 🟡 **Submitted (`2026-11-25` — pending review):** `@simpainai`, desired code `SIMPAINAI`, `Destination Blog`, `Thailand`, linked Impact account; HubSpot confirmed `"Thank you! We'll be in touch with you soon."` *(Gmail `in:inbox holafly`: no reply yet)* |
+| **Nomad** | Impact (direct team: `affiliate@getnomad.app`) | ~10% | 30d | $10 / PayPal or wire | 🟡 **Auto-Reply Received (`2026-11-25 11:22 GMT+7`):** `affiliate+noreply@getnomad.app` confirmed receipt (landed in Spam); expects human follow-up in 1–2 business days if interested |
+| **Holafly** | Direct HubSpot / Impact (`https://esim.holafly.com/affiliate-program/`) | Coupon-sale commission (% shown after approval) | 30d | Shown after approval | 🔴 **Declined (`2026-11-25 13:22 GMT+7`):** `creators@holafly.com` (`Holafly Affiliate Program Update 🌟`) — *"we are unable to move forward with a collaboration at this time."* Re-apply only after higher traffic/social traction. |
 | **aloSIM** | Direct / Everflow (`https://alosim.com/affiliate-program/` · `affiliates@alosim.com`) | 10% or ~$5 flat | 30d | Monthly / PayPal | 🟡 **Outreach Sent (`2026-11-25`):** Sent to `affiliates@alosim.com` via `whytobe@gmail.com` (confirmed in Gmail Sent); awaiting partner reply & Everflow onboarding link |
 
 ---
