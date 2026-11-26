@@ -1,4 +1,6 @@
 ---
+import { VACAY_CODE, VACAY_REF_URL } from '../lib/affiliate';
+
 interface Props {
   link: string;
   name: string;
@@ -12,17 +14,29 @@ const { link, name, data, days, price, code } = Astro.props;
 ---
 
 <aside class="quick-pick" aria-label="แพ็กเกจแนะนำ">
-  <div class="quick-pick__info">
-    <span class="quick-pick__label">แนะนำสำหรับทริปนี้</span>
-    <div class="quick-pick__title">
-      <strong>{name}</strong> · {data} / {days} · <span class="quick-pick__price">{price}</span>
-    </div>
-    {code && (
-      <div class="quick-pick__code">
-        โค้ดลด 15% ครั้งแรก: <code>{code}</code>
-        <button class="copy-code" type="button" data-copy={code}>คัดลอกโค้ด</button>
+  <div class="quick-pick__row">
+    <div class="quick-pick__info">
+      <span class="quick-pick__label">แนะนำสำหรับทริปนี้</span>
+      <div class="quick-pick__title">
+        <strong>{name}</strong> · {data} / {days} · <span class="quick-pick__price">{price}</span>
       </div>
-    )}
+      {code && (
+        <div class="quick-pick__code">
+          โค้ดลด 15% ครั้งแรก: <code>{code}</code>
+          <button class="copy-code" type="button" data-copy={code}>คัดลอกโค้ด</button>
+        </div>
+      )}
+    </div>
+    <a class="btn" href={link} rel="sponsored nofollow noopener" target="_blank">ดูราคา Airalo</a>
   </div>
-  <a class="btn" href={link} rel="sponsored nofollow" target="_blank">ดูราคาล่าสุด</a>
+  <div class="quick-pick__alt">
+    <div class="quick-pick__alt-copy">
+      <strong>อยากจ่ายผ่าน PromptPay / แบรนด์ไทย?</strong> ลอง <strong>Vacay eSIM</strong> · โค้ด
+      <code>{VACAY_CODE}</code>
+      <button class="copy-code" type="button" data-copy={VACAY_CODE}>คัดลอกโค้ด</button>
+    </div>
+    <a class="btn btn--secondary" href={VACAY_REF_URL} rel="sponsored nofollow noopener" target="_blank">
+      ดูแพ็ก Vacay (PromptPay)
+    </a>
+  </div>
 </aside>

@@ -1,4 +1,6 @@
 ---
+import { VACAY_CODE, VACAY_REF_URL } from '../lib/affiliate';
+
 interface Props {
   link: string;
   name: string;
@@ -15,11 +17,18 @@ const { link, name, data, days, price, code } = Astro.props;
   <div class="ticket__main">
     <h3>{name}</h3>
     <p>แพ็กเกจคุ้มสำหรับทริป {days} — ต่อเน็ตทันทีหลังถึง ไม่ต้องเปลี่ยนซิม</p>
-    <a class="btn" href={link} rel="sponsored nofollow" target="_blank">ดูราคาและสมัคร</a>
+    <div class="ticket__actions">
+      <a class="btn" href={link} rel="sponsored nofollow noopener" target="_blank">ดูราคาและสมัคร Airalo</a>
+      <a class="btn btn--secondary" href={VACAY_REF_URL} rel="sponsored nofollow noopener" target="_blank">
+        ดูแพ็ก Vacay (PromptPay)
+      </a>
+    </div>
     {code && (
       <p class="affiliate-note">
-        โค้ดส่วนลดครั้งแรก: <code>{code}</code>{' '}
+        Airalo ลด 15%: <code>{code}</code>{' '}
         <button class="copy-code" type="button" data-copy={code}>คัดลอกโค้ด</button>
+        {' · '}Vacay จ่าย PromptPay โค้ด: <code>{VACAY_CODE}</code>{' '}
+        <button class="copy-code" type="button" data-copy={VACAY_CODE}>คัดลอกโค้ด</button>
       </p>
     )}
   </div>

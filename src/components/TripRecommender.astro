@@ -1,4 +1,6 @@
 ---
+import { VACAY_CODE, VACAY_REF_URL } from '../lib/affiliate';
+
 const PLANS = {
   japan: {
     label: 'ญี่ปุ่น',
@@ -150,8 +152,11 @@ const initialTier = initial.tiers.standard;
       </div>
     </div>
     <div class="recommender__actions">
-      <a class="btn" data-rec-cta href={initial.link} rel="sponsored nofollow" target="_blank">
+      <a class="btn" data-rec-cta href={initial.link} rel="sponsored nofollow noopener" target="_blank">
         ดูราคาและสมัคร Airalo
+      </a>
+      <a class="btn btn--secondary" href={VACAY_REF_URL} rel="sponsored nofollow noopener" target="_blank">
+        ดูแพ็ก Vacay (PromptPay · โค้ด {VACAY_CODE})
       </a>
       <a class="recommender__guide" data-rec-guide href={initial.guide}>
         เทียบ 5 ค่ายใน{initial.label} →
