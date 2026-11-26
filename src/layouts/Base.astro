@@ -94,22 +94,58 @@ const canonicalUrl = new URL(
       </div>
     </footer>
     <script is:inline>
-      document.addEventListener('click', (event) => {
-        const btn = event.target instanceof Element ? event.target.closest('[data-copy]') : null;
-        if (!btn) return;
-        const value = btn.getAttribute('data-copy');
-        if (!value || !navigator.clipboard) return;
-        const original = btn.textContent;
-        navigator.clipboard
-          .writeText(value)
-          .then(() => {
-            btn.textContent = 'คัดลอกแล้ว';
-            window.setTimeout(() => {
-              btn.textContent = original;
-            }, 1800);
-          })
-          .catch(() => {});
-      });
+      (() => {
+        const clean = (v) => (v || '').trim().replace(/[^a-zA-Z0-9._-]/g, '-').slice(0, 32);
+        const params = new URLSearchParams(window.location.search);
+        const parts = [
+          clean(params.get('utm_source')),
+          clean(params.get('utm_campaign')),
+          clean(params.get('utm_content')),
+        ].filter(Boolean);
+        let attrTag = parts.join('__').slice(0, 64);
+        try {
+          if (attrTag) {
+            window.sessionStorage.setItem('spn_attr', attrTag);
+          } else {
+            attrTag = window.sessionStorage.getItem('spn_attr') || '';
+          }
+        } catch {}
+
+        const applySubId3 = (anchor) => {
+          if (!attrTag || !(anchor instanceof HTMLAnchorElement)) return;
+          try {
+            const url = new URL(anchor.href);
+            if (url.hostname === 'airalo.pxf.io') {
+              url.searchParams.set('subId3', attrTag);
+              anchor.href = url.toString();
+            }
+          } catch {}
+        };
+
+        if (attrTag) {
+          document.querySelectorAll('a[href*="airalo.pxf.io"]').forEach(applySubId3);
+        }
+
+        document.addEventListener('click', (event) => {
+          const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
+          if (anchor) applySubId3(anchor);
+
+          const btn = event.target instanceof Element ? event.target.closest('[data-copy]') : null;
+          if (!btn) return;
+          const value = btn.getAttribute('data-copy');
+          if (!value || !navigator.clipboard) return;
+          const original = btn.textContent;
+          navigator.clipboard
+            .writeText(value)
+            .then(() => {
+              btn.textContent = 'คัดลอกแล้ว';
+              window.setTimeout(() => {
+                btn.textContent = original;
+              }, 1800);
+            })
+            .catch(() => {});
+        });
+      })();
     </script>
     <script
       defer
