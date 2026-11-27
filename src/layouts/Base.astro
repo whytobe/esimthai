@@ -171,9 +171,29 @@ const canonicalUrl = new URL(
           const host = hostname.toLowerCase();
           if (host === 'airalo.pxf.io') return 'airalo';
           if (host === 'esim.vacay.asia' || host.endsWith('.vacay.asia')) return 'vacay';
-          if (host === 'tp.media' || host.endsWith('.tp.media')) return 'travelpayouts';
-          if (host === 'saily.com' || host.endsWith('.saily.com')) return 'saily';
-          if (host === 'klook.com' || host.endsWith('.klook.com')) return 'klook';
+          if (host === 'saily.tpx.lu' || host === 'saily.com' || host.endsWith('.saily.com')) {
+            return 'saily';
+          }
+          if (host === 'klook.tpx.lu' || host === 'klook.com' || host.endsWith('.klook.com')) {
+            return 'klook';
+          }
+          if (
+            host === 'yesim.tpx.lu' ||
+            host === 'yesim.app' ||
+            host.endsWith('.yesim.app') ||
+            host === 'yesim.tech' ||
+            host.endsWith('.yesim.tech')
+          ) {
+            return 'yesim';
+          }
+          if (
+            host === 'tp.media' ||
+            host.endsWith('.tp.media') ||
+            host === 'tpx.lu' ||
+            host.endsWith('.tpx.lu')
+          ) {
+            return 'travelpayouts';
+          }
           return '';
         };
 
