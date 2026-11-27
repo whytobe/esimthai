@@ -72,10 +72,11 @@ faqs:
 **จบทริปแล้วต้องลบ eSIM ไหม?**
 ลบได้ทันทีหลังกลับถึงไทย (Settings → Cellular → เลือก eSIM ที่หมดอายุ → Delete eSIM) หรือเก็บไว้เติมเงินต่อในแอปสำหรับค่ายที่รองรับ top-up
 
-## อ่านต่อ: คู่มือเลือกแพ็กตามประเทศ
+## อ่านต่อ: คู่มือตั้งค่าและเลือกแพ็กตามประเทศ
 
-- [eSIM ญี่ปุ่น 2569: เปรียบเทียบ 9 แพ็กเกจจริง + วิธีใช้](/blog/esim-japan/)
-- [eSIM เกาหลี 2569: เปรียบเทียบราคา + ข้อควรรู้ Naver Map และเบอร์ 010](/blog/esim-korea/)
-- [eSIM ญี่ปุ่น vs ซิมการ์ด vs SIM2Fly อันไหนคุ้มกว่า 2569](/blog/esim-japan-vs-sim-card/)
+- **ตั้งค่าก่อนบิน:** [วิธีใช้ Airalo บน iPhone & Android ทีละขั้น](/blog/how-to-use-airalo/) · [ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/) · [ซื้อ eSIM ที่ไหนดี 2569 (เทียบ 5 ค่าย)](/blog/where-to-buy-esim/)
+- **ญี่ปุ่น & เกาหลี:** [eSIM ญี่ปุ่น 2569](/blog/esim-japan/) · [eSIM ญี่ปุ่น vs ซิมการ์ด vs SIM2Fly](/blog/esim-japan-vs-sim-card/) · [eSIM เกาหลี 2569](/blog/esim-korea/)
+- **จีน ฮ่องกง ไต้หวัน:** [eSIM จีน 2569 (ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM ฮ่องกง 2569](/blog/esim-hong-kong/) · [eSIM จีน ฮ่องกง มาเก๊า (ข้ามแดนใบเดียวจบ)](/blog/esim-china-hong-kong-macau/) · [eSIM ไต้หวัน 2569](/blog/esim-taiwan/)
+- **อาเซียน & ข้ามหลายประเทศ:** [eSIM เวียดนาม 2569](/blog/esim-vietnam/) · [eSIM สิงคโปร์ 2569](/blog/esim-singapore/) · [eSIM เอเชียหลายประเทศ](/blog/esim-asia/)
 
 หากเช็กแล้วเครื่องมีเลข EID พร้อมใช้ แนะนำดูแพ็กเกจของ **Airalo** ที่มีครอบคลุมกว่า 200+ ประเทศ และใช้โค้ด `NEWTOAIRALO15` ลดเพิ่ม **15%** สำหรับการสั่งซื้อครั้งแรกครับ
