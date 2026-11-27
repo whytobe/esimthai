@@ -13,17 +13,20 @@ function escapeXml(value: string): string {
 }
 
 export const GET: APIRoute = async () => {
-  const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime()
-  );
+  const posts = (await getCollection('blog')).sort((a, b) => {
+    const aTime = (a.data.updatedDate ?? a.data.date).getTime();
+    const bTime = (b.data.updatedDate ?? b.data.date).getTime();
+    return bTime - aTime;
+  });
 
-  const newestDate = posts[0]?.data.date.toISOString().slice(0, 10) ?? '2026-11-24';
+  const newestDate =
+    (posts[0]?.data.updatedDate ?? posts[0]?.data.date)?.toISOString().slice(0, 10) ?? '2026-11-24';
 
   const urls = [
     { loc: `${SITE}/`, lastmod: newestDate },
     ...posts.map((post) => ({
       loc: `${SITE}/blog/${post.id}/`,
-      lastmod: post.data.date.toISOString().slice(0, 10),
+      lastmod: (post.data.updatedDate ?? post.data.date).toISOString().slice(0, 10),
     })),
   ];
 

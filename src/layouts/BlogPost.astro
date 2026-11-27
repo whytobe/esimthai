@@ -11,8 +11,14 @@ interface Props {
 }
 
 const { post, Content } = Astro.props;
-const { title, description, date, affiliate, recommend, faqs } = post.data;
+const { title, description, date, updatedDate, affiliate, recommend, faqs } = post.data;
+const effectiveModified = updatedDate ?? date;
 const dateStr = date.toLocaleDateString('th-TH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const updatedDateStr = updatedDate?.toLocaleDateString('th-TH', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -38,6 +44,7 @@ const graphNodes: Record<string, unknown>[] = [
     description,
     image: 'https://esim.whytobe.com/og-default.png',
     datePublished: date.toISOString(),
+    dateModified: effectiveModified.toISOString(),
     inLanguage: 'th-TH',
     mainEntityOfPage: canonicalUrl,
     publisher: {
@@ -84,9 +91,20 @@ const articleJsonLd = {
   '@graph': graphNodes,
 };
 
+const currentTags = new Set(post.data.tags.map((t: string) => t.trim().toLowerCase()));
 const relatedPosts = (await getCollection('blog'))
   .filter((p) => p.id !== post.id)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  .map((p) => {
+    const overlap = p.data.tags.reduce(
+      (acc: number, t: string) => acc + (currentTags.has(t.trim().toLowerCase()) ? 1 : 0),
+      0
+    );
+    const recency = (p.data.updatedDate ?? p.data.date).getTime();
+    return { post: p, overlap, recency };
+  })
+  .sort((a, b) => b.overlap - a.overlap || b.recency - a.recency)
+  .slice(0, 6)
+  .map((item) => item.post);
 ---
 
 <Base
@@ -94,6 +112,7 @@ const relatedPosts = (await getCollection('blog'))
   description={description}
   type="article"
   publishedTime={date.toISOString()}
+  modifiedTime={updatedDate?.toISOString()}
   jsonLd={articleJsonLd}
 >
   <article>
@@ -101,6 +120,9 @@ const relatedPosts = (await getCollection('blog'))
       <h1>{title}</h1>
       <div class="article-head__meta">
         <time datetime={date.toISOString()}>{dateStr}</time>
+        {updatedDate && updatedDateStr && (
+          <time datetime={updatedDate.toISOString()}>อัปเดต {updatedDateStr}</time>
+        )}
         {post.data.tags.map((tag: string) => <span>{tag}</span>)}
       </div>
     </header>
