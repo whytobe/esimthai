@@ -27,7 +27,7 @@ const { link, name, data, days, price, code } = Astro.props;
         </div>
       )}
     </div>
-    <a class="btn" href={link} rel="sponsored nofollow noopener" target="_blank">ดูราคา Airalo</a>
+    <a class="btn" href={link} data-partner="airalo" rel="sponsored nofollow noopener" target="_blank">ดูราคา Airalo</a>
   </div>
   <div class="quick-pick__alt">
     <div class="quick-pick__alt-copy">
@@ -35,7 +35,7 @@ const { link, name, data, days, price, code } = Astro.props;
       <code>{VACAY_CODE}</code>
       <button class="copy-code" type="button" data-copy={VACAY_CODE}>คัดลอกโค้ด</button>
     </div>
-    <a class="btn btn--secondary" href={VACAY_REF_URL} rel="sponsored nofollow noopener" target="_blank">
+    <a class="btn btn--secondary" href={VACAY_REF_URL} data-partner="vacay" rel="sponsored nofollow noopener" target="_blank">
       ดูแพ็ก Vacay (PromptPay)
     </a>
   </div>

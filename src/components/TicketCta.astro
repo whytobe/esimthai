@@ -18,8 +18,8 @@ const { link, name, data, days, price, code } = Astro.props;
     <h3>{name}</h3>
     <p>แพ็กเกจคุ้มสำหรับทริป {days} — ต่อเน็ตทันทีหลังถึง ไม่ต้องเปลี่ยนซิม</p>
     <div class="ticket__actions">
-      <a class="btn" href={link} rel="sponsored nofollow noopener" target="_blank">ดูราคาและสมัคร Airalo</a>
-      <a class="btn btn--secondary" href={VACAY_REF_URL} rel="sponsored nofollow noopener" target="_blank">
+      <a class="btn" href={link} data-partner="airalo" rel="sponsored nofollow noopener" target="_blank">ดูราคาและสมัคร Airalo</a>
+      <a class="btn btn--secondary" href={VACAY_REF_URL} data-partner="vacay" rel="sponsored nofollow noopener" target="_blank">
         ดูแพ็ก Vacay (PromptPay)
       </a>
     </div>
