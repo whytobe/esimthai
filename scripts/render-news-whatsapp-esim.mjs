@@ -3,6 +3,9 @@
  * Priority 1 — Breaking News Carousel Renderer (1080x1350, 4:5)
  * Topic: "WhatsApp จะขาย eSIM ในแอป บินเร็ว ๆ นี้ต้องรอไหม?"
  * Style: Bright Editorial News Card + Travel Survival Checklist
+ * Strict Real-Device Mobile Safe Zone (iPhone 15 Pro Max):
+ *   - ALL critical text/cards/navigation/URLs inside y = 60..1160, x = 54..1026
+ *   - Bottom 190px (y = 1160..1350) free of critical text for FB/TikTok fullscreen chrome
  * Output: assets/carousels/news-whatsapp-esim/slide-01.png .. slide-04.png
  */
 import { createRequire } from 'node:module';
@@ -50,75 +53,71 @@ const SHARED_CSS = `
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(244, 248, 247, 0.90) 0%,
-      rgba(244, 248, 247, 0.78) 48%,
-      rgba(235, 245, 242, 0.88) 100%
+      rgba(244, 248, 247, 0.92) 0%,
+      rgba(244, 248, 247, 0.80) 56%,
+      rgba(236, 246, 243, 0.86) 84%,
+      rgba(232, 243, 240, 0.72) 100%
     );
   }
   .frame-border {
     position: absolute;
-    inset: 22px;
-    border: 2px solid rgba(14, 42, 58, 0.10);
+    inset: 24px;
+    border: 2px solid rgba(14, 42, 58, 0.09);
     border-radius: 30px;
     pointer-events: none;
   }
   .masthead {
     position: absolute;
-    top: 46px;
-    left: 54px;
-    right: 54px;
+    top: 62px;
+    left: 56px;
+    right: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 2px solid rgba(14, 42, 58, 0.12);
   }
   .brand-lockup { display: flex; align-items: center; gap: 12px; }
   .brand-avatar {
-    width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+    width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
     border: 2.5px solid #0fa47a;
-    box-shadow: 0 4px 12px rgba(14, 42, 58, 0.18);
+    box-shadow: 0 4px 10px rgba(14, 42, 58, 0.16);
   }
   .brand-text { display: flex; flex-direction: column; gap: 1px; }
   .brand-name {
-    font-family: "Kanit", sans-serif; font-size: 23px; font-weight: 800;
-    color: #0e2a3a; line-height: 1.1;
+    font-family: "Kanit", sans-serif; font-size: 22px; font-weight: 800;
+    color: #0e2a3a; line-height: 1.08;
   }
   .brand-tag {
-    font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 800;
-    color: #0fa47a; letter-spacing: 1.4px;
+    font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 800;
+    color: #0fa47a; letter-spacing: 1.3px;
   }
   .page-pill {
-    font-family: "JetBrains Mono", monospace; font-size: 19px; font-weight: 800;
+    font-family: "JetBrains Mono", monospace; font-size: 18px; font-weight: 800;
     color: #0e2a3a; background: #ffffff;
     border: 2px solid rgba(14, 42, 58, 0.14);
-    padding: 6px 18px; border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(14, 42, 58, 0.06);
+    padding: 5px 16px; border-radius: 999px;
   }
-  .footer-plain {
+  /* Placed strictly inside y <= 1160 so bottom 190px stays clear of mobile fullscreen UI */
+  .safe-footer {
     position: absolute;
-    left: 54px;
-    right: 54px;
-    bottom: 52px;
+    left: 56px;
+    right: 56px;
+    top: 1120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: "Kanit", sans-serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 700;
     color: #0e2a3a;
   }
-  .footer-plain .hint {
-    color: #0b7a5b;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .footer-plain .domain {
+  .safe-footer .hint { color: #0b7a5b; }
+  .safe-footer .domain {
     font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 800;
-    color: #516b78;
+    color: #4a6674;
   }
 `;
 
@@ -136,7 +135,7 @@ function mastheadHtml(avatar, tag, pageNum) {
 }
 
 // ============================================================================
-// SLIDE 01: BREAKING NEWS COVER
+// SLIDE 01: BREAKING NEWS COVER (y = 62..1156)
 // ============================================================================
 function buildSlide01({ avatar, bg, piTua, simPok }) {
   return `<!doctype html>
@@ -146,22 +145,21 @@ function buildSlide01({ avatar, bg, piTua, simPok }) {
 ${FONTS_LINK}
 <style>
   ${SHARED_CSS}
-  .bg-photo { object-position: center 35%; }
+  .bg-photo { object-position: center 32%; }
   .bright-wash {
     background: linear-gradient(
       180deg,
-      rgba(244, 248, 247, 0.94) 0%,
-      rgba(242, 248, 246, 0.78) 44%,
-      rgba(14, 42, 58, 0.12) 72%,
-      rgba(244, 248, 247, 0.94) 93%,
-      rgba(244, 248, 247, 0.98) 100%
+      rgba(244, 248, 247, 0.95) 0%,
+      rgba(242, 248, 246, 0.84) 48%,
+      rgba(236, 246, 243, 0.65) 78%,
+      rgba(14, 42, 58, 0.20) 100%
     );
   }
   .hero {
     position: absolute;
-    top: 132px;
-    left: 54px;
-    right: 54px;
+    top: 138px;
+    left: 56px;
+    right: 56px;
   }
   .news-kicker {
     display: inline-flex;
@@ -170,115 +168,101 @@ ${FONTS_LINK}
     background: #0e2a3a;
     color: #ffffff;
     font-family: "Kanit", sans-serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 700;
-    padding: 8px 20px;
+    padding: 7px 18px;
     border-radius: 999px;
-    margin-bottom: 18px;
-    box-shadow: 0 8px 20px rgba(14, 42, 58, 0.18);
+    margin-bottom: 14px;
+    box-shadow: 0 8px 18px rgba(14, 42, 58, 0.16);
   }
   .live-dot {
-    width: 11px; height: 11px; border-radius: 50%;
+    width: 10px; height: 10px; border-radius: 50%;
     background: #4ef2be;
     box-shadow: 0 0 0 4px rgba(78, 242, 190, 0.28);
   }
   .news-date {
     color: #ffd166;
     font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 800;
     margin-left: 4px;
   }
   .title-line1 {
     font-family: "Kanit", sans-serif;
-    font-size: 80px;
+    font-size: 76px;
     font-weight: 900;
     color: #0e2a3a;
     line-height: 1.08;
     letter-spacing: -1.2px;
   }
-  .title-line1 .wa-green {
-    color: #0fa47a;
-  }
+  .title-line1 .wa-green { color: #0fa47a; }
   .title-line2 {
     font-family: "Kanit", sans-serif;
-    font-size: 66px;
+    font-size: 62px;
     font-weight: 900;
     color: #0e2a3a;
-    line-height: 1.15;
-    margin-top: 2px;
+    line-height: 1.14;
   }
   .hook-pill {
     display: inline-block;
-    margin-top: 16px;
+    margin-top: 14px;
     background: linear-gradient(95deg, #e8a13d 0%, #f5b951 100%);
     color: #0e2a3a;
     font-family: "Kanit", sans-serif;
-    font-size: 46px;
+    font-size: 44px;
     font-weight: 900;
     line-height: 1.2;
-    padding: 10px 26px;
-    border-radius: 18px;
-    box-shadow: 0 10px 24px rgba(232, 161, 61, 0.34);
+    padding: 9px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(232, 161, 61, 0.32);
   }
 
   .news-card {
     position: absolute;
-    top: 520px;
-    left: 54px;
-    right: 54px;
+    top: 484px;
+    left: 56px;
+    right: 56px;
     background: rgba(255, 255, 255, 0.96);
     border: 2px solid rgba(14, 42, 58, 0.12);
     border-left: 10px solid #0fa47a;
-    border-radius: 26px;
-    padding: 28px 30px;
-    box-shadow: 0 18px 40px rgba(14, 42, 58, 0.14);
+    border-radius: 24px;
+    padding: 24px 28px;
+    box-shadow: 0 16px 36px rgba(14, 42, 58, 0.13);
   }
   .card-top-row {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .icon-box {
-    width: 58px; height: 58px; border-radius: 16px;
+    width: 54px; height: 54px; border-radius: 15px;
     background: linear-gradient(135deg, #0fa47a, #17c492);
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 6px 16px rgba(15, 164, 122, 0.28);
   }
   .card-label {
     font-family: "Kanit", sans-serif;
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 800;
     color: #0e2a3a;
     line-height: 1.2;
   }
   .card-sublabel {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 600;
     color: #4f6b78;
     margin-top: 2px;
   }
-  .fact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 14px;
-  }
+  .fact-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
   .fact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 24px;
-    font-weight: 600;
-    color: #163445;
-    line-height: 1.38;
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 23px; font-weight: 600; color: #163445; line-height: 1.38;
   }
   .fact-dot {
-    width: 28px; height: 28px; border-radius: 50%;
+    width: 26px; height: 26px; border-radius: 50%;
     display: inline-flex; align-items: center; justify-content: center;
-    font-family: "Kanit", sans-serif; font-size: 16px; font-weight: 900;
+    font-family: "Kanit", sans-serif; font-size: 15px; font-weight: 900;
     flex-shrink: 0; margin-top: 3px;
   }
   .fact-dot.green { background: #dff8ef; color: #0b7a5b; }
@@ -286,9 +270,9 @@ ${FONTS_LINK}
 
   .verdict-bar {
     position: absolute;
-    top: 890px;
-    left: 54px;
-    width: 650px;
+    top: 762px;
+    left: 56px;
+    width: 636px;
     background: #0e2a3a;
     color: #ffffff;
     border-radius: 22px;
@@ -297,41 +281,66 @@ ${FONTS_LINK}
   }
   .verdict-eyebrow {
     font-family: "Kanit", sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 800;
     color: #ffd166;
     margin-bottom: 4px;
   }
   .verdict-text {
     font-family: "Kanit", sans-serif;
-    font-size: 29px;
+    font-size: 28px;
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1.32;
     color: #ffffff;
   }
   .verdict-text span { color: #6ef7ca; }
 
+  .swipe-note {
+    position: absolute;
+    top: 960px;
+    left: 56px;
+    width: 636px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1.8px solid rgba(15, 164, 122, 0.32);
+    border-radius: 16px;
+    padding: 13px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Kanit", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #0b7a5b;
+  }
+  .swipe-note .dom {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    font-weight: 800;
+    color: #4d6977;
+  }
+
+  /* Mascot art sits cleanly on the right; faces above y=1080, feet gently enter scenery margin */
   .mascot-cluster {
     position: absolute;
-    right: 44px;
-    bottom: 98px;
-    width: 330px;
-    height: 310px;
+    right: 48px;
+    top: 742px;
+    width: 332px;
+    height: 416px;
     pointer-events: none;
   }
   .mascot-pi {
     position: absolute;
-    right: 6px;
+    right: 2px;
     bottom: 0;
-    width: 245px;
-    filter: drop-shadow(0 14px 20px rgba(14, 42, 58, 0.28));
+    width: 244px;
+    filter: drop-shadow(0 14px 20px rgba(14, 42, 58, 0.26));
   }
   .mascot-simpok {
     position: absolute;
     left: 0;
-    bottom: 8px;
-    width: 145px;
-    filter: drop-shadow(0 12px 16px rgba(14, 42, 58, 0.26));
+    bottom: 10px;
+    width: 144px;
+    filter: drop-shadow(0 12px 16px rgba(14, 42, 58, 0.24));
   }
 </style>
 </head>
@@ -356,7 +365,7 @@ ${FONTS_LINK}
     <section class="news-card" data-safe-check="news-card">
       <div class="card-top-row">
         <div class="icon-box">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="5" y="2" width="14" height="20" rx="3"/>
             <path d="M9 7h6M9 11h6M9 15h3"/>
             <circle cx="16" cy="16" r="2" fill="#ffd166" stroke="none"/>
@@ -384,22 +393,22 @@ ${FONTS_LINK}
       <div class="verdict-text"><span>ไม่ต้องรอครับ</span> — เตรียมแพ็กที่ซื้อได้ตอนนี้และเช็ก 4 จุดก่อนบินให้พร้อมดีกว่า</div>
     </section>
 
-    <div class="mascot-cluster" data-safe-check="mascots">
+    <div class="swipe-note" data-safe-check="footer">
+      <span>ปัดขวาดู 3 ข้อจริง + เช็กลิสต์ก่อนบิน →</span>
+      <span class="dom">esim.whytobe.com</span>
+    </div>
+
+    <div class="mascot-cluster">
       <img class="mascot-pi" src="${piTua}" alt="">
       <img class="mascot-simpok" src="${simPok}" alt="">
     </div>
-
-    <footer class="footer-plain" data-safe-check="footer">
-      <span class="hint">ปัดขวาดู 3 ข้อจริง + เช็กลิสต์ก่อนบิน →</span>
-      <span class="domain">esim.whytobe.com</span>
-    </footer>
   </div>
 </body>
 </html>`;
 }
 
 // ============================================================================
-// SLIDE 02: 3 FACTS FROM THE ANNOUNCEMENT
+// SLIDE 02: 3 FACTS FROM THE ANNOUNCEMENT (y = 62..1152)
 // ============================================================================
 function buildSlide02({ avatar, bg, nongChip }) {
   return `<!doctype html>
@@ -412,50 +421,50 @@ ${FONTS_LINK}
   .bg-photo { object-position: center 65%; }
   .head {
     position: absolute;
-    top: 128px;
-    left: 54px;
-    right: 54px;
+    top: 136px;
+    left: 56px;
+    right: 56px;
   }
   .kicker {
     font-family: "Kanit", sans-serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 800;
     color: #0fa47a;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .title {
     font-family: "Kanit", sans-serif;
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 900;
     color: #0e2a3a;
-    line-height: 1.16;
+    line-height: 1.15;
   }
   .title span { color: #0fa47a; }
 
   .cards {
     position: absolute;
-    top: 326px;
-    left: 54px;
-    right: 54px;
+    top: 308px;
+    left: 56px;
+    right: 56px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
   }
   .fact-card {
     background: rgba(255, 255, 255, 0.96);
     border: 2px solid rgba(14, 42, 58, 0.10);
-    border-radius: 24px;
-    padding: 26px 28px;
+    border-radius: 22px;
+    padding: 22px 26px;
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    box-shadow: 0 12px 28px rgba(14, 42, 58, 0.08);
+    gap: 18px;
+    box-shadow: 0 10px 24px rgba(14, 42, 58, 0.08);
   }
   .num-badge {
-    width: 56px; height: 56px; border-radius: 16px;
+    width: 52px; height: 52px; border-radius: 15px;
     display: flex; align-items: center; justify-content: center;
     font-family: "JetBrains Mono", monospace;
-    font-size: 28px; font-weight: 800; color: #ffffff;
+    font-size: 26px; font-weight: 800; color: #ffffff;
     flex-shrink: 0; margin-top: 2px;
   }
   .n1 { background: #0e2a3a; }
@@ -463,50 +472,50 @@ ${FONTS_LINK}
   .n3 { background: #0fa47a; }
   .fact-title {
     font-family: "Kanit", sans-serif;
-    font-size: 31px;
+    font-size: 29px;
     font-weight: 800;
     color: #0e2a3a;
     line-height: 1.24;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
   .fact-desc {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 500;
     color: #314d5c;
-    line-height: 1.42;
+    line-height: 1.4;
   }
   .fact-desc b { color: #0e2a3a; font-weight: 700; }
 
   .takeaway {
     position: absolute;
-    top: 942px;
-    left: 54px;
-    right: 54px;
+    top: 900px;
+    left: 56px;
+    right: 56px;
     background: linear-gradient(135deg, #0e2a3a 0%, #163f54 100%);
-    border-radius: 26px;
-    padding: 26px 210px 26px 30px;
+    border-radius: 24px;
+    padding: 24px 204px 24px 28px;
     color: #ffffff;
-    box-shadow: 0 16px 34px rgba(14, 42, 58, 0.22);
+    box-shadow: 0 14px 30px rgba(14, 42, 58, 0.22);
   }
   .takeaway-tag {
     font-family: "Kanit", sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 800;
     color: #ffd166;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .takeaway-body {
     font-family: "Kanit", sans-serif;
-    font-size: 29px;
+    font-size: 27px;
     font-weight: 700;
     line-height: 1.35;
   }
   .takeaway-body span { color: #6ef7ca; }
   .chip-sticker {
     position: absolute;
-    right: 26px;
-    bottom: 8px;
-    width: 170px;
+    right: 24px;
+    bottom: 6px;
+    width: 158px;
     filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.28));
   }
 </style>
@@ -555,7 +564,7 @@ ${FONTS_LINK}
       <img class="chip-sticker" src="${nongChip}" alt="">
     </section>
 
-    <footer class="footer-plain" data-safe-check="footer">
+    <footer class="safe-footer" data-safe-check="footer">
       <span class="hint">ปัดขวาดูเช็กลิสต์ 4 ข้อก่อนบิน (ใช้ได้กับทุกเจ้า) →</span>
       <span class="domain">2 / 4</span>
     </footer>
@@ -565,7 +574,7 @@ ${FONTS_LINK}
 }
 
 // ============================================================================
-// SLIDE 03: PRE-FLIGHT 4-POINT CHECKLIST
+// SLIDE 03: PRE-FLIGHT 4-POINT CHECKLIST (y = 62..1152)
 // ============================================================================
 function buildSlide03({ avatar, bg, piTua }) {
   return `<!doctype html>
@@ -578,119 +587,117 @@ ${FONTS_LINK}
   .bg-photo { object-position: center 20%; }
   .head {
     position: absolute;
-    top: 126px;
-    left: 54px;
-    right: 54px;
+    top: 134px;
+    left: 56px;
+    right: 56px;
   }
   .kicker {
     display: inline-block;
     background: #dff8ef;
     color: #0b7a5b;
     font-family: "Kanit", sans-serif;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 800;
-    padding: 5px 16px;
+    padding: 4px 16px;
     border-radius: 999px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .title {
     font-family: "Kanit", sans-serif;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 900;
     color: #0e2a3a;
-    line-height: 1.16;
+    line-height: 1.15;
   }
   .title span { color: #0fa47a; }
 
   .checklist-board {
     position: absolute;
-    top: 326px;
-    left: 54px;
-    right: 54px;
+    top: 308px;
+    left: 56px;
+    right: 56px;
     background: rgba(255, 255, 255, 0.97);
     border: 2px solid rgba(14, 42, 58, 0.12);
-    border-radius: 28px;
-    padding: 28px 30px;
-    box-shadow: 0 18px 40px rgba(14, 42, 58, 0.10);
+    border-radius: 26px;
+    padding: 22px 26px;
+    box-shadow: 0 14px 34px rgba(14, 42, 58, 0.10);
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 16px;
   }
   .check-row {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
-    padding-bottom: 18px;
+    gap: 16px;
+    padding-bottom: 14px;
     border-bottom: 1.5px dashed rgba(14, 42, 58, 0.14);
   }
-  .check-row:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
+  .check-row:last-child { padding-bottom: 0; border-bottom: none; }
   .check-box {
-    width: 48px; height: 48px; border-radius: 14px;
+    width: 44px; height: 44px; border-radius: 13px;
     background: linear-gradient(135deg, #0fa47a, #15b88a);
     color: #ffffff;
     font-family: "Kanit", sans-serif;
-    font-size: 28px; font-weight: 900;
+    font-size: 26px; font-weight: 900;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; margin-top: 2px;
   }
   .check-title {
     font-family: "Kanit", sans-serif;
-    font-size: 29px;
+    font-size: 27px;
     font-weight: 800;
     color: #0e2a3a;
-    line-height: 1.24;
-    margin-bottom: 4px;
+    line-height: 1.22;
+    margin-bottom: 3px;
   }
   .check-title code {
     font-family: "JetBrains Mono", monospace;
     background: #eef6f4;
     color: #0b7a5b;
-    padding: 1px 10px;
+    padding: 1px 9px;
     border-radius: 8px;
-    font-size: 25px;
+    font-size: 23px;
   }
   .check-desc {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 500;
     color: #365261;
-    line-height: 1.4;
+    line-height: 1.38;
   }
   .check-desc b { color: #0e2a3a; font-weight: 700; }
 
   .tip-strip {
     position: absolute;
-    top: 1056px;
-    left: 54px;
-    width: 720px;
+    top: 944px;
+    left: 56px;
+    width: 726px;
     background: #fff6e0;
     border: 2px solid #e8a13d;
     border-radius: 20px;
-    padding: 20px 24px;
+    padding: 18px 24px;
   }
   .tip-strip strong {
     font-family: "Kanit", sans-serif;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 800;
     color: #8a4d00;
     display: block;
     margin-bottom: 2px;
   }
   .tip-strip span {
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 600;
     color: #4f3a1a;
-    line-height: 1.35;
+    line-height: 1.36;
   }
 
   .pi-corner {
     position: absolute;
-    right: 48px;
-    bottom: 84px;
-    width: 196px;
+    right: 52px;
+    top: 846px;
+    width: 184px;
     filter: drop-shadow(0 12px 18px rgba(14, 42, 58, 0.24));
+    pointer-events: none;
   }
 </style>
 </head>
@@ -745,11 +752,10 @@ ${FONTS_LINK}
       <span>ติดตั้ง eSIM ผ่าน Wi-Fi บ้านก่อนบินให้เสร็จ<br>พร้อมดาวน์โหลดแผนที่ออฟไลน์เผื่อไว้ 1 ชั้น</span>
     </section>
 
-    <img class="pi-corner" src="${piTua}" alt="" data-safe-check="mascot">
+    <img class="pi-corner" src="${piTua}" alt="">
 
-    <footer class="footer-plain" data-safe-check="footer">
+    <footer class="safe-footer" data-safe-check="footer">
       <span class="hint">ปัดขวาดูวิธีเลือกทางที่เหมาะกับทริปคุณ →</span>
-      <span class="domain">3 / 4</span>
     </footer>
   </div>
 </body>
@@ -757,7 +763,7 @@ ${FONTS_LINK}
 }
 
 // ============================================================================
-// SLIDE 04: PRACTICAL OPTIONS + SOFT CLOSING (NO HARD SELL, NO FAKE BUTTON)
+// SLIDE 04: PRACTICAL OPTIONS + SOFT CLOSING (y = 62..1152)
 // ============================================================================
 function buildSlide04({ avatar, bg, simPok }) {
   return `<!doctype html>
@@ -770,60 +776,60 @@ ${FONTS_LINK}
   .bg-photo { object-position: center 45%; }
   .head {
     position: absolute;
-    top: 126px;
-    left: 54px;
-    right: 54px;
+    top: 134px;
+    left: 56px;
+    right: 56px;
   }
   .kicker {
     font-family: "Kanit", sans-serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 800;
     color: #0fa47a;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .title {
     font-family: "Kanit", sans-serif;
-    font-size: 52px;
+    font-size: 50px;
     font-weight: 900;
     color: #0e2a3a;
-    line-height: 1.16;
+    line-height: 1.15;
   }
   .title span { color: #0fa47a; }
 
   .options {
     position: absolute;
-    top: 322px;
-    left: 54px;
-    right: 54px;
+    top: 306px;
+    left: 56px;
+    right: 56px;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 18px;
   }
   .opt-card {
     background: rgba(255, 255, 255, 0.96);
     border: 2px solid rgba(14, 42, 58, 0.11);
-    border-radius: 24px;
-    padding: 26px 28px;
-    box-shadow: 0 10px 26px rgba(14, 42, 58, 0.08);
+    border-radius: 22px;
+    padding: 22px 26px;
+    box-shadow: 0 10px 24px rgba(14, 42, 58, 0.08);
   }
   .opt-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .opt-trip {
     font-family: "Kanit", sans-serif;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 800;
     color: #0e2a3a;
   }
   .opt-tag {
     font-family: "Kanit", sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 800;
-    padding: 5px 15px;
+    padding: 4px 14px;
     border-radius: 999px;
     flex-shrink: 0;
   }
@@ -831,57 +837,57 @@ ${FONTS_LINK}
   .tag-amber { background: #fff0d1; color: #8c5200; }
   .tag-navy  { background: #e3edf3; color: #0e2a3a; }
   .opt-desc {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 500;
     color: #34505f;
-    line-height: 1.42;
+    line-height: 1.4;
   }
   .opt-desc b { color: #0e2a3a; font-weight: 700; }
 
   .closing-card {
     position: absolute;
-    top: 868px;
-    left: 54px;
-    right: 54px;
+    top: 816px;
+    left: 56px;
+    right: 56px;
     background: #0e2a3a;
-    border-radius: 28px;
-    padding: 28px 215px 28px 32px;
+    border-radius: 26px;
+    padding: 24px 206px 24px 28px;
     color: #ffffff;
-    box-shadow: 0 18px 36px rgba(14, 42, 58, 0.24);
+    box-shadow: 0 16px 34px rgba(14, 42, 58, 0.24);
   }
   .closing-save {
     font-family: "Kanit", sans-serif;
-    font-size: 32px;
+    font-size: 31px;
     font-weight: 900;
     color: #ffd166;
     line-height: 1.24;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .closing-text {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 500;
     color: #e4f2f7;
-    line-height: 1.45;
+    line-height: 1.42;
   }
   .closing-text b { color: #6ef7ca; font-weight: 700; }
   .closing-url {
-    margin-top: 12px;
+    margin-top: 10px;
     font-family: "JetBrains Mono", monospace;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 800;
     color: #8bf7d2;
   }
   .closing-note {
     margin-top: 6px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.72);
   }
   .simpok-sticker {
     position: absolute;
-    right: 26px;
-    bottom: 14px;
-    width: 172px;
+    right: 24px;
+    bottom: 12px;
+    width: 166px;
     filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.34));
   }
 </style>
@@ -932,7 +938,7 @@ ${FONTS_LINK}
       <img class="simpok-sticker" src="${simPok}" alt="">
     </section>
 
-    <footer class="footer-plain" data-safe-check="footer">
+    <footer class="safe-footer" data-safe-check="footer">
       <span class="hint">ติดตาม @simpainai อัปเดตข่าวซิมเที่ยวแบบตรงไปตรงมา</span>
       <span class="domain">4 / 4</span>
     </footer>
@@ -960,6 +966,7 @@ async function main() {
 
   const { chromium } = require(DEFAULT_PLAYWRIGHT_PATH);
   const browser = await chromium.launch({ headless: true });
+  let failed = false;
   try {
     const context = await browser.newContext({
       viewport: { width: 1080, height: 1350 },
@@ -991,12 +998,13 @@ async function main() {
       const dest = join(OUT_DIR, job.file);
       await page.screenshot({ path: dest, type: 'png', fullPage: false });
       const safeOk =
-        audit.minTop >= 40 &&
-        audit.maxBottom <= 1315 &&
-        audit.minLeft >= 40 &&
-        audit.maxRight <= 1040;
+        audit.minTop >= 60 &&
+        audit.maxBottom <= 1160 &&
+        audit.minLeft >= 54 &&
+        audit.maxRight <= 1026;
+      if (!safeOk) failed = true;
       console.log(
-        `[news-whatsapp-esim] ${job.file} | bounds y=${audit.minTop}..${audit.maxBottom}, x=${audit.minLeft}..${audit.maxRight} | ${safeOk ? 'PASS' : 'CHECK'}`
+        `[news-whatsapp-esim] ${job.file} | bounds y=${audit.minTop}..${audit.maxBottom}, x=${audit.minLeft}..${audit.maxRight} | ${safeOk ? 'PASS (y=60..1160)' : 'FAIL'}`
       );
       for (const c of audit.checked) {
         console.log(`   - ${c.name}: y=${c.top}..${c.bottom} x=${c.left}..${c.right}`);
@@ -1005,6 +1013,7 @@ async function main() {
   } finally {
     await browser.close();
   }
+  if (failed) process.exit(1);
 }
 
 main().catch((err) => {

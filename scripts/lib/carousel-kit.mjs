@@ -1,17 +1,17 @@
 /**
- * SimPaiNai Reusable Carousel Rendering Kit (1080x1920 PNG)
+ * SimPaiNai Reusable Carousel Rendering Kit
  * Brand Tokens:
  *   - Aviation Navy:  #0e2a3a
  *   - Signal Emerald: #0fa47a (highlight #4ef2be)
  *   - Boarding Amber: #e8a13d (highlight #ffd166)
  *   - Ticket Paper:   #f4f6f5
  *
- * Safe Zones (TikTok / Reels mobile UI):
- *   - Top header starts >= 112px
- *   - Right rail reserved >= 96px..120px in lower-mid interactive zone
- *   - Bottom critical content / CTA / Coupon ends:
- *       Style A: y <= 1440px
- *       Style B: y <= 1480px
+ * Real-Device Mobile Safe Zones (Verified iPhone 15 Pro Max, 2026-11-27):
+ *   - Feed 4:5 (1080x1350 — REQUIRED for FB/IG Feed, Carousels & Feed Ads):
+ *       All critical text, prices, coupons, URLs inside y = 60..1160, x = 54..1026
+ *       Bottom 190px (y = 1160..1350) reserved for clean scenery only
+ *   - Vertical 9:16 (1080x1920 — Reels/Stories/TikTok Video ONLY):
+ *       All critical text inside y = 320..1440 (Meta Reels Ads: y = 269..1248, x = 65..1015)
  */
 import { createRequire } from 'node:module';
 import { mkdirSync, readFileSync, existsSync } from 'node:fs';

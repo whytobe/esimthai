@@ -4,6 +4,9 @@
  * Style: Style A — Editorial Magazine Full-Bleed
  * Topic: "จีนต่อฮ่องกง? เช็ก 2 พื้นที่ก่อนกดซื้อซิม" (China + Hong Kong + Macau)
  * Source of truth: src/content/blog/esim-china-hong-kong-macau.md (verified 2026-11-27)
+ * Strict Real-Device Mobile Safe Zone (iPhone 15 Pro Max):
+ *   - ALL critical text/cards/coupons/URLs/navigation inside y = 60..1160, x = 54..1026
+ *   - Bottom 190px (y = 1160..1350) free of critical text for FB/TikTok fullscreen chrome
  * Output: assets/carousels/angle-f-china-hk-macau/slide-01.png .. slide-04.png
  */
 import { createRequire } from 'node:module';
@@ -48,63 +51,64 @@ const SHARED_CSS = `
   }
   .mag-frame {
     position: absolute;
-    inset: 22px;
-    border: 1.5px solid rgba(255, 255, 255, 0.16);
+    inset: 24px;
+    border: 1.5px solid rgba(255, 255, 255, 0.14);
     border-radius: 30px;
     pointer-events: none;
   }
   .masthead {
     position: absolute;
-    top: 46px;
-    left: 54px;
-    right: 54px;
+    top: 62px;
+    left: 56px;
+    right: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 14px;
+    padding-bottom: 12px;
     border-bottom: 1.5px solid rgba(255, 255, 255, 0.22);
   }
   .brand-lockup { display: flex; align-items: center; gap: 12px; }
   .brand-avatar {
-    width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+    width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
     border: 2.5px solid #4ef2be;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
   }
   .brand-text { display: flex; flex-direction: column; gap: 1px; }
   .brand-name {
-    font-family: "Kanit", sans-serif; font-size: 23px; font-weight: 800;
+    font-family: "Kanit", sans-serif; font-size: 22px; font-weight: 800;
     color: #ffffff; line-height: 1.08;
     text-shadow: 0 2px 8px rgba(0,0,0,0.65);
   }
   .brand-issue {
-    font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 700;
-    color: #ffd166; letter-spacing: 1.5px; text-transform: uppercase;
+    font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 700;
+    color: #ffd166; letter-spacing: 1.4px; text-transform: uppercase;
   }
   .page-pill {
-    font-family: "JetBrains Mono", monospace; font-size: 19px; font-weight: 800;
+    font-family: "JetBrains Mono", monospace; font-size: 18px; font-weight: 800;
     color: #e9fff7; background: rgba(14, 42, 58, 0.78);
     backdrop-filter: blur(10px);
     border: 1.5px solid rgba(78, 242, 190, 0.5);
-    padding: 6px 18px; border-radius: 999px;
+    padding: 5px 16px; border-radius: 999px;
   }
-  .footer-plain {
+  /* Placed strictly inside y <= 1160 so bottom 190px stays clear of mobile fullscreen chrome */
+  .safe-footer {
     position: absolute;
-    left: 54px;
-    right: 54px;
-    bottom: 48px;
+    left: 56px;
+    right: 56px;
+    top: 1122px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: "Kanit", sans-serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 700;
     color: #e8f8f3;
     text-shadow: 0 2px 10px rgba(4, 14, 22, 0.9);
   }
-  .footer-plain .accent { color: #ffd166; }
-  .footer-plain .domain {
+  .safe-footer .accent { color: #ffd166; }
+  .safe-footer .domain {
     font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 800;
     color: #8bf7d2;
   }
@@ -124,7 +128,7 @@ function mastheadHtml(avatar, issue, pageNum) {
 }
 
 // ============================================================================
-// SLIDE 01: EDITORIAL FULL-BLEED COVER (Hong Kong + China + Macau + Duo)
+// SLIDE 01: EDITORIAL FULL-BLEED COVER (All critical text in y = 62..1152)
 // ============================================================================
 function buildSlide01({ avatar, coverBg }) {
   return `<!doctype html>
@@ -134,135 +138,128 @@ function buildSlide01({ avatar, coverBg }) {
 ${FONTS_LINK}
 <style>
   ${SHARED_CSS}
-  .bg-photo { object-position: center 52%; }
+  .bg-photo { object-position: center 46%; }
   .scrim-top {
-    position: absolute; top: 0; left: 0; right: 0; height: 610px;
+    position: absolute; top: 0; left: 0; right: 0; height: 590px;
     background: linear-gradient(
       180deg,
       rgba(7, 20, 31, 0.92) 0%,
-      rgba(9, 27, 42, 0.78) 54%,
-      rgba(11, 31, 45, 0.16) 84%,
+      rgba(9, 27, 42, 0.78) 56%,
+      rgba(11, 31, 45, 0.14) 84%,
       rgba(11, 31, 45, 0) 100%
     );
   }
   .scrim-bottom {
-    position: absolute; left: 0; right: 0; bottom: 0; height: 290px;
+    position: absolute; left: 0; right: 0; bottom: 0; height: 390px;
     background: linear-gradient(
       0deg,
-      rgba(6, 17, 26, 0.94) 0%,
-      rgba(8, 22, 34, 0.62) 55%,
+      rgba(6, 17, 26, 0.88) 0%,
+      rgba(8, 22, 34, 0.56) 52%,
       rgba(10, 26, 39, 0) 100%
     );
   }
   .hero {
     position: absolute;
-    top: 128px;
-    left: 54px;
-    right: 54px;
+    top: 136px;
+    left: 56px;
+    right: 56px;
   }
   .kicker-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 14px; margin-bottom: 12px;
   }
   .kicker-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center;
     background: linear-gradient(95deg, #e8a13d, #f5b951);
-    color: #0b1f2d;
-    font-family: "Kanit", sans-serif;
-    font-size: 23px;
-    font-weight: 800;
-    padding: 6px 20px;
-    border-radius: 999px;
-    box-shadow: 0 6px 18px rgba(232, 161, 61, 0.36);
+    color: #0b1f2d; font-family: "Kanit", sans-serif;
+    font-size: 22px; font-weight: 800; padding: 5px 18px; border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(232, 161, 61, 0.36);
   }
   .kicker-route {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
-    font-weight: 800;
-    color: #9bf9da;
-    letter-spacing: 1.4px;
+    font-family: "JetBrains Mono", monospace; font-size: 17px; font-weight: 800;
+    color: #9bf9da; letter-spacing: 1.4px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   }
   .headline-top {
-    font-family: "Kanit", sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1.12;
+    font-family: "Kanit", sans-serif; font-size: 62px; font-weight: 900;
+    color: #ffffff; line-height: 1.12;
     text-shadow: 0 4px 18px rgba(5, 14, 22, 0.92);
   }
   .headline-mega {
-    font-family: "Kanit", sans-serif;
-    font-size: 98px;
-    font-weight: 900;
-    line-height: 1.08;
-    letter-spacing: -1.2px;
-    color: #ffd166;
-    -webkit-text-stroke: 3px #081a26;
-    paint-order: stroke fill;
+    font-family: "Kanit", sans-serif; font-size: 94px; font-weight: 900;
+    line-height: 1.08; letter-spacing: -1.2px; color: #ffd166;
+    -webkit-text-stroke: 3px #081a26; paint-order: stroke fill;
     text-shadow: 0 10px 24px rgba(4, 12, 20, 0.92), 0 4px 0 #081a26;
-    margin-top: 2px;
   }
   .headline-bar {
-    margin-top: 12px;
-    display: inline-flex;
-    align-items: center;
+    margin-top: 10px; display: inline-flex; align-items: center;
     background: linear-gradient(95deg, #0fa47a 0%, #10b981 100%);
-    color: #ffffff;
-    font-family: "Kanit", sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    padding: 10px 24px;
-    border-radius: 16px;
+    color: #ffffff; font-family: "Kanit", sans-serif;
+    font-size: 35px; font-weight: 800; padding: 9px 22px; border-radius: 15px;
     box-shadow: 0 10px 24px rgba(15, 164, 122, 0.42), 0 0 0 1.5px rgba(255,255,255,0.22) inset;
   }
   .sub-line {
-    margin-top: 12px;
-    font-family: "Anuphan", sans-serif;
-    font-size: 25px;
-    font-weight: 700;
-    color: #edf8fb;
+    margin-top: 10px; font-family: "Anuphan", sans-serif;
+    font-size: 24px; font-weight: 700; color: #edf8fb;
     text-shadow: 0 2px 12px rgba(4, 14, 22, 0.95);
   }
 
+  /* Compact info bar tucked neatly at y=1024..1152 (above bottom 190px UI overlay, below mascot faces) */
   .bottom-teaser {
     position: absolute;
-    left: 54px;
-    right: 54px;
-    bottom: 102px;
-    background: rgba(10, 31, 45, 0.88);
+    left: 56px;
+    right: 56px;
+    top: 1012px;
+    background: rgba(10, 31, 45, 0.90);
     backdrop-filter: blur(14px);
     border: 1.6px solid rgba(78, 242, 190, 0.55);
     border-radius: 20px;
-    padding: 16px 24px;
+    padding: 15px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.44);
+  }
+  .teaser-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.44);
+    gap: 14px;
   }
   .teaser-left {
     font-family: "Kanit", sans-serif;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
     color: #ffffff;
-    line-height: 1.28;
+    line-height: 1.24;
   }
   .teaser-left b { color: #ffd166; }
   .teaser-tag {
     font-family: "JetBrains Mono", monospace;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     color: #9bf9da;
     background: rgba(110, 247, 202, 0.12);
     border: 1.5px solid rgba(110, 247, 202, 0.45);
-    padding: 8px 16px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 10px;
     flex-shrink: 0;
+  }
+  .teaser-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.22);
+    font-family: "Kanit", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffd166;
+  }
+  .teaser-foot .dom {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    font-weight: 800;
+    color: #8bf7d2;
   }
 </style>
 </head>
@@ -286,21 +283,22 @@ ${FONTS_LINK}
     </section>
 
     <section class="bottom-teaser" data-safe-check="teaser">
-      <div class="teaser-left">เทียบจริง <b>Airalo · Vacay · SIM2Fly · True GO</b><br>ใบเดียวจบ ไม่ต้องสลับซิม</div>
-      <div class="teaser-tag">อัปเดต 27 พ.ย. 69</div>
+      <div class="teaser-top">
+        <div class="teaser-left">เทียบจริง <b>Airalo · Vacay · SIM2Fly · True GO</b><br>แพ็กเดียวจบ ข้ามด่านไม่ต้องสลับซิม</div>
+        <div class="teaser-tag">อัปเดต 27 พ.ย. 69</div>
+      </div>
+      <div class="teaser-foot">
+        <span>ปัดขวาดูจุดพลาด + เทียบราคา 4 ตัวเลือกจริง →</span>
+        <span class="dom">esim.whytobe.com</span>
+      </div>
     </section>
-
-    <footer class="footer-plain" data-safe-check="footer">
-      <span class="accent">ปัดขวาดูจุดพลาด + เทียบราคา 4 ตัวเลือกจริง →</span>
-      <span class="domain">esim.whytobe.com</span>
-    </footer>
   </div>
 </body>
 </html>`;
 }
 
 // ============================================================================
-// SLIDE 02: WHY SINGLE-COUNTRY SIM DROPS AT THE BORDER
+// SLIDE 02: WHY SINGLE-COUNTRY SIM DROPS AT THE BORDER (y = 62..1152)
 // ============================================================================
 function buildSlide02({ avatar, contentBg }) {
   return `<!doctype html>
@@ -316,43 +314,43 @@ ${FONTS_LINK}
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(8, 22, 34, 0.90) 0%,
-      rgba(9, 26, 40, 0.82) 55%,
-      rgba(7, 19, 29, 0.94) 100%
+      rgba(8, 22, 34, 0.92) 0%,
+      rgba(9, 26, 40, 0.84) 55%,
+      rgba(7, 19, 29, 0.90) 100%
     );
   }
   .head {
     position: absolute;
-    top: 128px;
-    left: 54px;
-    right: 54px;
+    top: 134px;
+    left: 56px;
+    right: 56px;
   }
   .kicker {
     font-family: "Kanit", sans-serif;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 800;
     color: #ffd166;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .title {
     font-family: "Kanit", sans-serif;
-    font-size: 54px;
+    font-size: 50px;
     font-weight: 900;
     color: #ffffff;
-    line-height: 1.15;
+    line-height: 1.14;
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
   }
   .title span { color: #6ef7ca; }
 
   .route-strip {
     position: absolute;
-    top: 320px;
-    left: 54px;
-    right: 54px;
+    top: 304px;
+    left: 56px;
+    right: 56px;
     background: rgba(14, 42, 58, 0.90);
     border: 1.8px solid rgba(78, 242, 190, 0.45);
-    border-radius: 22px;
-    padding: 20px 24px;
+    border-radius: 20px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -361,111 +359,76 @@ ${FONTS_LINK}
   .route-node {
     flex: 1;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 14px 12px;
+    border-radius: 14px;
+    padding: 12px 10px;
     text-align: center;
   }
   .node-code {
     font-family: "JetBrains Mono", monospace;
-    font-size: 16px;
-    font-weight: 800;
-    color: #ffd166;
-    margin-bottom: 4px;
+    font-size: 15px; font-weight: 800; color: #ffd166; margin-bottom: 3px;
   }
   .node-name {
     font-family: "Kanit", sans-serif;
-    font-size: 25px;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.2;
+    font-size: 23px; font-weight: 800; color: #ffffff; line-height: 1.18;
   }
-  .node-sub {
-    font-size: 16px;
-    font-weight: 600;
-    color: #b7d7e3;
-    margin-top: 2px;
-  }
+  .node-sub { font-size: 15px; font-weight: 600; color: #b7d7e3; margin-top: 2px; }
   .route-arrow {
     font-family: "Kanit", sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    color: #6ef7ca;
-    flex-shrink: 0;
+    font-size: 28px; font-weight: 900; color: #6ef7ca; flex-shrink: 0;
   }
 
   .compare-stack {
     position: absolute;
-    top: 496px;
-    left: 54px;
-    right: 54px;
+    top: 454px;
+    left: 56px;
+    right: 56px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
   }
   .warn-card {
     background: rgba(45, 19, 25, 0.90);
     border: 2px solid rgba(255, 114, 114, 0.65);
-    border-radius: 24px;
-    padding: 24px 28px;
+    border-radius: 22px;
+    padding: 20px 26px;
   }
   .ok-card {
     background: rgba(11, 47, 46, 0.92);
     border: 2px solid rgba(78, 242, 190, 0.68);
-    border-radius: 24px;
-    padding: 24px 28px;
+    border-radius: 22px;
+    padding: 20px 26px;
   }
   .card-badge {
     display: inline-block;
     font-family: "Kanit", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    padding: 4px 15px;
-    border-radius: 999px;
-    margin-bottom: 10px;
+    font-size: 19px; font-weight: 800;
+    padding: 3px 14px; border-radius: 999px; margin-bottom: 8px;
   }
   .badge-red { background: #ff6b6b; color: #1f080a; }
   .badge-green { background: #4ef2be; color: #07221b; }
   .card-h {
     font-family: "Kanit", sans-serif;
-    font-size: 30px;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.25;
-    margin-bottom: 8px;
+    font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.24; margin-bottom: 6px;
   }
-  .card-p {
-    font-size: 22px;
-    font-weight: 500;
-    color: #e6f2f5;
-    line-height: 1.44;
-  }
+  .card-p { font-size: 21px; font-weight: 500; color: #e6f2f5; line-height: 1.4; }
   .card-p b { color: #ffd166; font-weight: 700; }
 
   .rule-box {
     position: absolute;
-    top: 1054px;
-    left: 54px;
-    right: 54px;
+    top: 960px;
+    left: 56px;
+    right: 56px;
     background: rgba(255, 255, 255, 0.96);
     border-left: 10px solid #e8a13d;
     border-radius: 20px;
-    padding: 20px 24px;
+    padding: 18px 24px;
     color: #0e2a3a;
   }
   .rule-box strong {
     font-family: "Kanit", sans-serif;
-    font-size: 23px;
-    font-weight: 800;
-    color: #0e2a3a;
-    display: block;
-    margin-bottom: 3px;
+    font-size: 22px; font-weight: 800; color: #0e2a3a; display: block; margin-bottom: 3px;
   }
-  .rule-box span {
-    font-size: 20px;
-    font-weight: 600;
-    color: #304b59;
-    line-height: 1.38;
-  }
+  .rule-box span { font-size: 20px; font-weight: 600; color: #304b59; line-height: 1.38; }
 </style>
 </head>
 <body>
@@ -519,7 +482,7 @@ ${FONTS_LINK}
       <span>ใช้งานได้ไม่ต้องลง VPN แยก <b>เฉพาะแพ็กโรมมิ่งที่รองรับ</b><br>และห้ามต่อ Wi-Fi โรงแรมฝั่งจีน (Wi-Fi ท้องถิ่นติดบล็อก)</span>
     </section>
 
-    <footer class="footer-plain" data-safe-check="footer">
+    <footer class="safe-footer" data-safe-check="footer">
       <span class="accent">ปัดขวาดูตารางเทียบราคาจริง 4 ตัวเลือก (อัปเดต 27 พ.ย. 69) →</span>
       <span class="domain">2 / 4</span>
     </footer>
@@ -529,7 +492,7 @@ ${FONTS_LINK}
 }
 
 // ============================================================================
-// SLIDE 03: REAL 4-OPTION COMPARISON TABLE (VERIFIED 2026-11-27)
+// SLIDE 03: REAL 4-OPTION COMPARISON TABLE (y = 62..1152)
 // ============================================================================
 function buildSlide03({ avatar, contentBg }) {
   return `<!doctype html>
@@ -547,131 +510,93 @@ ${FONTS_LINK}
       180deg,
       rgba(8, 22, 34, 0.92) 0%,
       rgba(10, 28, 42, 0.86) 55%,
-      rgba(7, 19, 29, 0.95) 100%
+      rgba(7, 19, 29, 0.92) 100%
     );
   }
   .head {
     position: absolute;
-    top: 124px;
-    left: 54px;
-    right: 54px;
+    top: 132px;
+    left: 56px;
+    right: 56px;
   }
   .kicker {
     font-family: "Kanit", sans-serif;
-    font-size: 21px;
-    font-weight: 800;
-    color: #ffd166;
-    margin-bottom: 4px;
+    font-size: 20px; font-weight: 800; color: #ffd166; margin-bottom: 4px;
   }
   .title {
     font-family: "Kanit", sans-serif;
-    font-size: 50px;
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1.15;
+    font-size: 48px; font-weight: 900; color: #ffffff; line-height: 1.14;
   }
   .title span { color: #6ef7ca; }
 
   .table-list {
     position: absolute;
-    top: 264px;
-    left: 54px;
-    right: 54px;
+    top: 248px;
+    left: 56px;
+    right: 56px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
   }
   .plan-row {
     background: rgba(255, 255, 255, 0.96);
-    border-radius: 22px;
-    padding: 26px 26px;
+    border-radius: 20px;
+    padding: 20px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 18px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+    gap: 16px;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
     border-left: 10px solid #0fa47a;
   }
   .plan-row.amber { border-left-color: #e8a13d; }
   .plan-row.navy { border-left-color: #2c6e8f; }
   .plan-left { flex: 1; }
   .plan-name-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 5px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px;
   }
   .plan-name {
-    font-family: "Kanit", sans-serif;
-    font-size: 29px;
-    font-weight: 900;
-    color: #0e2a3a;
-    line-height: 1.15;
+    font-family: "Kanit", sans-serif; font-size: 28px; font-weight: 900; color: #0e2a3a; line-height: 1.15;
   }
   .plan-pill {
-    font-family: "Kanit", sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    padding: 3px 12px;
-    border-radius: 999px;
+    font-family: "Kanit", sans-serif; font-size: 15px; font-weight: 800;
+    padding: 3px 11px; border-radius: 999px;
   }
   .p-green { background: #dff8ef; color: #0b7a5b; }
   .p-amber { background: #fff0d1; color: #8c5200; }
   .p-blue  { background: #e3eff7; color: #195370; }
-  .plan-detail {
-    font-size: 20px;
-    font-weight: 600;
-    color: #2f4b5a;
-    line-height: 1.38;
-  }
+  .plan-detail { font-size: 19px; font-weight: 600; color: #2f4b5a; line-height: 1.38; }
   .plan-detail b { color: #0e2a3a; font-weight: 700; }
   .plan-detail code {
     font-family: "JetBrains Mono", monospace;
-    background: #0e2a3a;
-    color: #ffd166;
-    font-size: 17px;
-    font-weight: 800;
-    padding: 2px 8px;
-    border-radius: 6px;
+    background: #0e2a3a; color: #ffd166;
+    font-size: 16px; font-weight: 800; padding: 2px 7px; border-radius: 6px;
   }
 
   .plan-right {
-    text-align: right;
-    flex-shrink: 0;
-    min-width: 225px;
-    border-left: 1.5px dashed rgba(14, 42, 58, 0.16);
-    padding-left: 18px;
+    text-align: right; flex-shrink: 0; min-width: 218px;
+    border-left: 1.5px dashed rgba(14, 42, 58, 0.16); padding-left: 16px;
   }
   .price-main {
-    font-family: "Kanit", sans-serif;
-    font-size: 40px;
-    font-weight: 900;
-    color: #0b7a5b;
-    line-height: 1.05;
+    font-family: "Kanit", sans-serif; font-size: 38px; font-weight: 900; color: #0b7a5b; line-height: 1.05;
   }
   .price-main.amber-txt { color: #b56500; }
   .price-main.navy-txt { color: #0e2a3a; }
   .price-sub {
-    font-family: "Kanit", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #4b6675;
-    margin-top: 3px;
-    line-height: 1.25;
+    font-family: "Kanit", sans-serif; font-size: 17px; font-weight: 700; color: #4b6675; margin-top: 3px; line-height: 1.24;
   }
   .price-sub s { color: #8ea3ae; margin-right: 4px; }
 
   .footnote {
     position: absolute;
-    top: 1096px;
-    left: 54px;
-    right: 54px;
-    background: rgba(14, 42, 58, 0.88);
+    top: 982px;
+    left: 56px;
+    right: 56px;
+    background: rgba(14, 42, 58, 0.90);
     border: 1.5px solid rgba(255, 209, 102, 0.45);
     border-radius: 18px;
-    padding: 18px 24px;
-    font-size: 20px;
+    padding: 16px 22px;
+    font-size: 19px;
     font-weight: 600;
     color: #e9f5f9;
     line-height: 1.4;
@@ -753,7 +678,7 @@ ${FONTS_LINK}
       <b>เทียบให้เห็นชัด:</b> ซื้อ eSIM แยก 2 ใบ (HK 3GB + จีน 3GB) รวม <b>฿664.50</b><br>กรุณาเช็กราคาและรายชื่อพื้นที่รองรับล่าสุดหน้าแพ็กก่อนชำระเงินทุกครั้ง
     </section>
 
-    <footer class="footer-plain" data-safe-check="footer">
+    <footer class="safe-footer" data-safe-check="footer">
       <span class="accent">ปัดขวาดู 3 เช็กก่อนข้ามด่าน + สรุปโค้ดส่วนลด →</span>
       <span class="domain">3 / 4</span>
     </footer>
@@ -763,7 +688,7 @@ ${FONTS_LINK}
 }
 
 // ============================================================================
-// SLIDE 04: 3 BORDER CHECKS + PERFORATED COUPON TICKET + PLAIN FOOTER
+// SLIDE 04: 3 BORDER CHECKS + PERFORATED COUPON + PLAIN CTA (y = 62..1152)
 // ============================================================================
 function buildSlide04({ avatar, contentBg, piTua, simPok }) {
   return `<!doctype html>
@@ -781,193 +706,119 @@ ${FONTS_LINK}
       180deg,
       rgba(8, 22, 34, 0.92) 0%,
       rgba(9, 27, 42, 0.85) 56%,
-      rgba(6, 17, 26, 0.96) 100%
+      rgba(6, 17, 26, 0.94) 100%
     );
   }
   .head {
     position: absolute;
-    top: 124px;
-    left: 54px;
-    right: 54px;
+    top: 132px;
+    left: 56px;
+    right: 56px;
   }
   .kicker {
     font-family: "Kanit", sans-serif;
-    font-size: 21px;
-    font-weight: 800;
-    color: #6ef7ca;
-    margin-bottom: 4px;
+    font-size: 20px; font-weight: 800; color: #6ef7ca; margin-bottom: 4px;
   }
   .title {
     font-family: "Kanit", sans-serif;
-    font-size: 50px;
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1.15;
+    font-size: 48px; font-weight: 900; color: #ffffff; line-height: 1.14;
   }
   .title span { color: #ffd166; }
 
   .steps-card {
     position: absolute;
-    top: 266px;
-    left: 54px;
-    right: 54px;
+    top: 250px;
+    left: 56px;
+    right: 56px;
     background: rgba(255, 255, 255, 0.96);
-    border-radius: 26px;
-    padding: 30px 30px;
+    border-radius: 24px;
+    padding: 24px 28px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 18px;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.30);
   }
   .step-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding-bottom: 20px;
-    border-bottom: 1.5px dashed rgba(14, 42, 58, 0.14);
+    display: flex; align-items: flex-start; gap: 16px;
+    padding-bottom: 16px; border-bottom: 1.5px dashed rgba(14, 42, 58, 0.14);
   }
   .step-item:last-child { padding-bottom: 0; border-bottom: none; }
   .step-num {
-    width: 44px; height: 44px; border-radius: 13px;
+    width: 42px; height: 42px; border-radius: 12px;
     background: #0e2a3a; color: #ffd166;
-    font-family: "JetBrains Mono", monospace; font-size: 24px; font-weight: 800;
+    font-family: "JetBrains Mono", monospace; font-size: 23px; font-weight: 800;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; margin-top: 2px;
   }
   .step-h {
-    font-family: "Kanit", sans-serif;
-    font-size: 27px;
-    font-weight: 800;
-    color: #0e2a3a;
-    line-height: 1.24;
-    margin-bottom: 3px;
+    font-family: "Kanit", sans-serif; font-size: 26px; font-weight: 800; color: #0e2a3a; line-height: 1.24; margin-bottom: 2px;
   }
-  .step-p {
-    font-size: 21px;
-    font-weight: 500;
-    color: #324f5e;
-    line-height: 1.38;
-  }
+  .step-p { font-size: 20px; font-weight: 500; color: #324f5e; line-height: 1.36; }
   .step-p b { color: #0e2a3a; font-weight: 700; }
 
-  /* Perforated coupon ticket ONLY on Slide 04 */
   .coupon-ticket {
     position: absolute;
-    top: 760px;
-    left: 54px;
-    right: 54px;
+    top: 686px;
+    left: 56px;
+    right: 56px;
     background: linear-gradient(135deg, #0d3347 0%, #12445c 100%);
     border: 2px solid rgba(78, 242, 190, 0.65);
-    border-radius: 26px;
-    padding: 24px 26px;
+    border-radius: 24px;
+    padding: 22px 26px;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.40);
   }
   .ticket-header {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding-bottom: 14px;
-    padding-right: 190px;
+    display: flex; flex-direction: column; gap: 2px;
+    padding-bottom: 12px; padding-right: 190px;
     border-bottom: 2px dashed rgba(255, 255, 255, 0.26);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .ticket-title {
-    font-family: "Kanit", sans-serif;
-    font-size: 27px;
-    font-weight: 800;
-    color: #ffd166;
-    line-height: 1.2;
+    font-family: "Kanit", sans-serif; font-size: 26px; font-weight: 800; color: #ffd166; line-height: 1.2;
   }
   .ticket-sub {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 15px;
-    font-weight: 700;
-    color: #9bf9da;
-    letter-spacing: 1px;
+    font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 700; color: #9bf9da; letter-spacing: 1px;
   }
-  .code-grid {
-    display: flex;
-    gap: 16px;
-    padding-right: 184px;
-  }
+  .code-grid { display: flex; gap: 14px; padding-right: 184px; }
   .code-box {
-    flex: 1;
-    background: rgba(7, 23, 33, 0.72);
+    flex: 1; background: rgba(7, 23, 33, 0.72);
     border: 1.5px solid rgba(255, 255, 255, 0.18);
-    border-radius: 16px;
-    padding: 14px 16px;
+    border-radius: 15px; padding: 12px 15px;
   }
-  .code-brand {
-    font-family: "Kanit", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 4px;
-  }
-  .code-value {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 24px;
-    font-weight: 800;
-    color: #ffd166;
-    letter-spacing: 0.4px;
-  }
-  .code-note {
-    font-size: 17px;
-    font-weight: 600;
-    color: #a9e8d4;
-    margin-top: 3px;
-  }
+  .code-brand { font-family: "Kanit", sans-serif; font-size: 19px; font-weight: 800; color: #ffffff; margin-bottom: 3px; }
+  .code-value { font-family: "JetBrains Mono", monospace; font-size: 23px; font-weight: 800; color: #ffd166; letter-spacing: 0.3px; }
+  .code-note { font-size: 16px; font-weight: 600; color: #a9e8d4; margin-top: 3px; }
 
   .mascots-right {
     position: absolute;
     right: 60px;
-    top: 804px;
-    width: 196px;
-    height: 214px;
+    top: 722px;
+    width: 194px;
+    height: 210px;
     pointer-events: none;
   }
   .m-pi {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 162px;
+    position: absolute; right: 0; bottom: 0; width: 160px;
     filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.42));
   }
   .m-simpok {
-    position: absolute;
-    left: -10px;
-    bottom: 0;
-    width: 98px;
+    position: absolute; left: -10px; bottom: 0; width: 96px;
     filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.42));
   }
 
   .plain-cta {
     position: absolute;
-    top: 1094px;
-    left: 54px;
-    right: 54px;
+    top: 1020px;
+    left: 56px;
+    right: 56px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
   }
-  .cta-main {
-    font-family: "Kanit", sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: #ffffff;
-  }
+  .cta-main { font-family: "Kanit", sans-serif; font-size: 25px; font-weight: 800; color: #ffffff; }
   .cta-main span { color: #6ef7ca; }
-  .cta-url {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 19px;
-    font-weight: 800;
-    color: #ffd166;
-  }
-  .cta-meta {
-    font-size: 17px;
-    font-weight: 500;
-    color: rgba(232, 248, 243, 0.78);
-  }
+  .cta-url { font-family: "JetBrains Mono", monospace; font-size: 18px; font-weight: 800; color: #ffd166; }
+  .cta-meta { font-size: 16px; font-weight: 500; color: rgba(232, 248, 243, 0.80); }
 </style>
 </head>
 <body>
@@ -1027,7 +878,7 @@ ${FONTS_LINK}
       </div>
     </section>
 
-    <div class="mascots-right" data-safe-check="mascots">
+    <div class="mascots-right">
       <img class="m-pi" src="${piTua}" alt="">
       <img class="m-simpok" src="${simPok}" alt="">
     </div>
@@ -1061,6 +912,7 @@ async function main() {
 
   const { chromium } = require(DEFAULT_PLAYWRIGHT_PATH);
   const browser = await chromium.launch({ headless: true });
+  let failed = false;
   try {
     const context = await browser.newContext({
       viewport: { width: 1080, height: 1350 },
@@ -1092,12 +944,13 @@ async function main() {
       const dest = join(OUT_DIR, job.file);
       await page.screenshot({ path: dest, type: 'png', fullPage: false });
       const safeOk =
-        audit.minTop >= 40 &&
-        audit.maxBottom <= 1315 &&
-        audit.minLeft >= 40 &&
-        audit.maxRight <= 1040;
+        audit.minTop >= 60 &&
+        audit.maxBottom <= 1160 &&
+        audit.minLeft >= 54 &&
+        audit.maxRight <= 1026;
+      if (!safeOk) failed = true;
       console.log(
-        `[angle-f-china-hk-macau] ${job.file} | bounds y=${audit.minTop}..${audit.maxBottom}, x=${audit.minLeft}..${audit.maxRight} | ${safeOk ? 'PASS' : 'CHECK'}`
+        `[angle-f-china-hk-macau] ${job.file} | bounds y=${audit.minTop}..${audit.maxBottom}, x=${audit.minLeft}..${audit.maxRight} | ${safeOk ? 'PASS (y=60..1160)' : 'FAIL'}`
       );
       for (const c of audit.checked) {
         console.log(`   - ${c.name}: y=${c.top}..${c.bottom} x=${c.left}..${c.right}`);
@@ -1106,6 +959,7 @@ async function main() {
   } finally {
     await browser.close();
   }
+  if (failed) process.exit(1);
 }
 
 main().catch((err) => {

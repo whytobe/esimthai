@@ -67,7 +67,22 @@ Keep character prompts anchored word-for-word when adding reference images in Go
 - **Social Brand & Travel Campaign Assets:**
   - Avatar (`1024×1024` Mt. Fuji + Sakura + Duo): [simpainai-profile.png](../assets/brand/simpainai-profile.png)
   - Facebook Cover (`1640×924` Panorama Viewpoint + Shinkansen + Mt. Fuji): [simpainai-cover.png](../assets/brand/simpainai-cover.png)
-  - Vertical Travel Invite Creatives (`1080×1920`, EP 1–5): [post-japan-invite.png](../assets/brand/creatives/post-japan-invite.png), [post-seoul-night-invite.png](../assets/brand/creatives/post-seoul-night-invite.png), [post-china-shanghai-invite.png](../assets/brand/creatives/post-china-shanghai-invite.png), [post-preflight-lantern-invite.png](../assets/brand/creatives/post-preflight-lantern-invite.png), [post-japan-ramen-invite.png](../assets/brand/creatives/post-japan-ramen-invite.png)
+  - Vertical Travel Invite Creatives (`1080×1920`, Reels/Stories/TikTok Video): [post-japan-invite.png](../assets/brand/creatives/post-japan-invite.png), [post-seoul-night-invite.png](../assets/brand/creatives/post-seoul-night-invite.png), [post-china-shanghai-invite.png](../assets/brand/creatives/post-china-shanghai-invite.png), [post-preflight-lantern-invite.png](../assets/brand/creatives/post-preflight-lantern-invite.png), [post-japan-ramen-invite.png](../assets/brand/creatives/post-japan-ramen-invite.png)
+  - Feed `4:5` Travel Invite Creatives (`1080×1350`, FB/IG Feed Safe Zone verified): [post-preflight-lantern-invite-4x5.png](../assets/brand/creatives/post-preflight-lantern-invite-4x5.png), [post-japan-ramen-invite-4x5.png](../assets/brand/creatives/post-japan-ramen-invite-4x5.png)
+
+### Aspect Ratio & Real-Device Mobile Safe Zone Rules (Permanent — Verified on iPhone 15 Pro Max, 2026-11-27)
+
+Real-device testing on the Facebook iOS app (iPhone 15 Pro Max) confirmed two hard clipping risks: (1) `9:16` images posted to Feed are center-cropped to `4:5`, slicing off top headlines and bottom cards, and (2) fullscreen photo view overlays page name, caption, and Boost/action chrome across the bottom strip of the image. Every SimPaiNai asset MUST enforce the rules below:
+
+1. **Facebook / Instagram Feed Static Posts, Carousels & Feed Ads:**
+   - **MUST be `4:5` (`1080×1350`) ONLY.** Never publish `9:16` (`1080×1920`) static graphics to Feed.
+   - **Strict Safe Zone (`1080×1350`):** Place **all critical text, headlines, prices, coupons, URLs, and CTA notes inside `y = 60..1160 px` and `x = 54..1026 px`** (left/right margin `>= 54 px`).
+   - **Bottom 190 px (`y = 1160..1350 px`) MUST stay free of critical text** — use only clean background scenery or non-essential lower mascot feet/art so fullscreen FB/TikTok caption overlays never cover readable copy.
+2. **Reels / Stories / TikTok Video (`9:16`, `1080×1920`) ONLY:**
+   - **Strict Safe Zone (`1080×1920`):** Place **all critical text, logos, headlines, mascot faces, prices, and coupons inside `y = 320..1440 px`** (reserve top `320 px` and bottom `480 px` for mobile status/search bars and caption/action overlays).
+   - For **Meta Reels Ads**, follow the even tighter `x = 65..1015 px`, `y = 269..1248 px` box verified by `simpainai-reviewer`.
+3. **Zero Fake Clickable Buttons & Zero Overclaim:**
+   - Never draw pill/button elements that mimic clickable UI buttons; keep closing URLs and prompts as clean editorial text so native platform buttons work cleanly.
 
 ---
 
