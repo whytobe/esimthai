@@ -62,6 +62,7 @@ const canonicalUrl = new URL(
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <link
       href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -95,13 +96,38 @@ const canonicalUrl = new URL(
     </footer>
     <script is:inline>
       (() => {
+        const PIXEL_ID = '1204328895355336';
         const clean = (v) => (v || '').trim().replace(/[^a-zA-Z0-9._-]/g, '-').slice(0, 32);
         const params = new URLSearchParams(window.location.search);
-        const parts = [
-          clean(params.get('utm_source')),
-          clean(params.get('utm_campaign')),
-          clean(params.get('utm_content')),
-        ].filter(Boolean);
+        const utmFromUrl = {
+          utm_source: clean(params.get('utm_source')),
+          utm_medium: clean(params.get('utm_medium')),
+          utm_campaign: clean(params.get('utm_campaign')),
+          utm_content: clean(params.get('utm_content')),
+        };
+        const hasUrlUtm = Boolean(
+          utmFromUrl.utm_source || utmFromUrl.utm_campaign || utmFromUrl.utm_content
+        );
+
+        let utm = utmFromUrl;
+        try {
+          if (hasUrlUtm) {
+            window.sessionStorage.setItem('spn_utm', JSON.stringify(utmFromUrl));
+          } else {
+            const saved = window.sessionStorage.getItem('spn_utm');
+            if (saved) {
+              const parsed = JSON.parse(saved);
+              utm = {
+                utm_source: clean(parsed.utm_source),
+                utm_medium: clean(parsed.utm_medium),
+                utm_campaign: clean(parsed.utm_campaign),
+                utm_content: clean(parsed.utm_content),
+              };
+            }
+          }
+        } catch {}
+
+        const parts = [utm.utm_source, utm.utm_campaign, utm.utm_content].filter(Boolean);
         let attrTag = parts.join('__').slice(0, 64);
         try {
           if (attrTag) {
@@ -110,6 +136,40 @@ const canonicalUrl = new URL(
             attrTag = window.sessionStorage.getItem('spn_attr') || '';
           }
         } catch {}
+
+        // Meta Pixel (SimPaiNai Web) loaded asynchronously near footer
+        if (!window.fbq) {
+          const n = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!window._fbq) window._fbq = n;
+          n.push = n;
+          n.loaded = true;
+          n.version = '2.0';
+          n.queue = [];
+          window.fbq = n;
+          const t = document.createElement('script');
+          t.async = true;
+          t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+          const s = document.getElementsByTagName('script')[0];
+          if (s && s.parentNode) {
+            s.parentNode.insertBefore(t, s);
+          } else {
+            document.head.appendChild(t);
+          }
+        }
+        window.fbq('init', PIXEL_ID);
+        window.fbq('track', 'PageView');
+
+        const detectPartner = (hostname) => {
+          const host = hostname.toLowerCase();
+          if (host === 'airalo.pxf.io') return 'airalo';
+          if (host === 'esim.vacay.asia' || host.endsWith('.vacay.asia')) return 'vacay';
+          if (host === 'tp.media' || host.endsWith('.tp.media')) return 'travelpayouts';
+          if (host === 'saily.com' || host.endsWith('.saily.com')) return 'saily';
+          if (host === 'klook.com' || host.endsWith('.klook.com')) return 'klook';
+          return '';
+        };
 
         const applySubId3 = (anchor) => {
           if (!attrTag || !(anchor instanceof HTMLAnchorElement)) return;
@@ -128,7 +188,28 @@ const canonicalUrl = new URL(
 
         document.addEventListener('click', (event) => {
           const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
-          if (anchor) applySubId3(anchor);
+          if (anchor instanceof HTMLAnchorElement) {
+            applySubId3(anchor);
+            try {
+              const url = new URL(anchor.href);
+              const partner = detectPartner(url.hostname);
+              if (partner && typeof window.fbq === 'function') {
+                const payload = {
+                  partner,
+                  page_path: window.location.pathname,
+                };
+                if (utm.utm_source) payload.utm_source = utm.utm_source;
+                if (utm.utm_medium) payload.utm_medium = utm.utm_medium;
+                if (utm.utm_campaign) payload.utm_campaign = utm.utm_campaign;
+                if (utm.utm_content) payload.utm_content = utm.utm_content;
+                const subId1 = url.searchParams.get('subId1');
+                const subId2 = url.searchParams.get('subId2');
+                if (subId1) payload.sub_id1 = subId1;
+                if (subId2) payload.sub_id2 = subId2;
+                window.fbq('trackCustom', 'OutboundAffiliateClick', payload);
+              }
+            } catch {}
+          }
 
           const btn = event.target instanceof Element ? event.target.closest('[data-copy]') : null;
           if (!btn) return;
@@ -147,6 +228,15 @@ const canonicalUrl = new URL(
         });
       })();
     </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        alt=""
+        src="https://www.facebook.com/tr?id=1204328895355336&ev=PageView&noscript=1"
+      />
+    </noscript>
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
