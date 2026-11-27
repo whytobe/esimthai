@@ -87,6 +87,7 @@ const canonicalUrl = new URL(
         </p>
       </div>
     </footer>
+    <span class="visually-hidden" role="status" aria-live="polite" data-copy-live></span>
     <script is:inline>
       (() => {
         const PIXEL_ID = '1204328895355336';
@@ -179,10 +180,19 @@ const canonicalUrl = new URL(
           document.querySelectorAll('a[href*="airalo.pxf.io"]').forEach(applySubId3);
         }
 
+        const liveRegion = document.querySelector('[data-copy-live]');
+        const announceCopy = (code) => {
+          if (liveRegion) liveRegion.textContent = `คัดลอกโค้ด ${code} แล้ว`;
+        };
+
         document.addEventListener('click', (event) => {
           const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
           if (anchor instanceof HTMLAnchorElement) {
             applySubId3(anchor);
+            const autoCode = anchor.getAttribute('data-autocopy');
+            if (autoCode && navigator.clipboard) {
+              navigator.clipboard.writeText(autoCode).then(() => announceCopy(autoCode)).catch(() => {});
+            }
             try {
               const url = new URL(anchor.href);
               const partner = clean(anchor.dataset.partner || '') || detectPartner(url.hostname);
@@ -213,12 +223,48 @@ const canonicalUrl = new URL(
             .writeText(value)
             .then(() => {
               btn.textContent = 'คัดลอกแล้ว';
+              announceCopy(value);
               window.setTimeout(() => {
                 btn.textContent = original;
               }, 1800);
             })
             .catch(() => {});
         });
+
+        // Sticky mobile CTA bar: reveal only when scrolled past QuickPick and bottom TicketCta is offscreen
+        const stickyBar = document.querySelector('[data-sticky-cta]');
+        const quickPick = document.querySelector('.quick-pick');
+        const bottomTicket = document.querySelector('.ticket');
+        if (stickyBar && quickPick && 'IntersectionObserver' in window) {
+          let passedTop = false;
+          let bottomVisible = false;
+          const syncSticky = () => {
+            stickyBar.hidden = !(passedTop && !bottomVisible);
+          };
+          const topObserver = new IntersectionObserver(
+            (entries) => {
+              const entry = entries[0];
+              if (!entry) return;
+              passedTop = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
+              syncSticky();
+            },
+            { threshold: 0 }
+          );
+          topObserver.observe(quickPick);
+
+          if (bottomTicket) {
+            const bottomObserver = new IntersectionObserver(
+              (entries) => {
+                const entry = entries[0];
+                if (!entry) return;
+                bottomVisible = entry.isIntersecting;
+                syncSticky();
+              },
+              { threshold: 0 }
+            );
+            bottomObserver.observe(bottomTicket);
+          }
+        }
       })();
     </script>
     <noscript>

@@ -1,5 +1,5 @@
 ---
-import { VACAY_CODE, VACAY_REF_URL } from '../lib/affiliate';
+import { VACAY_CODE, discountedThbPrice, vacayUrlFor } from '../lib/affiliate';
 
 interface Props {
   link: string;
@@ -8,9 +8,12 @@ interface Props {
   days: string;
   price: string;
   code?: string;
+  slug?: string;
 }
 
-const { link, name, data, days, price, code } = Astro.props;
+const { link, name, data, days, price, code, slug } = Astro.props;
+const discounted = code ? discountedThbPrice(price, 15) : undefined;
+const vacayHref = vacayUrlFor(slug);
 ---
 
 <div class="ticket">
@@ -18,17 +21,47 @@ const { link, name, data, days, price, code } = Astro.props;
     <h3>{name}</h3>
     <p>แพ็กเกจคุ้มสำหรับทริป {days} — ต่อเน็ตทันทีหลังถึง ไม่ต้องเปลี่ยนซิม</p>
     <div class="ticket__actions">
-      <a class="btn" href={link} data-partner="airalo" rel="sponsored nofollow noopener" target="_blank">ดูราคาและสมัคร Airalo</a>
-      <a class="btn btn--secondary" href={VACAY_REF_URL} data-partner="vacay" rel="sponsored nofollow noopener" target="_blank">
+      <a
+        class="btn"
+        href={link}
+        data-partner="airalo"
+        data-autocopy={code || undefined}
+        rel="sponsored nofollow noopener"
+        target="_blank"
+      >
+        {code ? 'คัดลอกโค้ด + สมัคร Airalo' : 'ดูราคาและสมัคร Airalo'}
+      </a>
+      <a
+        class="btn btn--secondary"
+        href={vacayHref}
+        data-partner="vacay"
+        data-autocopy={VACAY_CODE}
+        rel="sponsored nofollow noopener"
+        target="_blank"
+      >
         ดูแพ็ก Vacay (PromptPay)
       </a>
     </div>
     {code && (
       <p class="affiliate-note">
         Airalo ลด 15%: <code>{code}</code>{' '}
-        <button class="copy-code" type="button" data-copy={code}>คัดลอกโค้ด</button>
+        <button
+          class="copy-code"
+          type="button"
+          data-copy={code}
+          aria-label={`คัดลอกโค้ดส่วนลด Airalo ${code}`}
+        >
+          คัดลอกโค้ด
+        </button>
         {' · '}Vacay จ่าย PromptPay โค้ด: <code>{VACAY_CODE}</code>{' '}
-        <button class="copy-code" type="button" data-copy={VACAY_CODE}>คัดลอกโค้ด</button>
+        <button
+          class="copy-code"
+          type="button"
+          data-copy={VACAY_CODE}
+          aria-label={`คัดลอกโค้ดส่วนลด Vacay ${VACAY_CODE}`}
+        >
+          คัดลอกโค้ด
+        </button>
       </p>
     )}
   </div>
@@ -37,7 +70,15 @@ const { link, name, data, days, price, code } = Astro.props;
     <span class="ticket__stub-data">{data}</span>
     <span class="ticket__stub-label">วัน</span>
     <span class="ticket__stub-data">{days}</span>
-    <span class="ticket__stub-label">ราคา</span>
-    <span class="ticket__stub-price">{price}</span>
+    <span class="ticket__stub-label">{discounted ? 'ลด 15% เหลือ' : 'ราคา'}</span>
+    <span class="ticket__stub-price">
+      {discounted ? (
+        <>
+          <s class="ticket__old-price">{price}</s> {discounted}
+        </>
+      ) : (
+        price
+      )}
+    </span>
   </div>
 </div>

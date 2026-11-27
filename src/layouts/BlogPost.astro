@@ -3,7 +3,7 @@ import Base from './Base.astro';
 import QuickPick from '../components/QuickPick.astro';
 import TicketCta from '../components/TicketCta.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { withSubId } from '../lib/affiliate';
+import { VACAY_CODE, discountedThbPrice, vacayUrlFor, withSubId } from '../lib/affiliate';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -20,6 +20,11 @@ const dateStr = date.toLocaleDateString('th-TH', {
 
 const topLink = affiliate ? withSubId(affiliate.link, post.id, 'top') : undefined;
 const bottomLink = affiliate ? withSubId(affiliate.link, post.id, 'bottom') : undefined;
+const stickyLink = affiliate ? withSubId(affiliate.link, post.id, 'sticky') : undefined;
+const vacayHref = vacayUrlFor(post.id);
+const stickyPrice = recommend
+  ? (affiliate?.code ? discountedThbPrice(recommend.price, 15) : undefined) ?? recommend.price
+  : undefined;
 
 const canonicalUrl = new URL(
   Astro.url.pathname,
@@ -109,6 +114,7 @@ const relatedPosts = (await getCollection('blog'))
           days={recommend.days}
           price={recommend.price}
           code={affiliate?.code}
+          slug={post.id}
         />
       )
     }
@@ -126,7 +132,43 @@ const relatedPosts = (await getCollection('blog'))
           days={recommend.days}
           price={recommend.price}
           code={affiliate?.code}
+          slug={post.id}
         />
+      )
+    }
+
+    {
+      stickyLink && recommend && stickyPrice && (
+        <aside class="sticky-cta" data-sticky-cta aria-label="ทางลัดสั่งซื้อแพ็กแนะนำ" hidden>
+          <div class="sticky-cta__info">
+            <strong class="sticky-cta__name">{recommend.name}</strong>
+            <span class="sticky-cta__meta">
+              {recommend.data}/{recommend.days} · <strong>{stickyPrice}</strong>
+            </span>
+          </div>
+          <div class="sticky-cta__actions">
+            <a
+              class="btn sticky-cta__btn"
+              href={stickyLink}
+              data-partner="airalo"
+              data-autocopy={affiliate?.code || undefined}
+              rel="sponsored nofollow noopener"
+              target="_blank"
+            >
+              ไปหน้า Airalo
+            </a>
+            <a
+              class="btn btn--secondary sticky-cta__btn"
+              href={vacayHref}
+              data-partner="vacay"
+              data-autocopy={VACAY_CODE}
+              rel="sponsored nofollow noopener"
+              target="_blank"
+            >
+              PromptPay
+            </a>
+          </div>
+        </aside>
       )
     }
 

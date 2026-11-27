@@ -1,5 +1,5 @@
 ---
-import { VACAY_CODE, VACAY_REF_URL } from '../lib/affiliate';
+import { VACAY_CODE, discountedThbPrice, vacayUrlFor } from '../lib/affiliate';
 
 interface Props {
   link: string;
@@ -8,9 +8,12 @@ interface Props {
   days: string;
   price: string;
   code?: string;
+  slug?: string;
 }
 
-const { link, name, data, days, price, code } = Astro.props;
+const { link, name, data, days, price, code, slug } = Astro.props;
+const discounted = code ? discountedThbPrice(price, 15) : undefined;
+const vacayHref = vacayUrlFor(slug);
 ---
 
 <aside class="quick-pick" aria-label="แพ็กเกจแนะนำ">
@@ -18,25 +21,71 @@ const { link, name, data, days, price, code } = Astro.props;
     <div class="quick-pick__info">
       <span class="quick-pick__label">แนะนำสำหรับทริปนี้</span>
       <div class="quick-pick__title">
-        <strong>{name}</strong> · {data} / {days} · <span class="quick-pick__price">{price}</span>
+        <strong>{name}</strong> · {data} / {days}
+      </div>
+      <div class="quick-pick__pricing">
+        {discounted ? (
+          <>
+            <s class="quick-pick__old-price">{price}</s>
+            <span class="quick-pick__price">{discounted}</span>
+            <span class="quick-pick__badge">ลด 15% ลูกค้าใหม่</span>
+          </>
+        ) : (
+          <span class="quick-pick__price">{price}</span>
+        )}
       </div>
       {code && (
         <div class="quick-pick__code">
-          โค้ดลด 15% ครั้งแรก: <code>{code}</code>
-          <button class="copy-code" type="button" data-copy={code}>คัดลอกโค้ด</button>
+          <span>โค้ด <code>{code}</code></span>
+          <button
+            class="copy-code"
+            type="button"
+            data-copy={code}
+            aria-label={`คัดลอกโค้ดส่วนลด Airalo ${code}`}
+          >
+            คัดลอกโค้ด
+          </button>
         </div>
       )}
     </div>
-    <a class="btn" href={link} data-partner="airalo" rel="sponsored nofollow noopener" target="_blank">ดูราคา Airalo</a>
+    <a
+      class="btn quick-pick__cta"
+      href={link}
+      data-partner="airalo"
+      data-autocopy={code || undefined}
+      rel="sponsored nofollow noopener"
+      target="_blank"
+    >
+      {code ? `คัดลอกโค้ด + ไปหน้า Airalo` : `ดูราคา Airalo`}
+    </a>
   </div>
   <div class="quick-pick__alt">
     <div class="quick-pick__alt-copy">
-      <strong>อยากจ่ายผ่าน PromptPay / แบรนด์ไทย?</strong> ลอง <strong>Vacay eSIM</strong> · โค้ด
+      <strong>จ่าย PromptPay / เมนูไทย?</strong> <strong>Vacay eSIM</strong> · โค้ด
       <code>{VACAY_CODE}</code>
-      <button class="copy-code" type="button" data-copy={VACAY_CODE}>คัดลอกโค้ด</button>
+      <button
+        class="copy-code"
+        type="button"
+        data-copy={VACAY_CODE}
+        aria-label={`คัดลอกโค้ดส่วนลด Vacay ${VACAY_CODE}`}
+      >
+        คัดลอกโค้ด
+      </button>
     </div>
-    <a class="btn btn--secondary" href={VACAY_REF_URL} data-partner="vacay" rel="sponsored nofollow noopener" target="_blank">
+    <a
+      class="btn btn--secondary"
+      href={vacayHref}
+      data-partner="vacay"
+      data-autocopy={VACAY_CODE}
+      rel="sponsored nofollow noopener"
+      target="_blank"
+    >
       ดูแพ็ก Vacay (PromptPay)
     </a>
+  </div>
+  <div class="quick-pick__trust">
+    <span>ติดตั้งก่อนบินได้ทันที</span>
+    <span>เปิดซิมไทยรับ OTP ได้</span>
+    <span>เช็กเครื่องกด <code>*#06#</code></span>
   </div>
 </aside>

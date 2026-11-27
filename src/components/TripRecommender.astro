@@ -1,5 +1,5 @@
 ---
-import { VACAY_CODE, VACAY_REF_URL } from '../lib/affiliate';
+import { VACAY_CODE, vacayUrlFor } from '../lib/affiliate';
 
 const PLANS = {
   japan: {
@@ -7,6 +7,7 @@ const PLANS = {
     network: 'SoftBank / KDDI / Rakuten 5G',
     operator: 'Airalo Moshi Moshi',
     link: 'https://airalo.pxf.io/E0B2zX?subId1=home-picker&subId2=japan',
+    vacay: vacayUrlFor('japan'),
     guide: '/blog/esim-japan/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '฿280', disc: '~฿238' },
@@ -19,6 +20,7 @@ const PLANS = {
     network: 'SK Telecom 5G',
     operator: 'Airalo 짱 Jjang',
     link: 'https://airalo.pxf.io/n4MgRx?subId1=home-picker&subId2=korea',
+    vacay: vacayUrlFor('korea'),
     guide: '/blog/esim-korea/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '฿315', disc: '~฿268' },
@@ -31,6 +33,7 @@ const PLANS = {
     network: 'Taiwan Mobile 5G',
     operator: 'Airalo Xie Xie',
     link: 'https://airalo.pxf.io/k46V9x?subId1=home-picker&subId2=taiwan',
+    vacay: vacayUrlFor('taiwan'),
     guide: '/blog/esim-taiwan/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '~฿306', disc: '~฿260' },
@@ -43,6 +46,7 @@ const PLANS = {
     network: 'VNPT 5G',
     operator: 'Airalo Xin Chao',
     link: 'https://airalo.pxf.io/aNgPjq?subId1=home-picker&subId2=vietnam',
+    vacay: vacayUrlFor('vietnam'),
     guide: '/blog/esim-vietnam/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '~฿272', disc: '~฿231' },
@@ -55,6 +59,7 @@ const PLANS = {
     network: 'Singtel 5G / M1 LTE',
     operator: 'Airalo Connect Lah!',
     link: 'https://airalo.pxf.io/dyBDOq?subId1=home-picker&subId2=singapore',
+    vacay: vacayUrlFor('singapore'),
     guide: '/blog/esim-singapore/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '฿245', disc: '~฿208' },
@@ -67,6 +72,7 @@ const PLANS = {
     network: 'HKT 5G',
     operator: 'Airalo Hkmobile',
     link: 'https://airalo.pxf.io/NGLe9v?subId1=home-picker&subId2=hong-kong',
+    vacay: vacayUrlFor('hong-kong'),
     guide: '/blog/esim-hong-kong/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '฿297.50', disc: '~฿253' },
@@ -79,6 +85,7 @@ const PLANS = {
     network: 'China Unicom 5G (ไม่ต้อง VPN)',
     operator: 'Airalo Chinacom',
     link: 'https://airalo.pxf.io/YVejRm?subId1=home-picker&subId2=china',
+    vacay: vacayUrlFor('china'),
     guide: '/blog/esim-china/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '฿367', disc: '~฿312' },
@@ -91,6 +98,7 @@ const PLANS = {
     network: 'ครอบคลุม 18 ประเทศเอเชีย',
     operator: 'Airalo Asialink',
     link: 'https://airalo.pxf.io/MKOkA3?subId1=home-picker&subId2=asia',
+    vacay: vacayUrlFor('asia'),
     guide: '/blog/esim-asia/',
     tiers: {
       light: { data: '3 GB', days: '7 วัน', price: '฿332.50', disc: '~฿283' },
@@ -152,10 +160,10 @@ const initialTier = initial.tiers.standard;
       </div>
     </div>
     <div class="recommender__actions">
-      <a class="btn" data-rec-cta data-partner="airalo" href={initial.link} rel="sponsored nofollow noopener" target="_blank">
-        ดูราคาและสมัคร Airalo
+      <a class="btn" data-rec-cta data-partner="airalo" data-autocopy="NEWTOAIRALO15" href={initial.link} rel="sponsored nofollow noopener" target="_blank">
+        คัดลอกโค้ด + ไปหน้า Airalo
       </a>
-      <a class="btn btn--secondary" data-partner="vacay" href={VACAY_REF_URL} rel="sponsored nofollow noopener" target="_blank">
+      <a class="btn btn--secondary" data-rec-vacay data-partner="vacay" data-autocopy={VACAY_CODE} href={initial.vacay} rel="sponsored nofollow noopener" target="_blank">
         ดูแพ็ก Vacay (PromptPay · โค้ด {VACAY_CODE})
       </a>
       <a class="recommender__guide" data-rec-guide href={initial.guide}>
@@ -178,6 +186,7 @@ const initialTier = initial.tiers.standard;
     const priceEl = root.querySelector('[data-rec-price]');
     const discEl = root.querySelector('[data-rec-disc]');
     const ctaEl = root.querySelector('[data-rec-cta]');
+    const vacayEl = root.querySelector('[data-rec-vacay]');
     const guideEl = root.querySelector('[data-rec-guide]');
 
     function render() {
@@ -190,6 +199,7 @@ const initialTier = initial.tiers.standard;
       priceEl.textContent = `ราคา ${t.price}`;
       discEl.textContent = `ลดครั้งแรก 15% เหลือ ${t.disc}`;
       ctaEl.setAttribute('href', plan.link);
+      if (vacayEl && plan.vacay) vacayEl.setAttribute('href', plan.vacay);
       guideEl.setAttribute('href', plan.guide);
       guideEl.textContent = `เทียบ 5 ค่ายใน${plan.label} →`;
     }
