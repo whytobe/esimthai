@@ -21,6 +21,7 @@ const VACAY_COUNTRY_PATHS: Record<string, string> = {
   asia: 'e-sim/asia/multiple-countries-asia',
   'esim-asia': 'e-sim/asia/multiple-countries-asia',
   'china-hk-macau': 'e-sim/asia/china-hong-kong-macau',
+  'esim-china-hong-kong-macau': 'e-sim/asia/china-hong-kong-macau',
 };
 
 /** Return the Thai-language Vacay country page URL with affiliate ref parameter. */

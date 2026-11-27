@@ -30,7 +30,7 @@ const canonicalUrl = new URL(
   <head>
     <meta name="impact-site-verification" value="d2786f61-3fe4-4810-b016-b9cb6a07cbab" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title} — eSIMไทย</title>
     {description && <meta name="description" content={description} />}
     {noindex && <meta name="robots" content="noindex" />}
@@ -57,9 +57,17 @@ const canonicalUrl = new URL(
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://connect.facebook.net" />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
@@ -88,6 +96,7 @@ const canonicalUrl = new URL(
       </div>
     </footer>
     <span class="visually-hidden" role="status" aria-live="polite" data-copy-live></span>
+    <div class="copy-toast" data-copy-toast aria-hidden="true"></div>
     <script is:inline>
       (() => {
         const PIXEL_ID = '1204328895355336';
@@ -176,13 +185,26 @@ const canonicalUrl = new URL(
           } catch {}
         };
 
+        window.__spnApplySubId3 = applySubId3;
+
         if (attrTag) {
           document.querySelectorAll('a[href*="airalo.pxf.io"]').forEach(applySubId3);
         }
 
         const liveRegion = document.querySelector('[data-copy-live]');
+        const copyToast = document.querySelector('[data-copy-toast]');
+        let toastTimer = 0;
         const announceCopy = (code) => {
-          if (liveRegion) liveRegion.textContent = `คัดลอกโค้ด ${code} แล้ว`;
+          const msg = `คัดลอกโค้ด ${code} แล้ว — วางที่หน้าชำระเงินได้เลย`;
+          if (liveRegion) liveRegion.textContent = msg;
+          if (copyToast) {
+            copyToast.textContent = msg;
+            copyToast.classList.add('is-visible');
+            window.clearTimeout(toastTimer);
+            toastTimer = window.setTimeout(() => {
+              copyToast.classList.remove('is-visible');
+            }, 2600);
+          }
         };
 
         document.addEventListener('click', (event) => {
@@ -235,36 +257,91 @@ const canonicalUrl = new URL(
         const stickyBar = document.querySelector('[data-sticky-cta]');
         const quickPick = document.querySelector('.quick-pick');
         const bottomTicket = document.querySelector('.ticket');
-        if (stickyBar && quickPick && 'IntersectionObserver' in window) {
-          let passedTop = false;
-          let bottomVisible = false;
+        if (stickyBar && quickPick) {
+          let rafId = 0;
           const syncSticky = () => {
-            stickyBar.hidden = !(passedTop && !bottomVisible);
+            rafId = 0;
+            const qpRect = quickPick.getBoundingClientRect();
+            const passedTop = qpRect.bottom < 0;
+            let bottomVisible = false;
+            if (bottomTicket) {
+              const btRect = bottomTicket.getBoundingClientRect();
+              bottomVisible = btRect.top < window.innerHeight && btRect.bottom > 0;
+            }
+            const shouldHide = !(passedTop && !bottomVisible);
+            if (shouldHide && stickyBar.contains(document.activeElement)) {
+              document.activeElement.blur();
+            }
+            stickyBar.hidden = shouldHide;
           };
-          const topObserver = new IntersectionObserver(
-            (entries) => {
-              const entry = entries[0];
-              if (!entry) return;
-              passedTop = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
-              syncSticky();
-            },
-            { threshold: 0 }
-          );
-          topObserver.observe(quickPick);
 
-          if (bottomTicket) {
-            const bottomObserver = new IntersectionObserver(
-              (entries) => {
-                const entry = entries[0];
-                if (!entry) return;
-                bottomVisible = entry.isIntersecting;
-                syncSticky();
-              },
-              { threshold: 0 }
-            );
-            bottomObserver.observe(bottomTicket);
+          const scheduleSync = () => {
+            if (!rafId) rafId = window.requestAnimationFrame(syncSticky);
+          };
+
+          if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(scheduleSync, { threshold: 0 });
+            io.observe(quickPick);
+            if (bottomTicket) io.observe(bottomTicket);
           }
+          window.addEventListener('scroll', scheduleSync, { passive: true });
+          window.addEventListener('resize', scheduleSync, { passive: true });
+          syncSticky();
         }
+
+        // Enhance Markdown tables with keyboard-scrollable region, scope="col", and scrollability shadow hints
+        document.querySelectorAll('.prose table').forEach((table) => {
+          if (table.closest('[data-table-wrap]')) return;
+          table.querySelectorAll('thead th').forEach((th) => {
+            if (!th.hasAttribute('scope')) th.setAttribute('scope', 'col');
+          });
+          const figure = document.createElement('div');
+          figure.className = 'table-figure';
+          figure.setAttribute('data-table-wrap', '');
+
+          const wrap = document.createElement('div');
+          wrap.className = 'table-wrap';
+
+          const scroller = document.createElement('div');
+          scroller.className = 'table-scroller';
+          scroller.setAttribute('tabindex', '0');
+          scroller.setAttribute('role', 'region');
+          scroller.setAttribute('aria-label', 'ตารางเปรียบเทียบแพ็กเกจ');
+
+          const hint = document.createElement('p');
+          hint.className = 'table-scroll-hint';
+          hint.setAttribute('aria-hidden', 'true');
+          hint.textContent = 'เลื่อนซ้าย-ขวาเพื่อดูครบทุกคอลัมน์ →';
+
+          table.parentNode?.insertBefore(figure, table);
+          scroller.appendChild(table);
+          wrap.appendChild(scroller);
+          figure.appendChild(wrap);
+          figure.appendChild(hint);
+        });
+
+        const tableWraps = document.querySelectorAll('[data-table-wrap]');
+        tableWraps.forEach((wrap) => {
+          const scroller = wrap.querySelector('.table-scroller');
+          if (!scroller) return;
+          const updateTableScroll = () => {
+            const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+            const hasOverflow = maxScroll > 2;
+            wrap.classList.toggle('has-overflow', hasOverflow);
+            wrap.classList.toggle('can-scroll-start', hasOverflow && scroller.scrollLeft > 2);
+            wrap.classList.toggle(
+              'can-scroll-end',
+              hasOverflow && scroller.scrollLeft < maxScroll - 2
+            );
+          };
+          scroller.addEventListener('scroll', updateTableScroll, { passive: true });
+          if ('ResizeObserver' in window) {
+            new ResizeObserver(updateTableScroll).observe(scroller);
+          } else {
+            window.addEventListener('resize', updateTableScroll, { passive: true });
+          }
+          updateTableScroll();
+        });
       })();
     </script>
     <noscript>

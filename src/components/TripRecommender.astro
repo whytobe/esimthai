@@ -199,6 +199,9 @@ const initialTier = initial.tiers.standard;
       priceEl.textContent = `ราคา ${t.price}`;
       discEl.textContent = `ลดครั้งแรก 15% เหลือ ${t.disc}`;
       ctaEl.setAttribute('href', plan.link);
+      if (typeof window.__spnApplySubId3 === 'function') {
+        window.__spnApplySubId3(ctaEl);
+      }
       if (vacayEl && plan.vacay) vacayEl.setAttribute('href', plan.vacay);
       guideEl.setAttribute('href', plan.guide);
       guideEl.textContent = `เทียบ 5 ค่ายใน${plan.label} →`;
