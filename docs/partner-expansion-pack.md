@@ -1,6 +1,6 @@
 # Affiliate Partner Expansion Pack
 
-> **Status (`2026-11-27`):** **Vacay Affiliate** approved & live (`?thref=PSXT8BB3`, code `THAF-TIWE`); **Nomad** sent a **human reply** (`2026-11-26 14:49 GMT+7`, `melanie.kwok@getnomad.app`, inviting application to Impact Program `34279`, 10% new / 5% existing + asking for Impact ID); **Travelpayouts** site **verified** (`2026-11-27 00:20 GMT+7`, LinkSwitcher removed to protect Airalo SubIDs — pull direct Saily 15% link only); **Holafly declined** (`2026-11-25`); **Ubigi** and **aloSIM** still await replies.
+> **Status (`2026-11-28`):** **Vacay Affiliate** approved & live (`?thref=PSXT8BB3`, code `THAF-TIWE`; plus 12% affiliate promo `12DECAFF` emailed `2026-11-27 18:14 GMT+7`); **Nomad (`34279`)** auto-declined on Impact (`2026-11-27 20:12 GMT+7`) and owner emailed `melanie.kwok@getnomad.app` (`20:23 GMT+7`) requesting manual review (awaiting reply); **Travelpayouts** site **verified** (`2026-11-27 00:20 GMT+7`, LinkSwitcher removed to protect Airalo SubIDs — pull direct Saily 15% link only); **Holafly declined** (`2026-11-25`); **Ubigi** and **aloSIM** still await replies.
 
 Why expand beyond Airalo alone:
 1. **Resilience:** Avoid single-vendor dependency ahead of the 11 Jan 2027 review.
