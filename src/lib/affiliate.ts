@@ -8,6 +8,7 @@ const VACAY_COUNTRY_PATHS: Record<string, string> = {
   japan: 'e-sim/asia/japan',
   'esim-japan': 'e-sim/asia/japan',
   'esim-japan-vs-sim-card': 'e-sim/asia/japan',
+  'esim-japan-how-many-gb': 'e-sim/asia/japan',
   korea: 'e-sim/asia/south-korea',
   'esim-korea': 'e-sim/asia/south-korea',
   taiwan: 'e-sim/asia/taiwan',
