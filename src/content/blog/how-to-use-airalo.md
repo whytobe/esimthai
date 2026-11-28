@@ -2,6 +2,7 @@
 title: 'วิธีใช้ Airalo บน iPhone + Android ทีละขั้น ฉบับคนไทย (2569)'
 description: 'คู่มือติดตั้ง Airalo eSIM บน iPhone และ Android ทีละขั้นใน 5 นาที ใส่โค้ดลด 15% NEWTOAIRALO15 ตั้ง Dual-SIM รับ OTP ไม่ให้เน็ตรั่ว และวิธีแก้เมื่อลงเครื่องแล้วเน็ตไม่ขึ้น'
 date: 2026-11-24T13:30:00+07:00
+updatedDate: 2026-11-28
 tags:
   - 'Airalo ใช้ยังไง'
   - 'วิธีติดตั้ง eSIM'
@@ -90,4 +91,4 @@ faqs:
 **อยากตั้งค่าซิมไทยรับ OTP ธนาคารพร้อมกันแบบไม่โดนค่าโรมมิ่ง ทำยังไงให้ชัวร์ 2 ชั้น?**
 นอกจากปิด Data Roaming และปิด Allow Cellular Data Switching ในมือถือแล้ว สามารถกดรหัสปิดเน็ตโรมมิ่งของค่ายไทย (AIS/True/dtac) เพิ่มได้ ดูคู่มือฉบับเต็มใน [วิธีตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/)
 
-**อ่านเพิ่มเติมตามประเทศปลายทาง:** [eSIM ญี่ปุ่น](/blog/esim-japan/) · [eSIM เกาหลี](/blog/esim-korea/) · [eSIM จีน (ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM จีน ฮ่องกง มาเก๊า](/blog/esim-china-hong-kong-macau/) · [eSIM ฮ่องกง](/blog/esim-hong-kong/) · [eSIM สิงคโปร์](/blog/esim-singapore/) · [eSIM เอเชียหลายประเทศ](/blog/esim-asia/) · [ซื้อ eSIM ที่ไหนดี 2569](/blog/where-to-buy-esim/)
+**อ่านเพิ่มเติมตามประเทศปลายทาง:** [ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน](/blog/esim-when-to-buy-day-count/) · [ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ?](/blog/esim-japan-how-many-gb/) · [eSIM ญี่ปุ่น](/blog/esim-japan/) · [eSIM เกาหลี](/blog/esim-korea/) · [eSIM จีน (ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM จีน ฮ่องกง มาเก๊า](/blog/esim-china-hong-kong-macau/) · [eSIM ฮ่องกง](/blog/esim-hong-kong/) · [eSIM สิงคโปร์](/blog/esim-singapore/) · [eSIM เอเชียหลายประเทศ](/blog/esim-asia/) · [ซื้อ eSIM ที่ไหนดี 2569](/blog/where-to-buy-esim/)

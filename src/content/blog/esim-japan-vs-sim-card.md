@@ -2,6 +2,7 @@
 title: 'eSIM ญี่ปุ่น vs ซิมการ์ด vs SIM2Fly อันไหนคุ้มกว่า 2569'
 description: 'เปรียบเทียบจริง Airalo eSIM vs AIS SIM2Fly (฿399) vs True GO Travel SIM (฿399) vs Pocket Wi-Fi สำหรับทริปญี่ปุ่น 5–10 วัน แบบไม่อวย'
 date: 2026-11-24T13:00:00+07:00
+updatedDate: 2026-11-28
 tags:
   - 'eSIM vs ซิมการ์ด'
   - 'eSIM ญี่ปุ่น'
@@ -66,7 +67,7 @@ faqs:
 - **มือถือรุ่นเก่า/เครื่องศูนย์จีนที่ไม่มี eSIM:** ใช้ **SIM2Fly / True GO Travel SIM** แบบซิมการ์ดจริง
 
 ยังไม่แน่ใจว่ามือถือรองรับไหม หรืออยากดูขั้นตอนตั้งค่าและตัวเลือก eSIM ทั้งหมด? อ่านต่อได้ที่:
-- [วิธีเช็กมือถือรองรับ eSIM ใน 30 วินาที (กด *#06#)](/blog/what-is-esim/)
-- [ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/)
-- [วิธีใช้ Airalo บน iPhone & Android ทีละขั้น](/blog/how-to-use-airalo/)
-- [เปรียบเทียบราคา eSIM ญี่ปุ่น 9 แพ็กเกจ (2569)](/blog/esim-japan/) · [ซื้อ eSIM ที่ไหนดี 2569 (เทียบ 5 ค่าย)](/blog/where-to-buy-esim/)
+- [ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ? เทียบ 3GB vs 5GB vs 10GB vs Unlimited](/blog/esim-japan-how-many-gb/)
+- [ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน (Airalo vs Vacay vs ซิมไทย)](/blog/esim-when-to-buy-day-count/)
+- [วิธีเช็กมือถือรองรับ eSIM ใน 30 วินาที (กด *#06#)](/blog/what-is-esim/) · [ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/)
+- [วิธีใช้ Airalo บน iPhone & Android ทีละขั้น](/blog/how-to-use-airalo/) · [เปรียบเทียบราคา eSIM ญี่ปุ่น 9 แพ็กเกจ (2569)](/blog/esim-japan/) · [ซื้อ eSIM ที่ไหนดี 2569 (เทียบ 5 ค่าย)](/blog/where-to-buy-esim/)

@@ -2,6 +2,7 @@
 title: 'ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง (iPhone & Android 2569)'
 description: 'วิธีตั้งค่า Dual-SIM ใช้ eSIM ต่างประเทศคู่ซิมไทย รับ SMS OTP ธนาคารและบัตรเครดิตฟรีโดยไม่โดนค่าโรมมิ่ง พร้อมรหัสปิดเน็ต AIS/True/dtac และวิธีแก้เมื่อ Wi-Fi Calling OTP ไม่เข้า'
 date: 2026-11-27T18:30:00+07:00
+updatedDate: 2026-11-28
 tags:
   - 'ใช้ eSIM รับ OTP'
   - 'ตั้งค่า eSIM'
@@ -112,4 +113,4 @@ faqs:
 **ถ้าใช้ซิมการ์ดจริงอย่าง SIM2Fly แบบซิมพลาสติก จะรับ OTP ได้ไหม?**
 ถ้ามือถือคุณใส่ซิมการ์ดพลาสติกได้แค่ 1 ช่องแล้วต้องถอดซิมไทยออก จะรับ OTP จากเบอร์ไทยไม่ได้ตลอดทริป นี่คือข้อได้เปรียบหลักของ eSIM หรือซิมแบบ eSIM2Fly ที่ทำให้เปิดซิมไทยค้างไว้ในเครื่องได้พร้อมกัน (อ่านเทียบละเอียดใน [eSIM ญี่ปุ่น vs ซิมการ์ด vs SIM2Fly](/blog/esim-japan-vs-sim-card/))
 
-**อ่านต่อตามจุดหมายของคุณ:** [เช็กมือถือรองรับ eSIM (`*#06#`)](/blog/what-is-esim/) · [วิธีใช้ Airalo ทีละขั้น](/blog/how-to-use-airalo/) · [ซื้อ eSIM ที่ไหนดี 2569](/blog/where-to-buy-esim/) · [eSIM ญี่ปุ่น](/blog/esim-japan/) · [eSIM จีน (ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM จีน ฮ่องกง มาเก๊า](/blog/esim-china-hong-kong-macau/) · [eSIM เกาหลี](/blog/esim-korea/) · [eSIM ไต้หวัน](/blog/esim-taiwan/)
+**อ่านต่อตามจุดหมายของคุณ:** [ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน](/blog/esim-when-to-buy-day-count/) · [เช็กมือถือรองรับ eSIM (`*#06#`)](/blog/what-is-esim/) · [วิธีใช้ Airalo ทีละขั้น](/blog/how-to-use-airalo/) · [ซื้อ eSIM ที่ไหนดี 2569](/blog/where-to-buy-esim/) · [ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ?](/blog/esim-japan-how-many-gb/) · [eSIM ญี่ปุ่น](/blog/esim-japan/) · [eSIM จีน (ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM จีน ฮ่องกง มาเก๊า](/blog/esim-china-hong-kong-macau/) · [eSIM เกาหลี](/blog/esim-korea/) · [eSIM ไต้หวัน](/blog/esim-taiwan/)

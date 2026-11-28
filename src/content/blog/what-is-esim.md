@@ -2,6 +2,7 @@
 title: 'eSIM คืออะไร? ต่างจากซิมการ์ดยังไง + เช็กมือถือที่รองรับ (2569)'
 description: 'อธิบาย eSIM แบบเข้าใจง่าย ต่างจากซิมการ์ดและ Pocket Wi-Fi ยังไง เช็กมือถือรองรับ eSIM ด้วยรหัส *#06# พร้อมข้อควรระวังก่อนซื้อ'
 date: 2026-11-24T12:00:00+07:00
+updatedDate: 2026-11-28
 tags:
   - 'eSIM คืออะไร'
   - 'มือถือกี่รุ่นรองรับ eSIM'
@@ -74,8 +75,8 @@ faqs:
 
 ## อ่านต่อ: คู่มือตั้งค่าและเลือกแพ็กตามประเทศ
 
-- **ตั้งค่าก่อนบิน:** [วิธีใช้ Airalo บน iPhone & Android ทีละขั้น](/blog/how-to-use-airalo/) · [ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/) · [ซื้อ eSIM ที่ไหนดี 2569 (เทียบ 5 ค่าย)](/blog/where-to-buy-esim/)
-- **ญี่ปุ่น & เกาหลี:** [eSIM ญี่ปุ่น 2569](/blog/esim-japan/) · [eSIM ญี่ปุ่น vs ซิมการ์ด vs SIM2Fly](/blog/esim-japan-vs-sim-card/) · [eSIM เกาหลี 2569](/blog/esim-korea/)
+- **ตั้งค่าก่อนบิน:** [ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน](/blog/esim-when-to-buy-day-count/) · [วิธีใช้ Airalo บน iPhone & Android ทีละขั้น](/blog/how-to-use-airalo/) · [ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/) · [ซื้อ eSIM ที่ไหนดี 2569 (เทียบ 5 ค่าย)](/blog/where-to-buy-esim/)
+- **ญี่ปุ่น & เกาหลี:** [eSIM ญี่ปุ่น 2569](/blog/esim-japan/) · [ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ?](/blog/esim-japan-how-many-gb/) · [eSIM ญี่ปุ่น vs ซิมการ์ด vs SIM2Fly](/blog/esim-japan-vs-sim-card/) · [eSIM เกาหลี 2569](/blog/esim-korea/)
 - **จีน ฮ่องกง ไต้หวัน:** [eSIM จีน 2569 (ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM ฮ่องกง 2569](/blog/esim-hong-kong/) · [eSIM จีน ฮ่องกง มาเก๊า (ข้ามแดนใบเดียวจบ)](/blog/esim-china-hong-kong-macau/) · [eSIM ไต้หวัน 2569](/blog/esim-taiwan/)
 - **อาเซียน & ข้ามหลายประเทศ:** [eSIM เวียดนาม 2569](/blog/esim-vietnam/) · [eSIM สิงคโปร์ 2569](/blog/esim-singapore/) · [eSIM เอเชียหลายประเทศ](/blog/esim-asia/)
 

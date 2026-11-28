@@ -2,6 +2,7 @@
 title: 'ซื้อ eSIM ที่ไหนดี 2569: เปรียบเทียบ Airalo / Ubigi / Nomad / Holafly / SimOptions'
 description: 'เปรียบเทียบซื้อ eSIM ต่างประเทศเจ้าไหนดี 2569 (Airalo, Ubigi, Nomad, Holafly, SimOptions + ทางเลือก PromptPay อย่าง Vacay และ SIM2Fly) เทียบราคา แชร์ Hotspot และวิธีเลือกใน 10 วิ'
 date: 2026-11-24T13:40:00+07:00
+updatedDate: 2026-11-28
 tags:
   - 'ซื้อ eSIM ที่ไหน'
   - 'เปรียบเทียบ eSIM'
@@ -72,7 +73,7 @@ faqs:
 
 ## ดูราคาจริงแยกตามประเทศปลายทาง
 
-- [เช็กมือถือรองรับ eSIM ใน 30 วิ (`*#06#`)](/blog/what-is-esim/) · [วิธีใช้ Airalo บน iPhone และ Android ทีละขั้น](/blog/how-to-use-airalo/) · [ตั้งค่า Dual-SIM รับ OTP ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/)
-- [eSIM ญี่ปุ่น 2569: เปรียบเทียบ 9 แพ็กเกจ + วิธีใช้](/blog/esim-japan/) · [eSIM เกาหลี 2569](/blog/esim-korea/)
+- [เช็กมือถือรองรับ eSIM ใน 30 วิ (`*#06#`)](/blog/what-is-esim/) · [ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน](/blog/esim-when-to-buy-day-count/) · [วิธีใช้ Airalo บน iPhone และ Android ทีละขั้น](/blog/how-to-use-airalo/) · [ตั้งค่า Dual-SIM รับ OTP ไม่โดนค่าโรมมิ่ง](/blog/esim-dual-sim-otp/)
+- [eSIM ญี่ปุ่น 2569: เปรียบเทียบ 9 แพ็กเกจ + วิธีใช้](/blog/esim-japan/) · [ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ?](/blog/esim-japan-how-many-gb/) · [eSIM เกาหลี 2569](/blog/esim-korea/)
 - [eSIM จีน 2569 (เล่น LINE ไม่ต้อง VPN)](/blog/esim-china/) · [eSIM ฮ่องกง 2569](/blog/esim-hong-kong/) · [eSIM จีน ฮ่องกง มาเก๊า (ข้ามแดนใบเดียวจบ)](/blog/esim-china-hong-kong-macau/)
 - [eSIM ไต้หวัน 2569](/blog/esim-taiwan/) · [eSIM เวียดนาม 2569](/blog/esim-vietnam/) · [eSIM สิงคโปร์ 2569](/blog/esim-singapore/) · [eSIM เอเชียหลายประเทศ](/blog/esim-asia/)

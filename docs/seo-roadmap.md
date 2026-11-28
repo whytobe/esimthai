@@ -1,16 +1,17 @@
 # SimPaiNai SEO & Content Growth Roadmap (`esim.whytobe.com`)
 
-อัปเดตล่าสุด: **27 พ.ย. 2569 (2026-11-27)** · เจ้าของแผน: `simpainai-seo`
+อัปเดตล่าสุด: **28 พ.ย. 2569 (2026-11-28)** · เจ้าของแผน: `simpainai-seo`
 เป้าหมาย: สร้างทราฟฟิกออร์แกนิกภาษาไทยแบบ Commercial & Comparison Intent เพื่อเพิ่มคลิกและยอดขาย Affiliate (Airalo + Vacay + พาร์ตเนอร์สำรอง) อย่างยั่งยืน
 
 ---
 
-## 1. ผลตรวจ SEO บทความเดิมทั้ง 12 หน้า (Audit 2026-11-27)
+## 1. ผลตรวจ SEO บทความเดิมทั้ง 12 หน้า (Audit 2026-11-27 → อัปเดต 2026-11-28)
 
 ### สถานะ Technical SEO & Sitemap
-- **Sitemap (`src/pages/sitemap.xml.ts`):** ดึงบทความจาก `getCollection('blog')` อัตโนมัติทุกครั้งที่ build (เดิม 13 URLs: หน้าแรก + 12 บทความ → หลัง Wave 1 จะเป็น **15 URLs** อัตโนมัติ)
-- **Structured Data (`src/layouts/BlogPost.astro`):** สร้าง `Article`, `BreadcrumbList`, และ `FAQPage` JSON-LD อัตโนมัติเมื่อบทความมีฟิลด์ `faqs:` ใน frontmatter
-- **Meta Pixel & SubID Attribution (`src/layouts/Base.astro`):** คงสภาพ `subId1` (slug), `subId2` (`top`/`bottom`), และ `subId3` (UTM) ครบถ้วน + `OutboundAffiliateClick` ทั้ง Airalo และ Vacay
+- **Sitemap (`src/pages/sitemap.xml.ts`):** ดึงบทความจาก `getCollection('blog')` อัตโนมัติทุกครั้งที่ build (เดิม 13 URLs → หลัง Wave 1 เป็น 15 URLs → หลัง **Wave 2 (28 พ.ย. 2569)** เป็น **17 URLs** อัตโนมัติ)
+- **Structured Data (`src/layouts/BlogPost.astro`):** สร้าง `Article` (พร้อม `dateModified` จาก `updatedDate`), `BreadcrumbList`, และ `FAQPage` JSON-LD + visible `<details>` FAQ accordion อัตโนมัติเมื่อบทความมีฟิลด์ `faqs:` ใน frontmatter
+- **Related Posts (`src/layouts/BlogPost.astro`):** `simpainai-web` จำกัดแสดงสูงสุด 6 บทความตามคะแนน tag overlap + recency แล้ว (`2857be4`)
+- **Meta Pixel & SubID Attribution (`src/layouts/Base.astro`):** คงสภาพ `subId1` (slug), `subId2` (`top`/`bottom`/`sticky`), และ `subId3` (UTM) ครบถ้วน + `OutboundAffiliateClick` ทั้ง Airalo และ Vacay
 
 ### ช่องโหว่ที่พบใน 12 บทความเดิม (และแผนแก้ใน Wave 1)
 
@@ -29,10 +30,10 @@
 | `how-to-use-airalo` | ❌ **ไม่มี** | ไม่มี FAQ ในเนื้อหาและ frontmatter + ขาดลิงก์ไปจีน/ฮ่องกง/สิงคโปร์/เอเชีย/OTP | **เพิ่มส่วน FAQ + `faqs:` (4 ข้อ)** + ลิงก์เชื่อม `esim-dual-sim-otp`, `esim-china`, `esim-asia`, `where-to-buy-esim` |
 | `where-to-buy-esim` | ❌ **ไม่มี** | ไม่มี FAQ ในเนื้อหาและ frontmatter + ขาดลิงก์ `what-is-esim`, `esim-dual-sim-otp` + ยังไม่ได้กล่าวถึงทางเลือกจ่าย PromptPay (Vacay) | **เพิ่มส่วน FAQ + `faqs:` (4 ข้อ)** + เพิ่มหมายเหตุทางเลือก PromptPay (Vacay) + ลิงก์ `what-is-esim` และ `esim-dual-sim-otp` |
 
-### ข้อเสนอ Technical SEO สำหรับประสานงาน `simpainai-web` (ไม่ขวางการออก Wave 1)
-1. **Related Posts Cap (`BlogPost.astro`):** ปัจจุบันแสดงบทความอื่นทุกหน้าแบบไม่จำกัดจำนวน เมื่อทะลุ 15–20 บทความควรจำกัดแสดง 5–6 บทความที่แท็ก/คลัสเตอร์ตรงกัน เพื่อรักษาความเข้มข้นของ internal link equity
-2. **Schema `dateModified`:** เพิ่ม optional field `updatedDate` ใน `src/content.config.ts` เพื่อให้ `Article` JSON-LD และ `sitemap.xml` สะท้อนวันที่อัปเดตราคาจริงโดยไม่ต้องแก้ `datePublished`
-3. **Vacay Destination Deep Links:** ในอนาคตเพิ่ม optional `vacayLink` ใน frontmatter เพื่อส่งคนจากหน้าประเทศไปยังหน้าแพ็กประเทศนั้นบน Vacay โดยตรง (ยังคง `?thref=PSXT8BB3`)
+### ข้อเสนอ Technical SEO สำหรับประสานงาน `simpainai-web`
+1. **Related Posts Cap (`BlogPost.astro`):** ✅ **เสร็จแล้ว (`2857be4`)** — จำกัดแสดงสูงสุด 6 บทความที่แท็กตรงกันและล่าสุด
+2. **Schema `dateModified`:** ✅ **เสร็จแล้ว (`2857be4`)** — เพิ่ม `updatedDate` ใน `src/content.config.ts`, `Article` JSON-LD และ `sitemap.xml` `<lastmod>`
+3. **Vacay Destination Deep Links (`src/lib/affiliate.ts`):** แมปประเทศหลักและ `esim-china-hong-kong-macau` แล้ว · ขอเพิ่ม `'esim-japan-how-many-gb': 'e-sim/asia/japan'` ในรอบ deploy Wave 2
 
 ---
 
@@ -77,9 +78,9 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | **1** | `esim-china-hong-kong-macau` | eSIM จีน ฮ่องกง มาเก๊า 2569: ใช้ใบเดียวข้ามเซินเจิ้น-กวางโจว ไม่ต้อง VPN | `eSIM จีน ฮ่องกง มาเก๊า`, `ซิมจีน ฮ่องกง`, `eSIM เซินเจิ้น ฮ่องกง`, `ซิมกวางโจว ฮ่องกง` | Commercial / Multi-country comparison | เชื่อม `esim-china`, `esim-hong-kong`, `esim-asia`, `esim-dual-sim-otp` | **P0 — Wave 1 (เผยแพร่ 27 พ.ย. 2569)** · รองรับดีมานด์ Klook HK+CN 29.7%, Pantip `44292624`, และแอด Meta จีน |
 | **2** | `esim-dual-sim-otp` | ตั้งค่า eSIM คู่ซิมไทย รับ OTP ธนาคาร ไม่โดนค่าโรมมิ่ง (iPhone & Android 2569) | `ใช้ eSIM รับ OTP ธนาคาร`, `ตั้งค่า eSIM ไม่ให้เสียค่าโรมมิ่ง`, `เปิด Wi-Fi Calling รับ OTP ต่างประเทศ`, `eSIM คู่ซิมไทย` | Pre-purchase anxiety / Setup | เชื่อมจากทุกหน้าประเทศ + `how-to-use-airalo`, `what-is-esim`, `where-to-buy-esim` | **P0 — Wave 1 (เผยแพร่ 27 พ.ย. 2569)** · รองรับ Angle E TikTok (28 พ.ย.) + Pantip `44286745` / `44121932` |
-| **3** | `esim-japan-how-many-gb` | ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ? เทียบ 3GB vs 5GB vs 10GB vs Unlimited | `ไปญี่ปุ่น 7 วัน ใช้เน็ตกี่ GB`, `eSIM ญี่ปุ่น กี่ GB พอ`, `ซิมญี่ปุ่น 5 วัน กี่ GB` | Commercial sizing | เชื่อม `esim-japan`, `esim-japan-vs-sim-card`, `where-to-buy-esim` | **P0 — Wave 2** · ตลาดใหญ่สุดของคนไทย (Klook 37.5%, JNTO ต.ค. 133,400 คน) + ต่อยอด Angle A |
-| **4** | `airalo-vs-vacay-vs-sim2fly` | Airalo vs Vacay vs SIM2Fly vs True GO 2569: เทียบ 4 ค่ายดัง จ่าย PromptPay / บัตรเครดิต อันไหนคุ้ม | `Airalo vs SIM2Fly`, `Vacay eSIM รีวิว`, `eSIM จ่าย PromptPay`, `Airalo vs True GO` | Brand comparison (BoFu) | เชื่อม `where-to-buy-esim`, `esim-japan-vs-sim-card`, ทุกหน้าประเทศ | **P0 — Wave 2** · จับคีย์เวิร์ดเปรียบเทียบตรง + รองรับคนไทยที่ไม่มีบัตรเครดิต (PromptPay → Vacay) |
-| **5** | `esim-when-to-buy-day-count` | ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน (Airalo vs Vacay vs ซิมไทย) | `ซื้อ eSIM ล่วงหน้าได้กี่วัน`, `eSIM นับวันยังไง`, `ติดตั้ง eSIM ก่อนบินวันเดินไหม` | Pre-purchase rule check | เชื่อม `how-to-use-airalo`, `what-is-esim`, `esim-dual-sim-otp`, `where-to-buy-esim` | **P1 — Wave 2** · มาจากคำถามซ้ำในคอมเมนต์ TikTok สแกนตลาด 27 พ.ย. |
+| **3** | `esim-japan-how-many-gb` | ไปญี่ปุ่น 5–7 วัน ใช้เน็ต eSIM กี่ GB พอ? เทียบ 3GB vs 5GB vs 10GB vs Unlimited | `ไปญี่ปุ่น 7 วัน ใช้เน็ตกี่ GB`, `eSIM ญี่ปุ่น กี่ GB พอ`, `ซิมญี่ปุ่น 5 วัน กี่ GB` | Commercial sizing | เชื่อม `esim-japan`, `esim-japan-vs-sim-card`, `esim-when-to-buy-day-count`, `where-to-buy-esim` | **P0 — Wave 2 (เผยแพร่ 28 พ.ย. 2569)** · ตลาดใหญ่สุดของคนไทย (Klook 37.5%, JNTO ต.ค. 133,400 คน) + รองรับแอดญี่ปุ่น Tranche 1 |
+| **4** | `airalo-vs-vacay-vs-sim2fly` | Airalo vs Vacay vs SIM2Fly vs True GO 2569: เทียบ 4 ค่ายดัง จ่าย PromptPay / บัตรเครดิต อันไหนคุ้ม | `Airalo vs SIM2Fly`, `Vacay eSIM รีวิว`, `eSIM จ่าย PromptPay`, `Airalo vs True GO` | Brand comparison (BoFu) | เชื่อม `where-to-buy-esim`, `esim-japan-vs-sim-card`, ทุกหน้าประเทศ | **P0 — Wave 2B (ถัดไป)** · จับคีย์เวิร์ดเปรียบเทียบตรง + รองรับคนไทยที่ไม่มีบัตรเครดิต (PromptPay → Vacay) |
+| **5** | `esim-when-to-buy-day-count` | ซื้อ eSIM ล่วงหน้าได้กี่วัน? เช็กกติกานับวันใช้งานก่อนบิน (Airalo vs Vacay vs ซิมไทย) | `ซื้อ eSIM ล่วงหน้าได้กี่วัน`, `eSIM นับวันยังไง`, `ติดตั้ง eSIM ก่อนบินวันเดินไหม` | Pre-purchase rule check | เชื่อม `how-to-use-airalo`, `what-is-esim`, `esim-dual-sim-otp`, `where-to-buy-esim`, `esim-japan-how-many-gb` | **P1 — Wave 2 (เผยแพร่ 28 พ.ย. 2569)** · รองรับคารูเซล `angle-g-when-to-buy-esim` คิว 1 ธ.ค. 2569 และคำถามซ้ำบน TikTok |
 | **6** | `esim-europe` | eSIM ยุโรป 2569: เที่ยวหลายประเทศเชงเก้น (อิตาลี สวิส ฝรั่งเศส เยอรมัน) แพ็กไหนคุ้มสุด | `eSIM ยุโรป`, `ซิมยุโรป หลายประเทศ`, `Airalo Eurolink รีวิว` | Commercial (High-AOV) | เชื่อม `where-to-buy-esim`, `esim-uk`, `esim-dual-sim-otp` | **P1 — Wave 3** · ทริป 10–15 วัน ยอดสั่งซื้อต่อออเดอร์สูง *(ต้องสร้าง Airalo Europe Impact deep link เพิ่มใน `docs/affiliate-links.md`)* |
 | **7** | `esim-australia` | eSIM ออสเตรเลีย 2569: ซิดนีย์ เมลเบิร์น เปรียบเทียบราคา Airalo / Vacay / SIM2Fly | `eSIM ออสเตรเลีย`, `ซิมออสเตรเลีย 2569`, `eSIM ซิดนีย์ เมลเบิร์น` | Commercial (High-AOV) | เชื่อม `where-to-buy-esim`, `esim-asia`, `esim-dual-sim-otp` | **P1 — Wave 3** · กลุ่มเที่ยว + นักเรียนไทยสูง *(ต้องสร้าง Airalo Australia Impact deep link เพิ่ม)* |
 | **8** | `esim-uk` | eSIM อังกฤษ (UK) 2569: ลอนดอน + ข้ามเที่ยวยุโรป ต้องซื้อแพ็กไหนไม่ให้เน็ตตัด | `eSIM อังกฤษ`, `eSIM ลอนดอน`, `ซิมอังกฤษ ยุโรป` | Commercial (High-AOV) | เชื่อม `esim-europe`, `where-to-buy-esim`, `esim-dual-sim-otp` | **P1 — Wave 3** · แก้จุดเจ็บ post-Brexit roaming *(ต้องสร้าง Airalo UK Impact deep link เพิ่ม)* |
